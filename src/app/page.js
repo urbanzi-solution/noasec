@@ -10,10 +10,10 @@ export const metadata = {
   description:
     "NoaSec Solutions offers real-world cybersecurity training and expert security services in Kerala.",
 
-  metadataBase: new URL("https://noasecsolutions.com"),
+  metadataBase: new URL("https://noasec.com/"),
 
   alternates: {
-    canonical: "/",
+    canonical: "https://noasec.com/",
   },
 
   icons: {
@@ -23,7 +23,7 @@ export const metadata = {
   },
 
   openGraph: {
-    url: "https://noasecsolutions.com",
+    url: "https://noasec.com/",
     title: "NoaSec Cybersecurity Training & Services |Kerala",
     description:
       "Learn cybersecurity with real-world training and protect your business.",
