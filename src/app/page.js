@@ -6,7 +6,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 
 export const metadata = {
-  title: " NoaSec Cybersecurity Training & Services | Kerala",
+  title: " NoaSec Cybersecurity Training & Services | Kottayam, Kerala",
   description:
     "NoaSec Solutions offers real-world cybersecurity training and expert security services in Kerala.",
 
@@ -24,7 +24,7 @@ export const metadata = {
 
   openGraph: {
     url: "https://noasec.com/",
-    title: "NoaSec Cybersecurity Training & Services |Kerala",
+    title: "NoaSec Cybersecurity Training & Services | Kottayam, Kerala",
     description:
       "Learn cybersecurity with real-world training and protect your business.",
     images: [
