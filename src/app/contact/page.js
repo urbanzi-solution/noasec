@@ -37,7 +37,7 @@ export default function ContactPage() {
     setStatus(null);
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbyn7VDHTLAWtjZONVkaJt-26d5H1VwtL0jiCz45zDqU-6bKvfzNgoqzy3yoEB3g4BQaOg/exec";
+      "https://script.google.com/macros/s/AKfycbzBeN4UR6DscHaYT5ryAPG4aOWR3CjyLHwJluL5RLKv4iRcSUR0N5_g7-h9QdME93V6EA/exec";
 
     const data = new FormData();
     data.append("FirstName", formData.firstName);
