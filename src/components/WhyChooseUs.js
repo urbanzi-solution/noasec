@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import {
+  BeakerIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  BriefcaseIcon,
+} from "@heroicons/react/24/outline";
 
 export default function WhyChooseUs() {
   return (
@@ -12,7 +18,7 @@ export default function WhyChooseUs() {
       viewport={{ once: true }}
       className="bg-[#05070d] text-white py-20 px-6 md:px-16 scroll-mt-24"
     >
-      <div className="max-w-7xl mx-auto -mt-19 ">
+      <div className="max-w-7xl mx-auto -mt-19">
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -26,37 +32,43 @@ export default function WhyChooseUs() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-4 gap-6 mb-16">
+
+          {/* Card 1 */}
           <div className="bg-[#0c0f17] p-6 rounded-md border border-white/5 hover:border-[#7dd3fc]/40 transition">
-            <div className="text-[#7dd3fc] text-xl mb-4">🧪</div>
+            <BeakerIcon className="w-6 h-6 text-[#7dd3fc] mb-4" />
             <h3 className="font-semibold mb-2">Hands-on Labs</h3>
             <p className="text-gray-400 text-sm">
               Real-world simulated environments to test your skills in combat conditions.
             </p>
           </div>
 
+          {/* Card 2 */}
           <div className="bg-[#0c0f17] p-6 rounded-md border border-white/5 hover:border-[#7dd3fc]/40 transition">
-            <div className="text-[#7dd3fc] text-xl mb-4">👥</div>
+            <UserGroupIcon className="w-6 h-6 text-[#7dd3fc] mb-4" />
             <h3 className="font-semibold mb-2">Practitioner-Led</h3>
             <p className="text-gray-400 text-sm">
               Learn from experts who spend their days fighting actual cyber threats.
             </p>
           </div>
 
+          {/* Card 3 */}
           <div className="bg-[#0c0f17] p-6 rounded-md border border-white/5 hover:border-[#7dd3fc]/40 transition">
-            <div className="text-[#7dd3fc] text-xl mb-4">📈</div>
+            <ChartBarIcon className="w-6 h-6 text-[#7dd3fc] mb-4" />
             <h3 className="font-semibold mb-2">Career Pathways</h3>
             <p className="text-gray-400 text-sm">
               Clear roadmap from beginner to elite security operator roles.
             </p>
           </div>
 
+          {/* Card 4 */}
           <div className="bg-[#0c0f17] p-6 rounded-md border border-white/5 hover:border-[#7dd3fc]/40 transition">
-            <div className="text-[#7dd3fc] text-xl mb-4">💼</div>
+            <BriefcaseIcon className="w-6 h-6 text-[#7dd3fc] mb-4" />
             <h3 className="font-semibold mb-2">Internships</h3>
             <p className="text-gray-400 text-sm">
               Direct pipeline to industry opportunities and hands-on experience.
             </p>
           </div>
+
         </div>
 
         {/* CTA BOX */}
@@ -73,14 +85,12 @@ export default function WhyChooseUs() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
 
-            {/* ✅ Button 1 */}
             <Link href="/contact">
               <button className="px-6 py-3 bg-[#7dd3fc] text-black font-semibold rounded-md hover:bg-[#38bdf8] transition">
                 Start Learning Today
               </button>
             </Link>
 
-            {/* ✅ Button 2 */}
             <Link href="/contact">
               <button className="px-6 py-3 border border-white/20 rounded-md text-white hover:bg-white/5 transition">
                 Get a Security Assessment
@@ -88,7 +98,6 @@ export default function WhyChooseUs() {
             </Link>
 
           </div>
-
         </div>
 
       </div>
