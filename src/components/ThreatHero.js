@@ -19,9 +19,7 @@ export default function ThreatHero() {
 
           {/* DESCRIPTION */}
           <p className="text-gray-400 mt-6 text-sm md:text-base leading-relaxed max-w-lg">
-            Reactive security is no longer enough. NoaSec's service takes a proactive
-            approach combining curated threat intelligence feeds with active hunting
-            techniques to neutralize adversaries before they execute.
+            Reactive security is no longer enough. NoaSec's Threat Intelligence & Hunting service takes a proactive approach — combining curated threat intelligence feeds with active hunting techniques to identify adversaries, indicators of compromise (IOCs), and stealthy threats lurking inside your environment before they execute their objectives.
           </p>
 
           {/* BUTTONS */}

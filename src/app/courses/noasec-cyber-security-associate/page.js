@@ -2,6 +2,7 @@ import NCSAHero from "@/components/NCSAHero";
 import ProgramOverview from "@/components/ProgramOverview";
 import LearningRoadmap from "@/components/LearningRoadmap";
 import PathToMastery from "@/components/PathToMastery";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -18,38 +19,48 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/courses/noasec-cyber-security-associate", // ✅ update if needed
+    canonical:
+      "https://www.noasec.com/courses/noasec-cyber-security-associate",
   },
 
   openGraph: {
     title: "Cyber Security Associate Course (NCSA) | NoaSec",
     description:
-      "Begin your cybersecurity career with NoaSec’s NCSA program — designed for absolute beginners.",
-    url: "https://www.noasec.com/courses/noasec-cyber-security-associate",
+      "Begin your cybersecurity career with NoaSec’s NCSA program.",
+    url:
+      "https://www.noasec.com/courses/noasec-cyber-security-associate",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-ncsa.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "NCSA Cyber Security Course NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Cyber Security Associate Course (NCSA) | NoaSec",
-    description:
-      "Kickstart your cybersecurity journey with NoaSec’s beginner-friendly NCSA course.",
-    images: ["https://www.noasec.com/og-ncsa.jpg"],
   },
 };
 
-export default function Home() {
+export default function NCSA() {
   return (
     <>
+      {/* ✅ Course Schema */}
+      <Script
+        id="ncsa-course-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: "Cyber Security Associate (NCSA)",
+            description:
+              "1-month beginner cybersecurity course covering cyber threats, networking fundamentals, Linux basics, ethical hacking concepts, and security tools.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            educationalLevel: "Beginner",
+            courseMode: "Online, Offline",
+            inLanguage: "en",
+          }),
+        }}
+      />
+
       <NCSAHero />
       <ProgramOverview />
       <LearningRoadmap />

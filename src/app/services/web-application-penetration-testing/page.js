@@ -2,6 +2,7 @@ import WebSecurityHero from "@/components/WebSecurityHero";
 import PentestSection from "@/components/PentestSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TrainingCTA from "@/components/TrainingCTA";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -18,38 +19,47 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/services/web-application-penetration-testing", // ✅ update if needed
+    canonical:
+      "https://www.noasec.com/services/web-application-penetration-testing",
   },
 
   openGraph: {
     title: "Web Application Penetration Testing | NoaSec",
     description:
       "Identify and fix web application vulnerabilities with expert pentesting aligned to OWASP Top 10.",
-    url: "https://www.noasec.com/services/web-application-penetration-testing",
+    url:
+      "https://www.noasec.com/services/web-application-penetration-testing",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-web-pentest.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "Web Application Penetration Testing NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Web Application Penetration Testing | NoaSec",
-    description:
-      "Comprehensive web app security testing aligned with OWASP Top 10.",
-    images: ["https://www.noasec.com/og-web-pentest.jpg"],
   },
 };
 
-export default function Home() {
+export default function WebApplicationPentestingPage() {
   return (
     <>
+      {/* ✅ Service Schema */}
+      <Script
+        id="web-application-pentest-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Web Application Penetration Testing",
+            description:
+              "Comprehensive web application security testing aligned with OWASP Top 10 to identify vulnerabilities such as SQL injection, cross-site scripting, authentication flaws, and insecure configurations.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            areaServed: "IN",
+            serviceType: "Application Security Testing",
+          }),
+        }}
+      />
+
       <WebSecurityHero />
       <PentestSection />
       <BenefitsSection />

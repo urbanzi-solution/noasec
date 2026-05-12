@@ -8,9 +8,10 @@ import { useRouter, usePathname } from "next/navigation";
 const navLinks = [
   { name: "Home", id: "home", type: "scroll" },
 
-  // ✅ FIXED ABOUT
+  // About
   { name: "About", href: "/about", type: "link" },
 
+  // Services
   {
     name: "Services",
     href: "/services",
@@ -31,6 +32,7 @@ const navLinks = [
     ],
   },
 
+  // Courses
   {
     name: "Courses",
     href: "/courses",
@@ -41,6 +43,13 @@ const navLinks = [
       { name: "NoaSec Cyber Defender (NCD)", href: "/courses/noasec-cyber-defender" },
       { name: "NoaSec Cyber Security Associate (NCSA)", href: "/courses/noasec-cyber-security-associate" },
     ],
+  },
+
+  // ✅ BLOG / INSIGHTS ADDED HERE
+  {
+    name: "Blogs",
+    href: "/blogs",
+    type: "link",
   },
 ];
 
@@ -129,7 +138,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Contact */}
+        {/* Contact Button */}
         <Link
           href="/contact"
           className="hidden md:block px-5 py-2 bg-[#0ea5e9] text-white rounded-md hover:bg-[#38bdf8]"
@@ -201,6 +210,15 @@ export default function Navbar() {
               )}
             </div>
           ))}
+
+          {/* Blogs for Mobile */}
+          <Link
+            href="/blogs"
+            onClick={() => setMenuOpen(false)}
+            className="text-gray-300"
+          >
+            Blogs
+          </Link>
 
           <Link
             href="/contact"

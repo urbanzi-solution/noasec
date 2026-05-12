@@ -45,9 +45,9 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-6xl font-bold leading-[1.1] text-white"
           >
-            Detect. Defend.{" "}
+            Kerala's Cybersecurity Training{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
-              Dominate.
+              Expert Security Services
             </span>
           </motion.h1>
 

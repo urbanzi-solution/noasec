@@ -1,6 +1,7 @@
-import NCDHero from "@/components/NCDHero"; 
+import NCDHero from "@/components/NCDHero";
 import NCDFoundation from "@/components/NCDFoundation";
 import CertificationPathway from "@/components/CertificationPathway";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -17,39 +18,49 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/courses/noasec-cyber-defender", // 🔥 update if needed
+    canonical:
+      "https://www.noasec.com/courses/noasec-cyber-defender",
   },
 
   openGraph: {
-    title: "Cyber Defender Course (NCD) | Ethical Hacking Training | NoaSec",
+    title:
+      "Cyber Defender Course (NCD) | Ethical Hacking Training | NoaSec",
     description:
-      "Master ethical hacking with NoaSec’s Cyber Defender (NCD) course — hands-on training in pentesting, web security, and vulnerability assessment.",
-    url: "https://www.noasec.com/courses/noasec-cyber-defender",
+      "Master ethical hacking with NoaSec’s Cyber Defender (NCD) course.",
+    url:
+      "https://www.noasec.com/courses/noasec-cyber-defender",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-ncd.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "Cyber Defender Course NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Cyber Defender Course (NCD) | Ethical Hacking Training | NoaSec",
-    description:
-      "Hands-on ethical hacking course covering pentesting, web security, and vulnerability assessment.",
-    images: ["https://www.noasec.com/og-ncd.jpg"],
   },
 };
 
-/* ✅ PAGE COMPONENT */
 export default function CyberDefender() {
   return (
     <>
+      {/* ✅ Course Schema */}
+      <Script
+        id="ncd-course-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: "Cyber Defender (NCD)",
+            description:
+              "2-month hands-on ethical hacking course covering vulnerability assessment, web security, wireless hacking, and penetration testing fundamentals.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            educationalLevel: "Beginner to Intermediate",
+            courseMode: "Online, Offline",
+            inLanguage: "en",
+          }),
+        }}
+      />
+
       <NCDHero />
       <NCDFoundation />
       <CertificationPathway />

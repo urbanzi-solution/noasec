@@ -188,7 +188,7 @@ export default function EngineeredSection() {
         {/* Right — buttons */}
         <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
           <Link
-            href="contact"
+            href="/contact"
             className="px-7 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-[0.15em] uppercase transition-colors duration-200 rounded-sm text-center"
           >
             Request a Consultation

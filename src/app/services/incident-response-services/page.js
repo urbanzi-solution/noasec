@@ -1,6 +1,7 @@
 import IncidentHero from "@/components/IncidentHero";
 import IncidentOverview from "@/components/IncidentOverview";
 import OperationalAdvantages from "@/components/OperationalAdvantages";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -17,38 +18,47 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/services/incident-response-services", // ✅ update if needed
+    canonical:
+      "https://www.noasec.com/services/incident-response-services",
   },
 
   openGraph: {
     title: "Incident Response Services | NoaSec Cybersecurity",
     description:
-      "Rapid cyber incident response, breach containment, and recovery services to protect your business from ongoing threats.",
-    url: "https://www.noasec.com/services/incident-response-services",
+      "Rapid cyber incident response, breach containment, and recovery services.",
+    url:
+      "https://www.noasec.com/services/incident-response-services",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-incident-response.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "Incident Response Services NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Incident Response Services | NoaSec Cybersecurity",
-    description:
-      "Fast, expert-led incident response to contain threats and restore operations.",
-    images: ["https://www.noasec.com/og-incident-response.jpg"],
   },
 };
 
 export default function IncidentResponsePage() {
   return (
     <>
+      {/* ✅ Service Schema */}
+      <Script
+        id="incident-response-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Incident Response Services",
+            description:
+              "Rapid containment, investigation, and recovery services for cyberattacks, data breaches, and ransomware incidents to minimize damage and restore operations.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            areaServed: "IN",
+            serviceType: "Cybersecurity Incident Response",
+          }),
+        }}
+      />
+
       <IncidentHero />
       <IncidentOverview />
       <OperationalAdvantages />

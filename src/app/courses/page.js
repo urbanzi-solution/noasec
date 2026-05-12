@@ -1,6 +1,7 @@
 import CoursesHero from "@/components/CoursesHero";
 import EnrollmentTracks from "@/components/EnrollmentTracks";
 import CourseCards from "@/components/CourseCards";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -16,38 +17,68 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/courses", // 🔥 update if needed
+    canonical: "https://www.noasec.com/courses",
   },
 
   openGraph: {
     title: "Cybersecurity Courses & Certifications | NoaSec",
     description:
-      "Hands-on cybersecurity training programs by NoaSec — learn ethical hacking, SOC operations, and digital forensics.",
+      "Hands-on cybersecurity training programs by NoaSec.",
     url: "https://www.noasec.com/courses",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-courses.jpg", // replace with your image
-        width: 1200,
-        height: 630,
-        alt: "NoaSec Cybersecurity Courses",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Cybersecurity Courses & Certifications | NoaSec",
-    description:
-      "Explore NoaSec's practical cybersecurity courses and certifications.",
-    images: ["https://www.noasec.com/og-courses.jpg"],
   },
 };
 
 export default function CoursesPage() {
   return (
     <>
+      {/* ✅ Courses Schema */}
+      <Script
+        id="courses-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "NoaSec Cybersecurity Courses",
+            itemListElement: [
+              {
+                "@type": "Course",
+                position: 1,
+                name: "Ethical Hacking Program",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  sameAs: "https://www.noasec.com",
+                },
+              },
+              {
+                "@type": "Course",
+                position: 2,
+                name: "SOC Analyst Training",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  sameAs: "https://www.noasec.com",
+                },
+              },
+              {
+                "@type": "Course",
+                position: 3,
+                name: "Digital Forensics Certification",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  sameAs: "https://www.noasec.com",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       <CoursesHero />
       <EnrollmentTracks />
       <CourseCards />

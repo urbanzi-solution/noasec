@@ -41,9 +41,7 @@ export default function WebSecurityHero() {
 
         {/* Description */}
         <p className="mt-6 text-gray-400 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
-          Simulate real-world attacks with clinical precision. Identify critical
-          vulnerabilities before exploit, aligning with OWASP Top 10 and global
-          compliance standards.
+          Web applications are a primary attack vector for threat actors. NoaSec's web application penetration testing service simulates real-world attacks against your web apps — uncovering vulnerabilities such as SQL injection, cross-site scripting (XSS), broken authentication, and API security flaws — aligned with the OWASP Top 10 framework.
         </p>
 
         {/* Buttons */}

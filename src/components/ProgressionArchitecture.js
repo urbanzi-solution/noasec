@@ -206,7 +206,78 @@ export default function ProgressionArchitecture() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="h-px bg-white/5" />
       </div>
+{/* ── RELATED SERVICES ── */}
+<section className="max-w-6xl mx-auto px-6 py-16">
+  <motion.div
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4 }}
+    className="mb-10"
+  >
+    <p className="text-[10px] font-bold tracking-[0.25em] text-cyan-500 uppercase mb-2">
+      Career Alignment
+    </p>
+    <h2 className="text-2xl font-extrabold text-white">
+      Related Security Services
+    </h2>
+    <p className="text-sm text-gray-400 mt-3 max-w-2xl">
+      These services represent real-world implementations of the skills taught
+      in the NoaSec certification pathway.
+    </p>
+  </motion.div>
 
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
+    {[
+      {
+        title: "Managed SOC Operations",
+        href: "/services/managed-soc",
+      },
+      {
+        title: "Incident Response Services",
+        href: "/services/incident-response-services",
+      },
+      {
+        title: "Web Application Penetration Testing",
+        href: "/services/web-application-penetration-testing",
+      },
+      {
+        title: "Network Penetration Testing",
+        href: "/services/network-penetration-testing",
+      },
+      {
+        title: "Cloud Security Solutions",
+        href: "/services/cloud-security-solutions",
+      },
+      {
+        title: "Digital Evidence Collection",
+        href: "/services/digital-evidence-collection",
+      },
+    ].map((item, i) => (
+      <motion.div
+        key={item.title}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.05 }}
+        className="px-6 py-6 rounded-md border border-white/5 bg-[#111] hover:bg-[#161616] hover:border-cyan-500/20 transition-all duration-200"
+      >
+        <h3 className="text-sm font-bold text-white mb-4">
+          {item.title}
+        </h3>
+
+        <Link
+          href={item.href}
+          className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-cyan-400 hover:text-cyan-300 uppercase transition-colors duration-200"
+        >
+          <span>Explore</span>
+          <span>→</span>
+        </Link>
+      </motion.div>
+    ))}
+  </div>
+</section>
       {/* ── CTA ── */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <motion.div

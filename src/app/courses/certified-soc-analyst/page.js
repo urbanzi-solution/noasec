@@ -1,6 +1,7 @@
 import NCSOCHero from "@/components/NCSOCHero";
 import ModuleRoadmap from "@/components/ModuleRoadmap";
 import ProfessionalServices from "@/components/ProfessionalServices";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -18,39 +19,48 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/courses/certified-soc-analyst", // 🔥 update if needed
+    canonical:
+      "https://www.noasec.com/courses/certified-soc-analyst",
   },
 
   openGraph: {
     title: "Certified SOC Analyst Course (NCSA-SOC) | NoaSec",
     description:
-      "Become a SOC Analyst with hands-on SIEM, threat detection, and incident response training using real-world tools like Splunk, Wazuh, and ELK Stack.",
-    url: "https://www.noasec.com/courses/certified-soc-analyst",
+      "Become a SOC Analyst with hands-on SIEM, threat detection, and incident response training.",
+    url:
+      "https://www.noasec.com/courses/certified-soc-analyst",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-ncsa-soc.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "Certified SOC Analyst Course NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Certified SOC Analyst Course (NCSA-SOC) | NoaSec",
-    description:
-      "Hands-on SOC analyst training covering SIEM, threat hunting, and incident response.",
-    images: ["https://www.noasec.com/og-ncsa-soc.jpg"],
   },
 };
 
-/* ✅ PAGE COMPONENT */
 export default function CertifiedSOCAnalyst() {
   return (
     <>
+      {/* ✅ Course Schema */}
+      <Script
+        id="ncsa-soc-course-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: "Certified SOC Analyst (NCSA-SOC)",
+            description:
+              "Hands-on SOC analyst certification covering SIEM architecture, log analysis, threat hunting, and incident response using tools like Splunk, Wazuh, and ELK Stack.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            educationalLevel: "Intermediate to Advanced",
+            courseMode: "Online",
+            inLanguage: "en",
+          }),
+        }}
+      />
+
       <NCSOCHero />
       <ModuleRoadmap />
       <ProfessionalServices />

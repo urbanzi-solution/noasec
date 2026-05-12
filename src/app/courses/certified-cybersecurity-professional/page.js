@@ -1,10 +1,12 @@
 import NCCPHero from "@/components/NCCPHero";
 import CurriculumRoadmap from "@/components/CurriculumRoadmap";
 import ProgressionArchitecture from "@/components/ProgressionArchitecture";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
-  title: "Certified Cybersecurity Professional (NCCP) | Advanced Course | NoaSec",
+  title:
+    "Certified Cybersecurity Professional (NCCP) | Advanced Course | NoaSec",
   description:
     "NoaSec's flagship 4-month cybersecurity certification covering advanced penetration testing, mobile security, cloud security, SOC operations, digital forensics, and incident response.",
 
@@ -17,39 +19,49 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/courses/certified-cybersecurity-professional", // 🔥 update if needed
+    canonical:
+      "https://www.noasec.com/courses/certified-cybersecurity-professional",
   },
 
   openGraph: {
-    title: "Certified Cybersecurity Professional (NCCP) | Advanced Course | NoaSec",
+    title:
+      "Certified Cybersecurity Professional (NCCP) | Advanced Course | NoaSec",
     description:
-      "Master advanced cybersecurity with NoaSec’s NCCP program — covering pentesting, cloud security, SOC operations, forensics, and incident response.",
-    url: "https://www.noasec.com/courses/certified-cybersecurity-professional",
+      "Master advanced cybersecurity with NoaSec’s NCCP program.",
+    url:
+      "https://www.noasec.com/courses/certified-cybersecurity-professional",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-nccp.jpg", // replace with real image
-        width: 1200,
-        height: 630,
-        alt: "NCCP Cybersecurity Course NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Certified Cybersecurity Professional (NCCP) | Advanced Course | NoaSec",
-    description:
-      "Advanced 4-month cybersecurity training covering pentesting, cloud security, SOC, and forensics.",
-    images: ["https://www.noasec.com/og-nccp.jpg"],
   },
 };
 
-/* ✅ PAGE COMPONENT */
 export default function CertifiedCybersecurityProfessional() {
   return (
     <>
+      {/* ✅ Course Schema */}
+      <Script
+        id="nccp-course-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: "Certified Cybersecurity Professional (NCCP)",
+            description:
+              "Advanced 4-month cybersecurity certification covering penetration testing, cloud security, SOC operations, digital forensics, mobile security, and incident response.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            educationalLevel: "Advanced",
+            courseMode: "Online",
+            inLanguage: "en",
+          }),
+        }}
+      />
+
       <NCCPHero />
       <CurriculumRoadmap />
       <ProgressionArchitecture />

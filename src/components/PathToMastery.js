@@ -75,7 +75,85 @@ export default function PathToMastery() {
             </span>
           </Link>
         </motion.div>
+{/* ── RELATED SECURITY SERVICES ── */}
+<section className="max-w-6xl mx-auto px-6 py-16">
+  <motion.h2
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4 }}
+    className="text-base font-bold text-white mb-8"
+  >
+    Related Security Services
+  </motion.h2>
 
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      className="p-6 rounded-lg border border-white/5 bg-[#111] hover:border-cyan-500/20 hover:bg-[#161616] transition-all duration-200"
+    >
+      <h3 className="text-sm font-bold text-white mb-2">
+        Vulnerability Assessment
+      </h3>
+      <p className="text-xs text-gray-400 mb-4">
+        Identify and prioritize security weaknesses across networks and systems.
+      </p>
+      <Link
+        href="/services/vulnerability-assessment-services"
+        className="text-xs font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-widest"
+      >
+        Learn More →
+      </Link>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45 }}
+      className="p-6 rounded-lg border border-white/5 bg-[#111] hover:border-cyan-500/20 hover:bg-[#161616] transition-all duration-200"
+    >
+      <h3 className="text-sm font-bold text-white mb-2">
+        Web Application Penetration Testing
+      </h3>
+      <p className="text-xs text-gray-400 mb-4">
+        OWASP-aligned testing to secure modern web applications.
+      </p>
+      <Link
+        href="/services/web-application-penetration-testing"
+        className="text-xs font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-widest"
+      >
+        Learn More →
+      </Link>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="p-6 rounded-lg border border-white/5 bg-[#111] hover:border-cyan-500/20 hover:bg-[#161616] transition-all duration-200"
+    >
+      <h3 className="text-sm font-bold text-white mb-2">
+        Managed SOC Operations
+      </h3>
+      <p className="text-xs text-gray-400 mb-4">
+        24/7 monitoring, threat detection, and SIEM management.
+      </p>
+      <Link
+        href="/services/managed-soc"
+        className="text-xs font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-widest"
+      >
+        Learn More →
+      </Link>
+    </motion.div>
+
+  </div>
+</section>
         {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}

@@ -82,7 +82,7 @@ export default function NCSAHero() {
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="#"
+                  href="/contact"
                   className="px-7 py-3 bg-cyan-500 hover:bg-cyan-400 text-black text-sm font-bold transition-colors duration-200 rounded-sm"
                 >
                   Enroll Now

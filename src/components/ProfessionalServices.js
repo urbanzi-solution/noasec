@@ -91,9 +91,71 @@ export default function ProfessionalServices() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="h-px bg-white/5" />
       </div>
+{/* ── RELATED SERVICES ── */}
+<section className="max-w-6xl mx-auto px-6 py-16">
+  <motion.h2
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4 }}
+    className="text-xl font-extrabold text-white mb-8"
+  >
+    Related Security Capabilities
+  </motion.h2>
 
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    {[
+      {
+        title: "Web Application Penetration Testing",
+        href: "/services/web-application-penetration-testing",
+      },
+      {
+        title: "Network Penetration Testing",
+        href: "/services/network-penetration-testing",
+      },
+      {
+        title: "Cloud Security Solutions",
+        href: "/services/cloud-security-solutions",
+      },
+      {
+        title: "Server & Firewall Hardening",
+        href: "/services/server-hardening",
+      },
+      {
+        title: "Malware Analysis",
+        href: "/services/malware-analysis",
+      },
+      {
+        title: "Digital Evidence Collection",
+        href: "/services/digital-evidence-collection",
+      },
+    ].map((item, i) => (
+      <motion.div
+        key={item.title}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.05 }}
+        className="px-6 py-6 rounded-md border border-white/8 bg-[#111] hover:bg-[#161616] hover:border-cyan-500/20 transition-all duration-200"
+      >
+        <h3 className="text-sm font-bold text-white mb-4">
+          {item.title}
+        </h3>
+
+        <Link
+          href={item.href}
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+        >
+          <span>Explore</span>
+          <span>→</span>
+        </Link>
+      </motion.div>
+    ))}
+  </div>
+</section>
       {/* ── CTA ── */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 py-16 -mt-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

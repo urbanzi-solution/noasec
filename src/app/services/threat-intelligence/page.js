@@ -2,6 +2,7 @@ import ThreatHero from "@/components/ThreatHero";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import CyberSection from "@/components/CyberSection";
 import RelatedServices from "@/components/RelatedServices";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -18,7 +19,7 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/services/threat-intelligence", // ✅ update if needed
+    canonical: "https://www.noasec.com/services/threat-intelligence",
   },
 
   openGraph: {
@@ -27,33 +28,40 @@ export const metadata = {
       "Identify hidden threats and adversaries with proactive threat intelligence and advanced threat hunting.",
     url: "https://www.noasec.com/services/threat-intelligence",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-threat-intelligence.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "Threat Intelligence NoaSec",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Threat Intelligence & Threat Hunting Services | NoaSec",
-    description:
-      "Proactive threat detection and intelligence to uncover hidden cyber threats.",
-    images: ["https://www.noasec.com/og-threat-intelligence.jpg"],
   },
 };
 
 export default function ThreatIntelligencePage() {
   return (
-    <div>
+    <>
+      {/* ✅ Service Schema */}
+      <Script
+        id="threat-intelligence-service-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Threat Intelligence & Threat Hunting Services",
+            description:
+              "Proactive threat intelligence and advanced threat hunting services designed to identify hidden adversaries, detect emerging threats, and mitigate advanced persistent threats before impact.",
+            provider: {
+              "@type": "Organization",
+              name: "NoaSec",
+              url: "https://www.noasec.com",
+            },
+            areaServed: "IN",
+            serviceType: "Cyber Threat Detection",
+          }),
+        }}
+      />
+
       <ThreatHero />
       <CapabilitiesSection />
       <CyberSection />
       <RelatedServices />
-    </div>
+    </>
   );
 }

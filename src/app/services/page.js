@@ -1,6 +1,7 @@
 import ServiceHero from "@/components/ServiceHero";
 import Services from "@/components/Services";
 import ServiceSelector from "@/components/ServiceSelector";
+import Script from "next/script";
 
 /* ✅ SEO METADATA */
 export const metadata = {
@@ -19,40 +20,79 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.noasec.com/services", // ✅ update if needed
+    canonical: "https://www.noasec.com/services",
   },
 
   openGraph: {
     title:
       "Cybersecurity Services | Penetration Testing, SOC & Forensics | NoaSec",
     description:
-      "Explore NoaSec's complete cybersecurity services including pentesting, SOC monitoring, forensics, and cloud security.",
+      "Explore NoaSec's complete cybersecurity services.",
     url: "https://www.noasec.com/services",
     siteName: "NoaSec",
-    images: [
-      {
-        url: "https://www.noasec.com/og-services.jpg", // replace with actual image
-        width: 1200,
-        height: 630,
-        alt: "NoaSec Cybersecurity Services",
-      },
-    ],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Cybersecurity Services | Penetration Testing, SOC & Forensics | NoaSec",
-    description:
-      "Comprehensive cybersecurity services tailored to protect modern organizations.",
-    images: ["https://www.noasec.com/og-services.jpg"],
   },
 };
 
-export default function Home() {
+export default function ServicesPage() {
   return (
     <>
+      {/* ✅ Services Schema */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "NoaSec Cybersecurity Services",
+            itemListElement: [
+              {
+                "@type": "Service",
+                position: 1,
+                name: "Penetration Testing",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  url: "https://www.noasec.com",
+                },
+              },
+              {
+                "@type": "Service",
+                position: 2,
+                name: "Managed SOC Services",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  url: "https://www.noasec.com",
+                },
+              },
+              {
+                "@type": "Service",
+                position: 3,
+                name: "Digital Forensics",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  url: "https://www.noasec.com",
+                },
+              },
+              {
+                "@type": "Service",
+                position: 4,
+                name: "Incident Response",
+                provider: {
+                  "@type": "Organization",
+                  name: "NoaSec",
+                  url: "https://www.noasec.com",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       <ServiceHero />
       <Services />
       <ServiceSelector />
