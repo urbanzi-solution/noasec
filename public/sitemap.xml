@@ -4,90 +4,90 @@
 >
 
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://www.noasec.com/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/about</loc>
+    <loc>https://www.noasec.com/about</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/contact</loc>
+    <loc>https://www.noasec.com/contact</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/courses</loc>
+    <loc>https://www.noasec.com/courses</loc>
   </url>
 
   <!-- Courses -->
   <url>
-    <loc>https://yourdomain.com/courses/certified-cybersecurity-professional</loc>
+    <loc>https://www.noasec.com/courses/certified-cybersecurity-professional</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/courses/certified-soc-analyst</loc>
+    <loc>https://www.noasec.com/courses/certified-soc-analyst</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/courses/noasec-cyber-defender</loc>
+    <loc>https://www.noasec.com/courses/noasec-cyber-defender</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/courses/noasec-cyber-security-associate</loc>
+    <loc>https://www.noasec.com/courses/noasec-cyber-security-associate</loc>
   </url>
 
   <!-- Services -->
   <url>
-    <loc>https://yourdomain.com/services</loc>
+    <loc>https://www.noasec.com/services</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/cloud-security-solutions</loc>
+    <loc>https://www.noasec.com/services/cloud-security-solutions</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/digital-evidence-collection</loc>
+    <loc>https://www.noasec.com/services/digital-evidence-collection</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/disk-memory-forensics</loc>
+    <loc>https://www.noasec.com/services/disk-memory-forensics</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/incident-response-services</loc>
+    <loc>https://www.noasec.com/services/incident-response-services</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/linux-windows-administration</loc>
+    <loc>https://www.noasec.com/services/linux-windows-administration</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/malware-analysis</loc>
+    <loc>https://www.noasec.com/services/malware-analysis</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/managed-soc</loc>
+    <loc>https://www.noasec.com/services/managed-soc</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/network-penetration-testing</loc>
+    <loc>https://www.noasec.com/services/network-penetration-testing</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/server-hardening</loc>
+    <loc>https://www.noasec.com/services/server-hardening</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/threat-intelligence</loc>
+    <loc>https://www.noasec.com/services/threat-intelligence</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/vulnerability-assessment-services</loc>
+    <loc>https://www.noasec.com/services/vulnerability-assessment-services</loc>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services/web-application-penetration-testing</loc>
+    <loc>https://www.noasec.com/services/web-application-penetration-testing</loc>
   </url>
 
 </urlset>
