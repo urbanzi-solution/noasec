@@ -6,14 +6,12 @@ import { motion } from "framer-motion";
 export default function UnderDevelopmentPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white flex items-center justify-center px-6">
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center max-w-xl"
       >
-
         {/* Badge */}
         <p className="text-xs font-bold tracking-[0.3em] text-cyan-400 uppercase mb-4">
           Coming Soon
@@ -32,7 +30,6 @@ export default function UnderDevelopmentPage() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-
           <Link
             href="/"
             className="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-black tracking-[0.18em] uppercase transition-colors duration-200 rounded-sm"
@@ -46,9 +43,18 @@ export default function UnderDevelopmentPage() {
           >
             Contact Us
           </Link>
-
         </div>
 
+        {/* Hyperlink */}
+        <p className="mt-8 text-sm text-gray-400">
+          Looking for cybersecurity training?{" "}
+          <Link
+            href="/blogs/blog"
+            className="text-cyan-400 hover:text-cyan-300 underline"
+          >
+            Explore Our Blog
+          </Link>
+        </p>
       </motion.div>
     </div>
   );
