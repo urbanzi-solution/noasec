@@ -1,4 +1,8 @@
-export default function WhyLearningMatters() {
+"use client";
+
+import Link from "next/link";
+
+export default function LearningMatters() {
   return (
     <section className="bg-[#06182B] py-10 md:py-12">
       <div className="max-w-7xl mx-auto">
@@ -36,6 +40,17 @@ export default function WhyLearningMatters() {
               skills that employers actively seek.”
             </p>
           </div>
+
+          {/* Hyperlink */}
+          <p className="mt-8 text-sm text-gray-400">
+            Looking for cybersecurity training?{" "}
+            <Link
+              href="/blogs/blog"
+              className="text-cyan-400 hover:text-cyan-300 underline">
+              Explore Our Blog
+            </Link>
+          </p>
+
         </div>
 
       </div>

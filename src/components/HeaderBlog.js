@@ -1,8 +1,8 @@
-export default function BlogHeader() {
+export default function HeaderBlog() {
   return (
     <main className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-  
+      
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-[#07182c]/85" />
