@@ -1,106 +1,81 @@
-import {
-  GraduationCap,
-  MonitorPlay,
-  BadgeCheck,
-} from "lucide-react";
+import Image from "next/image";
+import { GraduationCap, MonitorPlay, BadgeCheck, ShieldCheck } from "lucide-react";
 
 const features = [
   {
     icon: GraduationCap,
-    title: "Industry-led Training",
-    description:
-      "Learn from experts currently working in the field.",
+    title: "Practitioner-Led Instruction",
+    description: "Learn directly from active cybersecurity consultants executing real penetration tests and SOC audits.",
   },
   {
     icon: MonitorPlay,
-    title: "Hands-on Learning",
-    description:
-      "Real-world labs and incident response simulations.",
+    title: "100% Hands-On Attack & Defense Labs",
+    description: "Real-world adversary emulation environments, SIEM telemetry investigation, and packet capture triage.",
   },
   {
     icon: BadgeCheck,
-    title: "Career-directed Guidance",
-    description:
-      "Resume building and interview prep for security roles.",
+    title: "Direct Placement & Industrial Internships",
+    description: "Resume optimization, live client auditing exposure, mock technical interviews, and referral support.",
   },
 ];
 
 export default function HowNoasecHelps() {
   return (
-    <section className="relative bg-[#0d1723] py-20 overflow-hidden">
-
-      {/* Left Gradient Line */}
-      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-[#6d5cff] via-[#3b82f6] to-[#6d5cff]" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
-
-        {/* Image */}
-        <div className="overflow-hidden rounded-[26px] mb-12">
-          <img
-            src="/help.avif"
-            alt="How Noasec Helps"
-            className="w-full h-[230px] sm:h-[320px] md:h-[420px] lg:h-[470px] object-cover"
-          />
-        </div>
+    <section className="bg-[#05070d] py-16 px-6 md:px-12 border-t border-white/5">
+      <div className="max-w-4xl mx-auto space-y-8">
 
         {/* Heading */}
-        <h2 className="text-[#8EE7FF] text-3xl md:text-4xl font-bold mb-6">
-          How Noasec Helps
-        </h2>
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
+            <ShieldCheck size={13} className="text-cyan-400" />
+            <span>The NoaSec Training Advantage</span>
+          </div>
 
-        {/* Description */}
-        <p className="text-[#9EB1C1] text-lg leading-8 max-w-5xl mb-10">
-          We bridge the gap between theory and practice. Our curriculum
-          is designed by active industry professionals to ensure you
-          learn the exact skills employers are hiring for today.
-        </p>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+            How NoaSec Accelerates Your Path
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-gray-300 leading-relaxed">
+            We eliminate the gap between abstract academic theory and operational excellence. Our syllabus is continuously refreshed to align with active corporate hiring requirements.
+          </p>
+        </div>
+
+        {/* Image */}
+        <div className="overflow-hidden rounded-2xl border border-white/10 glass-card p-2 shadow-2xl">
+          <div className="relative h-[240px] sm:h-[380px] w-full rounded-xl overflow-hidden">
+            <Image
+              src="/help.webp"
+              alt="How NoaSec Accelerates Career Readiness"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-transparent to-transparent" />
+          </div>
+        </div>
 
         {/* Feature Cards */}
-        <div className="space-y-5">
-
+        <div className="space-y-4">
           {features.map((item, index) => {
             const Icon = item.icon;
-
             return (
               <div
                 key={index}
-                className="
-                  flex
-                  items-start
-                  gap-5
-                  bg-[#132131]
-                  border
-                  border-[#243647]
-                  rounded-xl
-                  px-6
-                  py-5
-                  transition-all
-                  duration-300
-                  hover:border-[#4d8dff]
-                  hover:bg-[#16283c]
-                "
+                className="glass-card flex items-start gap-4 rounded-2xl p-6 transition-all duration-300"
               >
-                <div className="flex-shrink-0 mt-1">
-                  <Icon
-                    size={24}
-                    strokeWidth={2}
-                    className="text-[#CFEFFF]"
-                  />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mt-0.5">
+                  <Icon size={20} />
                 </div>
-
                 <div>
-                  <h3 className="text-white text-lg font-semibold mb-1">
+                  <h3 className="text-base font-bold text-white mb-1">
                     {item.title}
                   </h3>
-
-                  <p className="text-[#94A8B7] text-sm leading-6">
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               </div>
             );
           })}
-
         </div>
 
       </div>

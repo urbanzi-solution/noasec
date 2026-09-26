@@ -1,123 +1,133 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle, Shield, Network, AlertTriangle } from "lucide-react";
+import { CheckCircle2, Shield, Network, AlertTriangle, ArrowRight } from "lucide-react";
 
 const benefits = [
   {
     title: "Full Vulnerability Exposure",
-    desc: "Uncover deep-seated flaws that threat actors seek to exploit before they cause damage.",
+    desc: "Uncover deep-seated flaws that threat actors seek to exploit before they cause business damage.",
   },
   {
     title: "Regulatory Compliance",
-    desc: "Seamlessly meet the rigorous demands of SOC2, PCI-DSS, and GDPR audits.",
+    desc: "Seamlessly meet the rigorous demands of SOC2, PCI-DSS, ISO 27001, and GDPR audits.",
   },
   {
     title: "Precision Data Protection",
-    desc: "Robust safeguards for PII, financial data, and sensitive internal databases.",
+    desc: "Robust safeguards for PII, financial transactions, and sensitive proprietary databases.",
   },
   {
     title: "Actionable Guidance",
-    desc: "Direct, clear remediation steps that integrate directly into developer workflows.",
+    desc: "Direct, developer-ready remediation steps that integrate directly into your CI/CD workflow.",
   },
 ];
 
 const services = [
   {
     name: "Vulnerability Assessment",
+    href: "/services/vulnerability-assessment-services",
     icon: Shield,
   },
   {
-    name: "Network Pentesting",
+    name: "Network Penetration Testing",
+    href: "/services/network-penetration-testing",
     icon: Network,
   },
   {
     name: "Incident Response",
+    href: "/services/incident-response-services",
     icon: AlertTriangle,
   },
 ];
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-[#050b14] text-white px-6 md:px-12 lg:px-20 py-24 -mt-20">
+    <section className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        {/* TOP GRID */}
+        <div className="grid lg:grid-cols-12 gap-12 mb-20 items-start">
+          {/* LEFT (4 cols) */}
+          <div className="lg:col-span-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <span>Strategic Advantage</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+              Key Strategic <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                Benefits
+              </span>
+            </h2>
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+              Why leading enterprises and tech institutions trust NoaSec for their critical public-facing assets.
+            </p>
+          </div>
 
-      {/* TOP GRID */}
-      <div className="grid md:grid-cols-3 gap-12">
-
-        {/* LEFT */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Key Benefits
-          </h2>
-          <p className="text-gray-400 text-sm md:text-base max-w-sm">
-            Why leading organizations trust NoaSec for their critical web-facing assets.
-          </p>
-        </div>
-
-        {/* RIGHT BENEFITS */}
-        <div className="md:col-span-2 grid sm:grid-cols-2 gap-8">
-          {benefits.map((item, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <CheckCircle className="text-blue-500 mt-1" size={22} />
-
-              <div>
-                <h4 className="text-lg font-semibold">
-                  {item.title}
-                </h4>
-                <p className="text-gray-400 text-sm mt-1 leading-relaxed">
+          {/* RIGHT BENEFITS (8 cols) */}
+          <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+            {benefits.map((item, i) => (
+              <div key={i} className="glass-card p-6 flex flex-col justify-start">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                    <CheckCircle2 size={18} />
+                  </div>
+                  <h4 className="text-base font-bold text-white">
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="text-gray-400 text-sm leading-relaxed pl-10">
                   {item.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* RELATED SERVICES */}
+        <div className="border-t border-white/10 pt-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Complementary Security Services
+              </h3>
+              <p className="text-gray-400 text-sm mt-1">
+                Explore end-to-end defenses that pair with web penetration testing.
+              </p>
             </div>
-          ))}
+            <Link
+              href="/services"
+              className="text-xs font-semibold tracking-wider uppercase text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
+            >
+              <span>View All Services</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {/* CARDS */}
+          <div className="grid sm:grid-cols-3 gap-6">
+            {services.map((service, i) => {
+              const Icon = service.icon;
+
+              return (
+                <Link
+                  key={i}
+                  href={service.href}
+                  className="glass-card p-6 flex items-center justify-between group cursor-pointer"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                      <Icon size={20} />
+                    </div>
+                    <span className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                      {service.name}
+                    </span>
+                  </div>
+                  <ArrowRight size={16} className="text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
-
-      {/* DIVIDER */}
-      <div className="border-t border-white/10 my-20" />
-
-      {/* RELATED SERVICES */}
-      <div>
-        <h3 className="text-2xl md:text-3xl font-semibold mb-10">
-          Related Services
-        </h3>
-
-        {/* CARDS */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-
-            return (
-              <div
-                key={i}
-                className="group flex items-center gap-4 border border-white/10 rounded-xl px-6 py-5 bg-[#0b1220]/60 backdrop-blur hover:border-blue-500/40 transition cursor-pointer"
-              >
-                <Icon className="text-gray-400 group-hover:text-blue-400 transition" size={22} />
-
-                <span className="text-gray-300 group-hover:text-white font-medium">
-                  {service.name}
-                </span>
-
-                <span className="ml-auto opacity-0 group-hover:opacity-100 transition text-blue-400">
-                  →
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* CTA BUTTON (BOTTOM CENTER) */}
-        <div className="mt-12 flex justify-center">
-          <Link
-            href="/services"
-            className="px-8 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-sm font-semibold transition shadow-lg shadow-blue-500/20"
-          >
-            View All Security Services →
-          </Link>
-        </div>
-
-      </div>
-
     </section>
   );
 }

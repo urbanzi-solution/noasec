@@ -3,160 +3,140 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowRight, HelpCircle, Headphones, ShieldAlert, CheckCircle2, GraduationCap } from "lucide-react";
 
 export default function ServiceSelector() {
-  const services = [
+  const needs = [
     {
-      title: "Unknown vulnerabilities?",
-      action: "VULNERABILITY ASSESSMENT",
+      question: "Suspect unknown vulnerabilities or compliance audit due?",
+      solution: "Vulnerability Assessment & VAPT",
       href: "/services/vulnerability-assessment-services",
+      tag: "Offensive Security",
     },
     {
-      title: "Web app at risk?",
-      action: "WEB APPLICATION PENTESTING",
+      question: "Web or mobile application vulnerable to OWASP exploits?",
+      solution: "Web & Mobile App Pen Testing",
       href: "/services/web-application-penetration-testing",
+      tag: "Application Security",
     },
     {
-      title: "Ongoing monitoring?",
-      action: "MANAGED SOC OPERATIONS",
+      question: "Require 24/7 SIEM monitoring and proactive threat defense?",
+      solution: "Managed SOC Operations",
       href: "/services/managed-soc",
+      tag: "Continuous Defense",
     },
     {
-      title: "Incident in progress?",
-      action: "INCIDENT RESPONSE SERVICES",
+      question: "Active ransomware outbreak, breach, or system intrusion?",
+      solution: "Rapid Incident Response & Containment",
       href: "/services/incident-response-services",
+      tag: "Emergency IR",
     },
   ];
 
-  // Animation Variants
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
-    <section className="bg-[#050b14] text-white -mt-15">
+    <section className="bg-[#05070d] text-white border-t border-white/5 py-24">
+      {/* Top Question & Selector */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center">
 
-      {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 grid md:grid-cols-2 gap-12 items-center">
+        {/* Left (7 cols) */}
+        <div className="lg:col-span-7">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+            <HelpCircle size={14} className="text-cyan-400" />
+            <span>Interactive Decision Helper</span>
+          </div>
 
-        {/* Left */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.h2 variants={item} className="text-3xl md:text-4xl font-bold mb-10">
-            Which Service Do You Need?
-          </motion.h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+            Which Security Service Does Your Business Need?
+          </h2>
 
-          <div className="space-y-4">
-            {services.map((itemData, i) => (
-              <motion.div key={i} variants={item}>
-                <Link
-                  href={itemData.href}
-                  className="group flex items-start gap-4 bg-[#0a0f18] hover:bg-[#0f1623] border border-white/5 p-5 transition"
-                >
-                  <div className="w-1 h-full bg-blue-500 group-hover:bg-blue-400" />
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+            Click on your operational situation below to immediately navigate to the relevant testing methodology and engagement scope.
+          </p>
 
-                  <div>
-                    <p className="text-sm text-gray-400">
-                      {itemData.title}
-                    </p>
-                    <p className="text-sm font-semibold tracking-wide text-white mt-1">
-                      → {itemData.action}
-                    </p>
-                  </div>
-                </Link>
-              </motion.div>
+          <div className="space-y-3">
+            {needs.map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className="glass-card group flex items-center justify-between p-5 rounded-2xl transition-all duration-300"
+              >
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400">
+                    {item.tag}
+                  </span>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                    {item.question}
+                  </p>
+                  <p className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors mt-0.5">
+                    {item.solution}
+                  </p>
+                </div>
+
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/40 transition-all shrink-0 ml-4">
+                  <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+                </div>
+              </Link>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* Right */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <div className="relative w-full h-[320px] md:h-[360px] border border-white/10">
-            <Image
-              src="/service-bg.jpg"
-              alt="consultation"
-              fill
-              loading="lazy"
-              className="object-cover opacity-40"
-            />
-          </div>
+        {/* Right Consultant Card (5 cols) */}
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="glass-card rounded-3xl p-8 border-cyan-500/30 text-center max-w-md w-full relative overflow-hidden shadow-2xl">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mx-auto mb-5">
+              <Headphones size={28} />
+            </div>
 
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-[#0a0f18]/90 backdrop-blur-md border border-white/10 p-6 md:p-8 max-w-sm w-full text-center shadow-xl">
-              <div className="text-blue-400 text-2xl mb-4">🎧</div>
+            <h3 className="text-xl font-bold text-white mb-2">
+              Speak with a Senior Consultant
+            </h3>
 
-              <h3 className="text-lg font-semibold mb-2">
-                Speak with a Consultant
-              </h3>
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
+              Need immediate advice on scoping an enterprise penetration test, cloud architecture review, or incident triage?
+            </p>
 
-              <p className="text-sm text-gray-400 mb-6">
-                Our analysts are available 24/7 for critical response and architectural planning.
-              </p>
+            <Link
+              href="/contact"
+              className="btn-primary w-full justify-center py-3 text-xs uppercase tracking-wider font-semibold"
+            >
+              Schedule Free Scoping Call <ArrowRight size={14} />
+            </Link>
 
-              <Link
-                href="/contact"
-                className="block bg-blue-500 hover:bg-blue-600 text-white py-3 text-sm font-semibold tracking-wide"
-              >
-                SCHEDULE CONSULTATION
-              </Link>
+            <div className="mt-6 flex items-center justify-center gap-2 text-xs text-cyan-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Available 24/7 for Critical Response</span>
             </div>
           </div>
-        </motion.div>
+        </div>
+
       </div>
 
-      {/* Bottom CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className="border-t border-white/5 bg-gradient-to-b from-[#050b14] to-[#060d18] py-20 text-center px-6 -mt-15"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Train Your Team
-        </h2>
+      {/* Bottom Cross-Sell: Train Your Team */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-20 pt-16 border-t border-white/5">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-[#0c182c] to-[#070e1c] p-8 md:p-12 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+            <GraduationCap size={14} className="text-cyan-400" />
+            <span>Internal Capability Development</span>
+          </div>
 
-        <p className="text-gray-400 max-w-2xl mx-auto mb-10">
-          Pair professional services with certified cybersecurity training to build long-term
-          resilience and internal expertise within your organization.
-        </p>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+            Upskill Your Internal Defense Team
+          </h3>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="/courses"
-            className="bg-blue-600 hover:bg-blue-700 px-8 py-3 font-semibold text-sm tracking-wide"
-          >
-            EXPLORE CYBERSECURITY COURSES
-          </Link>
+          <p className="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+            Combine professional security assessments with hands-on corporate cybersecurity certification training to establish long-term institutional resilience.
+          </p>
 
-          <Link
-            href="/contact"
-            className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-3 font-semibold text-sm tracking-wide"
-          >
-            CONTACT US FOR A QUOTE
-          </Link>
+          <div className="flex flex-wrap justify-center items-center gap-3">
+            <Link href="/courses" className="btn-primary">
+              Explore Certification Courses <ArrowRight size={14} />
+            </Link>
+            <Link href="/contact" className="btn-secondary">
+              Corporate Training Enquiry
+            </Link>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

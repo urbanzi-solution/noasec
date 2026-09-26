@@ -2,126 +2,112 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight, Clock, Award, Shield } from "lucide-react";
 
 const tracks = [
   {
     title: "NCSA — Cyber Security Associate",
-    code: "MODULE_CORE_001",
+    code: "TRACK-001",
     duration: "1 Month",
+    level: "Beginner",
     href: "/courses/noasec-cyber-security-associate",
   },
   {
     title: "NCD — Cyber Defender",
-    code: "MODULE_DEF_002",
+    code: "TRACK-002",
     duration: "2 Months",
+    level: "Foundational",
     href: "/courses/noasec-cyber-defender",
   },
   {
     title: "NCCP — Certified Cybersecurity Professional",
-    code: "MODULE_ADV_003",
+    code: "TRACK-003",
     duration: "4 Months",
+    level: "Advanced Flagship",
     href: "/courses/certified-cybersecurity-professional",
   },
   {
-    title: "NCDF — Certified Digital Forensics Analyst",
-    code: "MODULE_SPEC_004",
+    title: "NCSA-SOC — Certified SOC Analyst",
+    code: "TRACK-004",
     duration: "1–2 Months",
-    href: "/courses/noasec-certified-digital-forensics-analyst",
+    level: "Specialist",
+    href: "/courses/certified-soc-analyst",
   },
   {
-    title: "NCSA-SOC — Certified SOC Analyst",
-    code: "MODULE_SPEC_005",
+    title: "NCDF — Digital Forensics Analyst",
+    code: "TRACK-005",
     duration: "1–2 Months",
-    href: "/courses/certified-soc-analyst",
+    level: "Specialist",
+    href: "/contact",
   },
 ];
 
 export default function EnrollmentTracks() {
   return (
-    <div className="bg-[#0a0a0a] text-white min-h-screen px-6 py-16">
+    <section id="tracks" className="bg-[#05070d] text-white px-6 md:px-12 py-20 border-b border-white/5 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
 
-        {/* ── HEADER ── */}
-        <div className="flex items-center justify-between mb-10">
-          <div className="flex items-center gap-4">
-            <div className="w-1 h-10 bg-blue-500 rounded-full" />
-            <h1 className="text-3xl font-black tracking-tight uppercase text-white">
-              Current Enrollment Tracks
-            </h1>
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-2">
+              <Shield size={13} className="text-cyan-400" />
+              <span>Syllabus Quick Index</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+              Enrollment Tracks &amp; Schedule
+            </h2>
           </div>
-          <span className="text-xs font-mono font-semibold text-blue-400 tracking-widest hidden sm:block">
-            [STATUS: ACTIVE_PATHWAYS]
+          <span className="text-xs font-mono font-semibold text-cyan-400 tracking-wider bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+            ADMISSIONS OPEN · 2026
           </span>
         </div>
 
-        {/* ── TABLE ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="rounded-lg border border-white/8 overflow-hidden bg-[#111]"
-        >
-          {/* Table header */}
-          <div className="grid grid-cols-12 px-8 py-4 bg-[#161616] border-b border-white/8">
-            <div className="col-span-8">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                Course Code &amp; Title
-              </span>
-            </div>
-            <div className="col-span-2">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                Duration
-              </span>
-            </div>
-            <div className="col-span-2 text-right">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                Action
-              </span>
-            </div>
-          </div>
-
-          {/* Rows */}
+        {/* Interactive List */}
+        <div className="glass-card rounded-2xl border border-white/10 overflow-hidden divide-y divide-white/5">
           {tracks.map((t, i) => (
             <motion.div
               key={t.code}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
+              transition={{ delay: i * 0.05, duration: 0.3 }}
             >
               <Link
                 href={t.href}
-                className={`group grid grid-cols-12 items-center px-8 py-6 border-b border-white/5 hover:bg-white/3 transition-colors duration-200 ${
-                  i === tracks.length - 1 ? "border-b-0" : ""
-                }`}
+                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-5 hover:bg-white/[0.04] transition-all duration-200"
               >
-                {/* Title + code */}
-                <div className="col-span-8">
-                  <p className="text-sm font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-200 mb-1">
-                    {t.title}
-                  </p>
-                  <p className="text-[10px] font-mono text-gray-600 tracking-widest">
+                <div className="flex items-center gap-4">
+                  <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-1 rounded-md">
                     {t.code}
-                  </p>
-                </div>
-
-                {/* Duration */}
-                <div className="col-span-2">
-                  <span className="text-sm text-white font-medium">{t.duration}</span>
-                </div>
-
-                {/* Arrow */}
-                <div className="col-span-2 flex justify-end">
-                  <span className="text-blue-400 group-hover:text-blue-300 group-hover:translate-x-1 transition-all duration-200 text-lg">
-                    →
                   </span>
+                  <div>
+                    <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
+                      {t.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      Difficulty Level: <span className="text-gray-300 font-medium">{t.level}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between sm:justify-end gap-6">
+                  <div className="flex items-center gap-1.5 text-xs text-gray-300 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                    <Clock size={13} className="text-cyan-400" />
+                    <span>{t.duration}</span>
+                  </div>
+
+                  <div className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-cyan-400 group-hover:text-cyan-300">
+                    <span className="hidden sm:inline">View Details</span>
+                    <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
+                  </div>
                 </div>
               </Link>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }

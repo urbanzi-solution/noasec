@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ShieldAlert, Radar, Zap, ArrowRight, ShieldCheck } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -15,169 +16,145 @@ const fadeUp = {
 const services = [
   {
     title: "Managed SOC Operations",
-    desc: "24/7 continuous monitoring and response powered by our elite security team.",
+    desc: "24/7/365 continuous monitoring, alert triage, and threat detection powered by certified security analysts.",
     href: "/services/managed-soc",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-      </svg>
-    ),
+    icon: ShieldAlert,
   },
   {
     title: "Threat Intelligence & Hunting",
-    desc: "Identifying hidden threats before they manifest through proactive behavioral analysis.",
+    desc: "Identifying hidden adversaries before impact through proactive hypothesis-driven threat hunting.",
     href: "/services/threat-intelligence",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
-      </svg>
-    ),
+    icon: Radar,
   },
   {
     title: "Incident Response Services",
-    desc: "Rapid engagement and remediation for organizations under active cyber attack.",
+    desc: "Rapid breach containment, surgical digital forensics, and emergency disaster recovery workflows.",
     href: "/services/incident-response-services",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-      </svg>
-    ),
+    icon: Zap,
   },
+];
+
+const related = [
+  { title: "Web App Penetration Testing", href: "/services/web-application-penetration-testing" },
+  { title: "Network Penetration Testing", href: "/services/network-penetration-testing" },
+  { title: "Cloud Security Solutions", href: "/services/cloud-security-solutions" },
+  { title: "Server & Firewall Hardening", href: "/services/server-hardening" },
+  { title: "Malware Analysis Lab", href: "/services/malware-analysis" },
+  { title: "Digital Evidence Collection", href: "/services/digital-evidence-collection" },
 ];
 
 export default function ProfessionalServices() {
   return (
-    <div className="bg-[#080c10] text-white">
-
-      {/* ── PROFESSIONAL SECURITY SERVICES ── */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-xl font-extrabold text-white mb-8"
-        >
-          Professional Security Services
-        </motion.h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="flex flex-col px-6 py-6 rounded-md border border-white/8 bg-[#111] hover:bg-[#161616] hover:border-cyan-500/20 transition-all duration-200 group"
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
+        {/* ── PROFESSIONAL SECURITY SERVICES ── */}
+        <section>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
+                <ShieldCheck size={14} className="text-cyan-400" />
+                <span>Enterprise Deployments</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+                Professional Security Services
+              </h2>
+            </div>
+            <Link
+              href="/services"
+              className="text-xs font-semibold tracking-wider uppercase text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
             >
-              <span className="text-cyan-400 mb-5">{s.icon}</span>
-              <h3 className="text-sm font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-xs text-gray-400 leading-relaxed mb-5 flex-1">{s.desc}</p>
-              <Link
-                href={s.href}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors duration-200 group/link"
+              <span>View All Services</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {services.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <motion.div
+                  key={s.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                >
+                  <Link
+                    href={s.href}
+                    className="glass-card p-7 flex flex-col justify-between h-full group"
+                  >
+                    <div>
+                      <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                        <Icon size={22} />
+                      </div>
+                      <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                        {s.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 leading-relaxed mb-6">
+                        {s.desc}
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span>Explore Service</span>
+                      <ArrowRight size={13} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ── RELATED CAPABILITIES ── */}
+        <section className="border-t border-white/10 pt-20">
+          <h3 className="text-2xl font-bold text-white mb-8">
+            Adjacent Security Capabilities
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {related.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
               >
-                <span>Learn More</span>
-                <span className="transition-transform duration-200 group-hover/link:translate-x-1">→</span>
+                <Link
+                  href={item.href}
+                  className="glass-card p-5 flex items-center justify-between group"
+                >
+                  <span className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                    {item.title}
+                  </span>
+                  <ArrowRight size={14} className="text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] p-10 md:p-14 text-center relative overflow-hidden shadow-[0_0_50px_rgba(14,165,233,0.12)]">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+              Ready to Accelerate Your Career?
+            </h2>
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-8">
+              Join the next cohort of certified security operations professionals and build your expertise on the front lines of digital defense.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link href="/contact" className="btn-primary">
+                Enrol Now <ArrowRight size={15} />
               </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-white/5" />
+              <Link href="/courses" className="btn-secondary">
+                View All Courses
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
-{/* ── RELATED SERVICES ── */}
-<section className="max-w-6xl mx-auto px-6 py-16">
-  <motion.h2
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4 }}
-    className="text-xl font-extrabold text-white mb-8"
-  >
-    Related Security Capabilities
-  </motion.h2>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-    {[
-      {
-        title: "Web Application Penetration Testing",
-        href: "/services/web-application-penetration-testing",
-      },
-      {
-        title: "Network Penetration Testing",
-        href: "/services/network-penetration-testing",
-      },
-      {
-        title: "Cloud Security Solutions",
-        href: "/services/cloud-security-solutions",
-      },
-      {
-        title: "Server & Firewall Hardening",
-        href: "/services/server-hardening",
-      },
-      {
-        title: "Malware Analysis",
-        href: "/services/malware-analysis",
-      },
-      {
-        title: "Digital Evidence Collection",
-        href: "/services/digital-evidence-collection",
-      },
-    ].map((item, i) => (
-      <motion.div
-        key={item.title}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: i * 0.05 }}
-        className="px-6 py-6 rounded-md border border-white/8 bg-[#111] hover:bg-[#161616] hover:border-cyan-500/20 transition-all duration-200"
-      >
-        <h3 className="text-sm font-bold text-white mb-4">
-          {item.title}
-        </h3>
-
-        <Link
-          href={item.href}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-        >
-          <span>Explore</span>
-          <span>→</span>
-        </Link>
-      </motion.div>
-    ))}
-  </div>
-</section>
-      {/* ── CTA ── */}
-      <section className="max-w-6xl mx-auto px-6 py-16 -mt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="rounded-xl border border-white/8 bg-[#111] px-8 py-16 flex flex-col items-center text-center"
-        >
-          <h2 className="text-2xl font-extrabold text-white mb-4">
-            Ready to Secure Your Future?
-          </h2>
-          <p className="text-sm text-gray-400 leading-relaxed max-w-md mb-8">
-            Join the next cohort of certified security operations professionals and build
-            your career in the front lines of digital defense.
-          </p>
-          <Link
-            href="/contact"
-            className="px-10 py-4 bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-black tracking-[0.18em] uppercase transition-colors duration-200 rounded-sm"
-          >
-            Contact Us to Enrol
-          </Link>
-        </motion.div>
-      </section>
     </div>
   );
 }

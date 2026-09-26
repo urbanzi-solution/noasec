@@ -1,58 +1,54 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight, ShieldCheck, Phone } from "lucide-react";
+import { SITE } from "@/data/site";
 
 export default function ReadyCTA() {
   return (
-    <section className="bg-[#050b14] text-white px-6 md:px-12 lg:px-20 py-24 -mt-25">
+    <section className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+      <div className="max-w-5xl mx-auto rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-[#0c182c] via-[#091222] to-[#060a14] p-8 md:p-14 text-center relative overflow-hidden shadow-2xl">
 
-      <div className="max-w-5xl mx-auto border border-cyan-500/20 rounded-xl p-10 md:p-14 text-center relative overflow-hidden">
-
-        {/* Subtle Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.08),transparent_70%)] pointer-events-none" />
+        {/* Ambient Glows */}
+        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/15 blur-[80px]" />
+        <div className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-blue-600/15 blur-[80px]" />
 
         {/* Content */}
         <div className="relative z-10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+            <ShieldCheck size={14} className="text-cyan-400" />
+            <span>Join The Vanguard</span>
+          </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Ready to Secure Your Future?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+            Ready to Fortify Your Future?
           </h2>
 
-          {/* Description */}
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-10">
-            Join the vanguard of digital defense. Whether you're looking for
-            advanced training or enterprise-level security architecture,
-            NoaSec is your strategic partner.
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
+            Whether you are an aspiring security specialist looking for frontline training, or an enterprise seeking comprehensive vulnerability assessments, NoaSec is your trusted partner in Kerala and worldwide.
           </p>
 
-          {/* Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
-
-            {/* Button 1 */}
+          <div className="flex flex-wrap justify-center items-center gap-3">
             <Link
               href="/courses"
-              className="px-6 py-3 text-sm font-semibold border border-cyan-400/40 text-cyan-300 rounded-md hover:bg-cyan-400/10 transition"
+              className="btn-primary"
             >
-              BROWSE ALL COURSES
+              Browse All Courses <ArrowRight size={15} />
             </Link>
 
-            {/* Button 2 (Primary) */}
             <Link
               href="/services"
-              className="px-6 py-3 text-sm font-semibold rounded-md bg-cyan-300 text-[#050b14] hover:bg-cyan-200 transition shadow-lg shadow-cyan-500/10"
+              className="btn-secondary"
             >
-              VIEW SECURITY SERVICES
+              View Security Services
             </Link>
 
-            {/* Button 3 */}
             <Link
               href="/contact"
-              className="px-6 py-3 text-sm font-semibold border border-white/20 text-gray-300 rounded-md hover:bg-white/5 transition"
+              className="btn-ghost text-gray-300"
             >
-              CONTACT OUR TEAM
+              Contact Our Team
             </Link>
-
           </div>
         </div>
 

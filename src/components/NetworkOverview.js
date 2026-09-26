@@ -1,62 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Globe, Server, Shield, Search, Wifi, FileCheck } from "lucide-react";
 
 const deliverables = [
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <circle cx="12" cy="12" r="10" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
-      </svg>
-    ),
+    icon: Globe,
     title: "External Pentesting",
-    desc: "Attacker-view assessment of public-facing assets and perimeter defenses.",
+    desc: "Attacker-view assessment of public-facing assets, DNS, IP blocks, and edge perimeter defenses.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3M14 6l-4 12" />
-      </svg>
-    ),
+    icon: Server,
     title: "Internal Pentesting",
-    desc: "Active Directory attack simulation and analysis of lateral movement paths.",
+    desc: "Active Directory attack simulation, privilege escalation analysis, and lateral movement mapping.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
-    title: "Firewall Reviews",
-    desc: "Granular rule-set auditing to eliminate redundant or overly permissive access.",
+    icon: Shield,
+    title: "Firewall Rule Reviews",
+    desc: "Granular rule-set auditing to eliminate redundant or overly permissive ports and ingress policies.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-      </svg>
-    ),
+    icon: Search,
     title: "Service Enumeration",
-    desc: "Identification and mapping of all active network services and potential entry points.",
+    desc: "Comprehensive fingerprinting of all active network services, versions, and potential entry points.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12 20.25h.008v.008H12v-.008z" />
-      </svg>
-    ),
+    icon: Wifi,
     title: "Wireless Assessment",
-    desc: "Rigorous testing of Wi-Fi protocols, encryption standards, and rogue AP detection.",
+    desc: "Rigorous testing of corporate Wi-Fi protocols, WPA3 enterprise authentication, and rogue AP detection.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-      </svg>
-    ),
-    title: "Comprehensive Reporting",
-    desc: "CISO-ready summaries paired with actionable technical remediation paths.",
+    icon: FileCheck,
+    title: "Actionable Reporting",
+    desc: "CISO-ready executive summaries paired with developer-ready technical remediation scripts.",
   },
 ];
 
@@ -71,63 +47,75 @@ const fadeUp = {
 
 export default function NetworkOverview() {
   return (
-    <div className="bg-[#0a0a0a] text-white px-6 py-20 max-w-6xl mx-auto">
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        {/* ── SERVICE OVERVIEW ── */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-start">
+          {/* Left */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <span>Service Overview</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+              Comprehensive <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                Network Scoping
+              </span>
+            </h2>
+          </div>
 
-      {/* ── SERVICE OVERVIEW ── */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-        {/* Left */}
-        <div>
-          <p className="text-xs font-semibold tracking-[0.2em] text-blue-500 uppercase mb-3">
-            Service Overview
-          </p>
-          <h2 className="text-3xl font-bold text-white leading-tight">
-            Comprehensive Scope
-          </h2>
-        </div>
+          {/* Right */}
+          <div className="space-y-5 text-gray-300 text-sm md:text-base leading-relaxed">
+            <p>
+              NoaSec&apos;s network penetration testing service simulates real adversary techniques against your network infrastructure — identifying weaknesses in firewalls, routers, switches, VPNs, and exposed services. We test both external perimeters and internal segments to give you a complete picture of your network security posture.
+            </p>
+            <p className="text-gray-400">
+              We evaluate your external perimeter as well as internal network segments, ensuring that lateral movement is restricted and sensitive data remains isolated from compromised endpoints.
+            </p>
+          </div>
+        </section>
 
-        {/* Right */}
-        <div className="space-y-5 text-gray-400 text-sm leading-relaxed">
-          <p>
-            NoaSec's network penetration testing service simulates real adversary techniques against your network infrastructure — identifying weaknesses in firewalls, routers, switches, VPNs, and exposed services. We test both external perimeters (internet-facing assets) and internal segments (lateral movement scenarios) to give you a complete picture of your network security posture.
-          </p>
-          <p>
-            We evaluate your external perimeter as well as internal network segments, ensuring
-            that lateral movement is restricted and sensitive data remains isolated from
-            compromised endpoints.
-          </p>
-        </div>
-      </section>
+        {/* ── TECHNICAL DELIVERABLES ── */}
+        <section>
+          <div className="mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+              Technical Deliverables
+            </h3>
+            <p className="text-gray-400 text-sm mt-1">
+              Precision artifacts delivered at the completion of every network assessment.
+            </p>
+          </div>
 
-      {/* ── TECHNICAL DELIVERABLES ── */}
-      <section>
-        <div className="mb-10">
-          <p className="text-xs font-semibold tracking-[0.2em] text-blue-500 uppercase mb-3">
-            Technical Deliverables
-          </p>
-          <h2 className="text-3xl font-bold text-white">What We Deliver</h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-lg overflow-hidden">
-          {deliverables.map((d, i) => (
-            <motion.div
-              key={d.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-30px" }}
-              variants={fadeUp}
-              className="bg-[#111111] px-7 py-8 hover:bg-[#161616] transition-colors duration-300 group"
-            >
-              {/* Icon */}
-              <div className="w-11 h-11 rounded-md bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6 group-hover:bg-blue-500/20 transition-colors duration-300">
-                {d.icon}
-              </div>
-              <h3 className="font-bold text-white text-[16px] mb-3">{d.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">{d.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {deliverables.map((d, i) => {
+              const Icon = d.icon;
+              return (
+                <motion.div
+                  key={d.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-30px" }}
+                  variants={fadeUp}
+                  className="glass-card p-7 flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Icon */}
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+                      <Icon size={22} />
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">{d.title}</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">{d.desc}</p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center text-xs text-cyan-400 font-mono">
+                    VERIFIED DELIVERABLE
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

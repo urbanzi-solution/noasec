@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Globe, Network, ShieldCheck, AlertTriangle, Cloud, Server, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -14,320 +15,213 @@ const fadeUp = {
 
 const pathway = [
   {
-    label: "Foundation",
+    label: "Foundation Track",
     title: "NCSA / NCD",
-    desc: "Fundamental Digital Vigilance",
+    desc: "Fundamental Digital Vigilance & Basic Ethical Hacking",
     current: false,
+    href: "/courses/noasec-cyber-defender",
   },
   {
-    label: "Current Focus",
+    label: "Apex Specialization",
     title: "THE APEX: NCCP",
-    desc: "Certified Cybersecurity Professional",
+    desc: "Certified Cybersecurity Professional (Dual Offensive & Defensive)",
     current: true,
+    href: "/courses/certified-cybersecurity-professional",
   },
   {
-    label: "Specialization",
-    title: "CDFA / SOC-X",
-    desc: "Forensics & Operations",
+    label: "Advanced Operations",
+    title: "NCSA-SOC / CDFA",
+    desc: "Enterprise SOC Operations & Advanced Digital Forensics",
     current: false,
+    href: "/courses/certified-soc-analyst",
   },
 ];
 
 const services = [
   {
     title: "Web Application Pentesting",
-    desc: "Securing modern web architecture against OWASP vulnerabilities.",
+    desc: "Securing modern web applications against OWASP Top 10 vulnerabilities.",
     href: "/services/web-application-penetration-testing",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
+    icon: Globe,
   },
   {
     title: "Network Penetration Testing",
-    desc: "Rigorous stress testing of perimeter and internal infrastructure.",
+    desc: "Rigorous stress testing of perimeter and internal network infrastructure.",
     href: "/services/network-penetration-testing",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12 20.25h.008v.008H12v-.008z" />
-      </svg>
-    ),
+    icon: Network,
   },
   {
     title: "Managed SOC Operations",
-    desc: "Continuous 24/7 monitoring and threat detection services.",
+    desc: "Continuous 24/7/365 monitoring, alert triage, and threat detection services.",
     href: "/services/managed-soc",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    icon: ShieldCheck,
   },
   {
     title: "Incident Response",
-    desc: "Rapid remediation and recovery protocols for active threats.",
+    desc: "Rapid breach containment, eradication, and disaster recovery workflows.",
     href: "/services/incident-response-services",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-      </svg>
-    ),
+    icon: AlertTriangle,
   },
   {
-    title: "Cloud Security",
-    desc: "Auditing AWS, Azure, and GCP for misconfigurations.",
+    title: "Cloud Security Solutions",
+    desc: "Auditing multi-cloud AWS, Azure, and GCP workloads for posture drift.",
     href: "/services/cloud-security-solutions",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
-      </svg>
-    ),
+    icon: Cloud,
   },
   {
-    title: "Server Hardening",
-    desc: "Deep optimization of OS security policies and permissions.",
+    title: "Server & Firewall Hardening",
+    desc: "Deep kernel and firewall policy hardening aligned with CIS benchmarks.",
     href: "/services/server-hardening",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z" />
-      </svg>
-    ),
+    icon: Server,
   },
 ];
 
 export default function ProgressionArchitecture() {
   return (
-    <div className="bg-[#080c10] text-white">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
+        {/* ── PROGRESSION ARCHITECTURE ── */}
+        <section>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <span>Career Roadmap</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+              Progression <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Architecture</span>
+            </h2>
+            <p className="mt-4 text-sm md:text-base text-gray-400">
+              The continuous multi-tier credentialing model of the NoaSec academy.
+            </p>
+          </div>
 
-      {/* ── PROGRESSION ARCHITECTURE ── */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-center mb-14"
-        >
-          <p className="text-[10px] font-bold tracking-[0.28em] text-cyan-400 uppercase mb-3">
-            The NoaSec Pathway
-          </p>
-          <h2 className="text-3xl font-extrabold text-white">Progression Architecture</h2>
-        </motion.div>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          {pathway.map((p, i) => (
-            <div key={p.title} className="flex items-center gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {pathway.map((p, i) => (
               <motion.div
+                key={p.title}
                 custom={i}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className={`flex flex-col items-center justify-center text-center px-8 py-7 rounded-md border min-w-[180px] transition-all duration-200 ${
-                  p.current
-                    ? "border-cyan-500/60 bg-[#0d1a20]"
-                    : "border-white/8 bg-[#111]"
+                className={`glass-card p-8 flex flex-col justify-between relative overflow-hidden group ${
+                  p.current ? "border-cyan-500/60 bg-gradient-to-br from-cyan-500/10 to-transparent shadow-[0_0_30px_rgba(14,165,233,0.15)]" : ""
                 }`}
               >
-                <p className={`text-[9px] font-bold tracking-[0.2em] uppercase mb-2 ${
-                  p.current ? "text-cyan-400" : "text-gray-600"
-                }`}>
-                  {p.label}
-                </p>
-                <p className={`text-sm font-extrabold leading-snug mb-1 ${
-                  p.current ? "text-white" : "text-gray-400"
-                }`}>
-                  {p.title}
-                </p>
-                <p className={`text-xs ${
-                  p.current ? "text-cyan-400/80" : "text-gray-600"
-                }`}>
-                  {p.desc}
-                </p>
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-[10px] font-mono font-bold tracking-widest uppercase ${
+                      p.current ? "text-cyan-300" : "text-gray-500"
+                    }`}>
+                      {p.label}
+                    </span>
+                    {p.current && (
+                      <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    {p.title}
+                  </h3>
+                  <p className="text-xs text-gray-400 leading-relaxed mb-6">
+                    {p.desc}
+                  </p>
+                </div>
+
+                <Link
+                  href={p.href}
+                  className="inline-flex items-center text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors"
+                >
+                  <span>Explore Track</span>
+                  <ArrowRight size={13} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
+            ))}
+          </div>
+        </section>
 
-              {i < pathway.length - 1 && (
-                <span className="text-cyan-700 text-base flex-shrink-0 hidden sm:block">→</span>
-              )}
+        {/* ── CORE DEFENSIVE SERVICES ── */}
+        <section className="border-t border-white/10 pt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
+                <span>Ecosystem Synergy</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                Core Defensive Services
+              </h3>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-white/5" />
-      </div>
-
-      {/* ── CORE DEFENSIVE SERVICES ── */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="mb-10"
-        >
-          <p className="text-[10px] font-bold tracking-[0.25em] text-cyan-500 uppercase mb-2">
-            Ecosystem Synergy
-          </p>
-          <h2 className="text-2xl font-extrabold text-white">Core Defensive Services</h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="flex flex-col px-6 py-6 rounded-md border border-white/5 bg-[#111] hover:bg-[#161616] hover:border-cyan-500/20 transition-all duration-200 group"
+            <Link
+              href="/services"
+              className="text-xs font-semibold tracking-wider uppercase text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
             >
-              <span className="text-cyan-500 mb-4">{s.icon}</span>
-              <h3 className="text-sm font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-xs text-gray-400 leading-relaxed mb-5 flex-1">{s.desc}</p>
-              <Link
-                href={s.href}
-                className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-cyan-400 hover:text-cyan-300 uppercase transition-colors duration-200 group/link"
-              >
-                <span>Learn More</span>
-                <span className="transition-transform duration-200 group-hover/link:translate-x-1">→</span>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+              <span>Explore All Services</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-white/5" />
-      </div>
-{/* ── RELATED SERVICES ── */}
-<section className="max-w-6xl mx-auto px-6 py-16">
-  <motion.div
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4 }}
-    className="mb-10"
-  >
-    <p className="text-[10px] font-bold tracking-[0.25em] text-cyan-500 uppercase mb-2">
-      Career Alignment
-    </p>
-    <h2 className="text-2xl font-extrabold text-white">
-      Related Security Services
-    </h2>
-    <p className="text-sm text-gray-400 mt-3 max-w-2xl">
-      These services represent real-world implementations of the skills taught
-      in the NoaSec certification pathway.
-    </p>
-  </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <motion.div
+                  key={s.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                >
+                  <Link
+                    href={s.href}
+                    className="glass-card p-6 flex flex-col justify-between h-full group"
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                        <Icon size={20} />
+                      </div>
+                      <h4 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                        {s.title}
+                      </h4>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                        {s.desc}
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span>View details</span>
+                      <ArrowRight size={12} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-
-    {[
-      {
-        title: "Managed SOC Operations",
-        href: "/services/managed-soc",
-      },
-      {
-        title: "Incident Response Services",
-        href: "/services/incident-response-services",
-      },
-      {
-        title: "Web Application Penetration Testing",
-        href: "/services/web-application-penetration-testing",
-      },
-      {
-        title: "Network Penetration Testing",
-        href: "/services/network-penetration-testing",
-      },
-      {
-        title: "Cloud Security Solutions",
-        href: "/services/cloud-security-solutions",
-      },
-      {
-        title: "Digital Evidence Collection",
-        href: "/services/digital-evidence-collection",
-      },
-    ].map((item, i) => (
-      <motion.div
-        key={item.title}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: i * 0.05 }}
-        className="px-6 py-6 rounded-md border border-white/5 bg-[#111] hover:bg-[#161616] hover:border-cyan-500/20 transition-all duration-200"
-      >
-        <h3 className="text-sm font-bold text-white mb-4">
-          {item.title}
-        </h3>
-
-        <Link
-          href={item.href}
-          className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-cyan-400 hover:text-cyan-300 uppercase transition-colors duration-200"
-        >
-          <span>Explore</span>
-          <span>→</span>
-        </Link>
-      </motion.div>
-    ))}
-  </div>
-</section>
-      {/* ── CTA ── */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="relative rounded-xl border border-white/5 bg-[#0d1520] overflow-hidden px-8 py-16 flex flex-col items-center text-center"
-        >
-          {/* Subtle grid bg */}
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,200,255,0.03) 39px, rgba(0,200,255,0.03) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,200,255,0.03) 39px, rgba(0,200,255,0.03) 40px)",
-            }}
-          />
-
-          {/* Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-cyan-500/10 blur-3xl rounded-full" />
-
-          <div className="relative z-10 flex flex-col items-center">
-            <p className="text-[10px] font-bold tracking-[0.28em] text-cyan-400 uppercase mb-4">
-              Begin Your Elite Journey
+        {/* ── ENROLLMENT CTA ── */}
+        <section className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] p-10 md:p-14 text-center relative overflow-hidden shadow-[0_0_50px_rgba(14,165,233,0.12)]">
+          <div className="max-w-2xl mx-auto relative z-10">
+            <p className="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase mb-3">
+              BEGIN YOUR APEX JOURNEY
             </p>
-            <h2 className="text-3xl font-extrabold text-white mb-4 leading-tight max-w-lg">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
               Become a Certified Cybersecurity Professional
             </h2>
-            <p className="text-sm text-gray-400 leading-relaxed max-w-md mb-10">
-              The NCCP is the most advanced certification in the NoaSec ecosystem.
-              Enrol today and position yourself at the apex of the cybersecurity industry.
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-8">
+              The NCCP is the most comprehensive technical certification in the NoaSec academy. Enrol today to secure your place in the upcoming cohort.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                className="px-9 py-3.5 bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-black tracking-[0.18em] uppercase transition-colors duration-200 rounded-sm"
-              >
-                Enrol Now
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link href="/contact" className="btn-primary">
+                Enrol Now <ArrowRight size={15} />
               </Link>
-             
+              <Link href="/courses" className="btn-secondary">
+                View All Courses
+              </Link>
             </div>
-
-            {/* Trust line */}
-            <p className="text-[10px] text-gray-600 mt-8 tracking-widest uppercase">
-              Next cohort enrolling — Limited seats available
+            <p className="text-[11px] font-mono text-gray-500 uppercase tracking-widest mt-6">
+              Next Cohort Starting Soon • Limited Candidate Capacity
             </p>
           </div>
-        </motion.div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const services = [
-  { title: "Managed SOC Operations", href: "/services/managed-soc" },
-  { title: "Incident Response", href: "/services/incident-response-services" },
-  { title: "Malware Analysis", href: "/services/malware-analysis" },
+  { title: "Managed SOC Operations", desc: "24/7/365 continuous threat monitoring and alert triage.", href: "/services/managed-soc" },
+  { title: "Incident Response Services", desc: "Rapid breach containment, eradication, and post-incident recovery.", href: "/services/incident-response-services" },
+  { title: "Malware Analysis Lab", desc: "Deep static and dynamic reverse-engineering of malicious binaries.", href: "/services/malware-analysis" },
 ];
 
 const fadeUp = {
@@ -20,61 +21,81 @@ const fadeUp = {
 
 export default function RelatedServices() {
   return (
-    <div className="bg-[#0d0d0d] text-white px-6 py-16 max-w-6xl mx-auto -mt-20">
-
-      {/* ── RELATED SERVICES ── */}
-      <section className="mb-16">
-        {/* Title */}
-        <h3 className="text-lg font-bold text-white mb-6">Related Services</h3>
-
-        {/* Service cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-30px" }}
-              variants={fadeUp}
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-20 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        {/* ── RELATED SERVICES ── */}
+        <section className="mb-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Related Security Capabilities
+              </h3>
+              <p className="text-gray-400 text-sm mt-1">
+                Explore end-to-end defenses that pair with Threat Intelligence &amp; Hunting.
+              </p>
+            </div>
+            <Link
+              href="/services"
+              className="text-xs font-semibold tracking-wider uppercase text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
             >
-              <Link
-                href={s.href}
-                className="group flex flex-col justify-between h-full px-5 py-5 rounded-md bg-[#161616] border border-white/5 hover:border-blue-500/30 hover:bg-[#1a1a1a] transition-all duration-300 min-h-[100px]"
+              <span>View All Services</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {/* Service cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {services.map((s, i) => (
+              <motion.div
+                key={s.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-30px" }}
+                variants={fadeUp}
               >
-                <p className="font-semibold text-white text-[14px] mb-4">{s.title}</p>
-                <span className="text-gray-500 group-hover:text-blue-400 transition-colors duration-200 text-lg">
-                  →
-                </span>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+                <Link
+                  href={s.href}
+                  className="glass-card p-6 flex flex-col justify-between h-full group"
+                >
+                  <div>
+                    <h4 className="font-bold text-white text-base group-hover:text-cyan-300 transition-colors mb-2">
+                      {s.title}
+                    </h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {s.desc}
+                    </p>
+                  </div>
+                  <div className="mt-6 flex items-center text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                    <span>Learn more</span>
+                    <ArrowRight size={13} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
-        {/* View All — bottom right */}
-        <div className="flex justify-end mt-4">
-          <Link
-            href="/services"
-            className="flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200 group"
-          >
-            <span>View all Security Services</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* ── CTA BANNER ── */}
-      <section className="rounded-lg bg-blue-600 px-10 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-          Ready to secure your perimeter?
-        </h2>
-        <Link
-          href="/contact"
-          className="flex-shrink-0 px-6 py-3 bg-white text-blue-700 text-sm font-bold tracking-widest uppercase hover:bg-gray-100 transition-colors duration-200 rounded-sm"
-        >
-          Request Quote
-        </Link>
-      </section>
+        {/* ── CTA BANNER ── */}
+        <section className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] p-10 md:p-14 flex flex-col sm:flex-row items-center justify-between gap-8 shadow-[0_0_50px_rgba(14,165,233,0.12)]">
+          <div className="max-w-xl">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-2">
+              Ready to hunt down hidden adversaries?
+            </h2>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Engage our threat hunting team to execute a comprehensive threat sweep across your enterprise perimeter.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-4 flex-shrink-0">
+            <Link
+              href="/contact"
+              className="btn-primary"
+            >
+              Request Threat Sweep <ArrowRight size={15} />
+            </Link>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

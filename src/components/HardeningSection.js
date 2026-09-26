@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ShieldCheck, ArrowRight, GraduationCap, CheckCircle2 } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,121 +17,100 @@ const benefits = [
   {
     num: "01",
     title: "Surface Reduction",
-    desc: "Dramatically decrease the number of potential entry points available to attackers.",
+    desc: "Dramatically decrease the number of potential entry points, unauthenticated protocols, and unnecessary daemons available to external adversaries.",
   },
   {
     num: "02",
     title: "Total Compliance",
-    desc: "Align your infrastructure with GDPR, HIPAA, and PCI-DSS requirements through automated enforcement.",
+    desc: "Seamlessly align your production infrastructure with ISO 27001, GDPR, HIPAA, and PCI-DSS requirements through verified baseline enforcement.",
   },
   {
     num: "03",
-    title: "Attack Prevention",
-    desc: "Stop automated exploits and script-kiddie attacks before they even reach your application layer.",
+    title: "Exploit Prevention",
+    desc: "Neutralize automated exploit chains and script-driven bots before they ever reach your core application logic or customer database.",
   },
 ];
 
 export default function HardeningSection() {
   return (
-    <div className="bg-[#0a0a0a] text-white px-6 py-20 max-w-6xl mx-auto space-y-16">
-
-      {/* ── THREE BENEFITS ── */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {benefits.map((b, i) => (
-          <motion.div
-            key={b.num}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-30px" }}
-            variants={fadeUp}
-            className="flex gap-4"
-          >
-            {/* Number */}
-            <span className="text-2xl font-bold text-gray-600 leading-none mt-0.5 min-w-[32px]">
-              {b.num}
-            </span>
-            {/* Text */}
-            <div>
-              <h3 className="text-base font-bold text-white mb-2">{b.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">{b.desc}</p>
-            </div>
-          </motion.div>
-        ))}
-      </section>
-
-      {/* ── NCCP CERTIFICATION CARD ── */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="rounded-xl bg-[#141414] border border-white/5 overflow-hidden"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/5">
-
-          {/* Left — content */}
-          <div className="px-10 py-12 flex flex-col justify-between gap-8">
-            <div>
-              {/* Badge */}
-              <span className="inline-block text-[10px] font-semibold tracking-[0.18em] text-blue-300 uppercase border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-sm mb-6">
-                Official Certification
-              </span>
-
-              <h2 className="text-2xl font-bold text-white leading-tight mb-4">
-                Certified Cybersecurity Professional (NCCP)
-              </h2>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Empower your internal IT teams to maintain hardening standards. Our NCCP
-                training provides hands-on labs focused on the exact techniques we use for
-                infrastructure defense.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div>
-              <Link
-                href="/courses"
-                className="inline-block px-6 py-3 bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors duration-200 rounded-sm"
-              >
-                View Curriculum
-              </Link>
-            </div>
-          </div>
-
-          {/* Right — stat */}
-          <div className="px-10 py-12 flex flex-col items-center justify-center gap-4 relative">
-            {/* Ghost icon */}
-            <svg
-              className="absolute right-8 top-1/2 -translate-y-1/2 w-32 h-32 text-white/5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5 space-y-20">
+      <div className="max-w-7xl mx-auto space-y-16">
+        {/* ── THREE BENEFITS ── */}
+        <section className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {benefits.map((b, i) => (
+            <motion.div
+              key={b.num}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-30px" }}
+              variants={fadeUp}
+              className="glass-card p-7 flex flex-col justify-between"
             >
-              <path d="M12 2C8.134 2 5 5.134 5 9v7l-1.707 1.707A1 1 0 004 19v1a1 1 0 001 1h14a1 1 0 001-1v-1a1 1 0 00-.293-.707L18 16V9c0-3.866-3.134-7-6-7zm0 2c2.761 0 5 2.239 5 5v7.586l1.414 1.414H5.586L7 16.586V9c0-2.761 2.239-5 5-5z" />
-              <path d="M12 1C9.239 1 7 3.686 7 7v9l-2 2v1h10v-1l-2-2V7c0-3.314-2.239-6-1-6z" />
-            </svg>
+              <div>
+                <span className="text-3xl font-extrabold font-mono text-cyan-400/40 leading-none mb-4 block">
+                  {b.num}
+                </span>
+                <h3 className="text-lg font-bold text-white mb-2">{b.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{b.desc}</p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center text-xs text-cyan-400 font-mono">
+                HARDENED BENCHMARK
+              </div>
+            </motion.div>
+          ))}
+        </section>
 
-            {/* Graduation cap icon */}
-            <div className="relative z-10 mb-2">
-              <svg
-                className="w-20 h-20 text-white/10"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-              </svg>
+        {/* ── NCCP CERTIFICATION CARD ── */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] overflow-hidden shadow-[0_0_50px_rgba(14,165,233,0.12)]"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+            {/* Left — content (8 cols) */}
+            <div className="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between gap-8">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">
+                  <GraduationCap size={14} className="text-cyan-400" />
+                  <span>Industrial Defense Certification</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight mb-4">
+                  Certified Cybersecurity Professional (NCCP)
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-2xl">
+                  Empower your internal sysadmins and DevOps teams to maintain world-class hardening standards continuously. Our NCCP training provides hands-on cyber range labs focused on enterprise defense and CIS configuration baselines.
+                </p>
+              </div>
+
+              <div>
+                <Link
+                  href="/courses/certified-cybersecurity-professional"
+                  className="btn-primary"
+                >
+                  Explore NCCP Curriculum <ArrowRight size={15} />
+                </Link>
+              </div>
             </div>
 
-            {/* Stat */}
-            <div className="relative z-10 text-center">
-              <p className="text-5xl font-extrabold text-blue-400 leading-none">25+</p>
-              <p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mt-2">
-                Hardening Labs
+            {/* Right — stat (4 cols) */}
+            <div className="lg:col-span-4 p-8 md:p-12 flex flex-col items-center justify-center text-center relative bg-white/[0.02]">
+              <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+                <ShieldCheck size={32} />
+              </div>
+              <p className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-mono leading-none">
+                25+
+              </p>
+              <p className="text-xs font-mono tracking-widest text-gray-400 uppercase mt-2">
+                Hands-on Hardening Labs
               </p>
             </div>
           </div>
-        </div>
-      </motion.section>
+        </motion.section>
+      </div>
     </div>
   );
 }

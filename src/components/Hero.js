@@ -3,151 +3,178 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowRight, ShieldCheck, CheckCircle2, Terminal, Award, Lock, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0f] scroll-mt-24"
+      className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#05070d] bg-cyber-grid pt-28 pb-20 md:pt-36 md:pb-28"
     >
-      {/* 🔵 Background Gradient Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-[-200px] top-[20%] w-[600px] h-[600px] bg-cyan-500/20 blur-[120px] rounded-full" />
-        <div className="absolute right-[-200px] bottom-[10%] w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full" />
+      {/* Background Gradient Glow Orbs */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute left-[-150px] top-[15%] w-[550px] h-[550px] bg-cyan-500/15 blur-[140px] rounded-full" />
+        <div className="absolute right-[-150px] bottom-[10%] w-[500px] h-[500px] bg-blue-600/10 blur-[140px] rounded-full" />
+        <div className="absolute left-[35%] top-[40%] w-[350px] h-[350px] bg-indigo-500/5 blur-[120px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
 
-        {/* ================= LEFT ================= */}
+        {/* ================= LEFT CONTENT (7 cols on lg) ================= */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col gap-6"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col gap-6 lg:col-span-7"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 backdrop-blur"
-          >
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-cyan-400 text-xs font-semibold tracking-widest uppercase">
-              Cyber Security Experts
+          {/* Cyber Status Badge */}
+          <div className="inline-flex items-center gap-2.5 w-fit px-3.5 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-500/10 backdrop-blur-md shadow-[0_0_15px_rgba(14,165,233,0.15)]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-          </motion.div>
+            <span className="text-cyan-300 text-xs font-bold tracking-widest uppercase">
+              Kerala&apos;s Premier Cybersecurity & Growth Agency
+            </span>
+          </div>
 
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold leading-[1.1] text-white"
-          >
-            Kerala's Cybersecurity Training{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
-              Expert Security Services
-            </span>
-          </motion.h1>
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] text-white tracking-tight">
+            Offensive Defense &{" "}
+            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-transparent bg-clip-text">
+              Digital Growth
+            </span>{" "}
+            Engineered for Impact.
+          </h1>
 
           {/* Subtext */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg"
-          >
-            Real-world cybersecurity training & expert security services in Kerala.
-            We prepare professionals and protect organizations with practical,
-            industry-focused solutions.
-          </motion.p>
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl font-normal">
+            Real-world hands-on cybersecurity training programs and enterprise security audits —
+            plus high-impact branding, custom web & app development, UI/UX design, and AI-first
+            growth marketing (SEO, GEO, AEO & Performance Ads).
+          </p>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap items-center gap-4 mt-3"
-          >
+          {/* Interactive CTA Buttons */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
             <Link
-              href="/#courses"
-              className="px-6 py-3 rounded-md bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-semibold transition shadow-lg shadow-cyan-500/20"
+              href="/courses"
+              className="btn-primary text-sm font-semibold py-3.5 px-6 shadow-xl shadow-cyan-500/25"
             >
-              Explore Courses
+              Explore Training Courses <ArrowRight size={16} />
             </Link>
 
             <Link
-              href="/#services"
-              className="px-6 py-3 text-white text-sm font-semibold border border-white/20 rounded-md hover:bg-white/5 transition"
+              href="/services"
+              className="btn-secondary text-sm font-semibold py-3.5 px-6"
             >
               Security Services
             </Link>
-          </motion.div>
 
-          {/* Trust indicators */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="flex items-center gap-6 mt-4 text-gray-500 text-sm"
-          >
-            <span>✔ Hands-on Training</span>
-            <span>✔ Certified Experts</span>
-            <span>✔ 100% Practical</span>
-          </motion.div>
+            <Link
+              href="/services/branding"
+              className="btn-ghost text-sm font-semibold py-3.5 px-5 text-gray-300"
+            >
+              Digital & Branding
+            </Link>
+          </div>
+
+          {/* Trust Metric Badges */}
+          <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 max-w-lg">
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-bold text-white flex items-center gap-1">
+                100%
+              </span>
+              <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Hands-On Labs</span>
+            </div>
+            <div className="flex flex-col border-l border-white/10 pl-4">
+              <span className="text-xl sm:text-2xl font-bold text-cyan-400">
+                24 / 7
+              </span>
+              <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">SOC & IR Response</span>
+            </div>
+            <div className="flex flex-col border-l border-white/10 pl-4">
+              <span className="text-xl sm:text-2xl font-bold text-white">
+                Global
+              </span>
+              <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Industry Standards</span>
+            </div>
+          </div>
         </motion.div>
 
-        {/* ================= RIGHT ================= */}
+        {/* ================= RIGHT PREVIEW (5 cols on lg) ================= */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative flex justify-center items-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative lg:col-span-5 flex justify-center items-center"
         >
-          {/* Glass Card */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="relative w-full max-w-lg rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl"
-          >
-            <Image
-              src="/hero-img.png"
-              width={720}
-              height={480}
-              alt="dashboard"
-              priority
-              className="w-full h-auto object-cover"
-            />
+          {/* Glass Terminal Card */}
+          <div className="relative w-full max-w-lg rounded-2xl overflow-hidden border border-white/15 bg-[#0b1324]/80 backdrop-blur-2xl shadow-2xl shadow-cyan-950/40 group">
+            {/* Terminal Window Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-[#070d18]/90">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+              </div>
+              <span className="text-[11px] font-mono text-gray-400 flex items-center gap-1.5">
+                <Terminal size={12} className="text-cyan-400" />
+                noasec-defense-core.sh
+              </span>
+              <span className="text-[10px] text-emerald-400 font-mono">LIVE ACTIVE</span>
+            </div>
 
-            {/* overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          </motion.div>
+            {/* Dashboard Visual */}
+            <div className="relative overflow-hidden aspect-[4/3] w-full">
+              <Image
+                src="/hero-img.webp"
+                width={720}
+                height={540}
+                alt="NoaSec Cybersecurity & Digital Operations Dashboard"
+                priority
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070d18] via-transparent to-transparent opacity-80" />
+            </div>
 
-          {/* Floating Stat Card */}
+            {/* Terminal Overlay Info */}
+            <div className="p-4 bg-[#070d18]/90 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+              <div className="flex items-center gap-2 text-cyan-300">
+                <ShieldCheck size={16} className="text-cyan-400" />
+                <span>Zero-Trust Architecture</span>
+              </div>
+              <span className="text-gray-400">Kottayam, Kerala</span>
+            </div>
+          </div>
+
+          {/* Floating Pill Badge 1: Top Right */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="absolute bottom-6 right-0 md:-right-6 flex items-center gap-3 bg-[#0d1520]/90 backdrop-blur-lg border border-white/10 rounded-xl px-5 py-3 shadow-xl"
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="absolute -top-4 -right-2 sm:-right-4 hidden sm:flex items-center gap-2.5 bg-[#091222]/90 backdrop-blur-xl border border-cyan-500/30 rounded-full px-4 py-2 shadow-xl"
           >
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <polyline points="9 12 11 14 15 10"/>
-              </svg>
-            </div>
-
-            <div>
-              <span className="text-white text-xl font-bold">100%</span>
-              <p className="text-gray-400 text-[11px] uppercase tracking-wider">
-                Practical
-              </p>
-            </div>
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs font-bold text-white tracking-wide">SOC Analyst Ready</span>
           </motion.div>
 
-          {/* Floating Blur Circle */}
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-500/10 blur-[80px] rounded-full" />
+          {/* Floating Stat Card: Bottom Left */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="absolute -bottom-5 -left-2 sm:-left-6 flex items-center gap-3.5 bg-[#091222]/95 backdrop-blur-xl border border-white/15 rounded-xl px-4 py-3 shadow-2xl"
+          >
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-400/40 text-cyan-300">
+              <Award size={20} />
+            </div>
+            <div>
+              <p className="text-white text-sm font-bold">Industry Certified</p>
+              <p className="text-gray-400 text-[11px]">NCSA · NCD · NCCP</p>
+            </div>
+          </motion.div>
         </motion.div>
+
       </div>
     </section>
   );

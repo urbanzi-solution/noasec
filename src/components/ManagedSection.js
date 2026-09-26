@@ -2,26 +2,41 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { CheckCircle2, Award, ArrowRight } from "lucide-react";
 
 const benefits = [
   {
-    title: "Continuous Protection",
-    desc: "Eliminate gaps in security coverage with persistent analyst oversight.",
+    title: "Continuous 24/7/365 Protection",
+    desc: "Eliminate gaps in security coverage with persistent analyst oversight during weekends, holidays, and off-hours.",
   },
   {
-    title: "Faster Detection",
-    desc: "Reduced Mean Time to Detect (MTTD) and Respond (MTTR) with automated triage.",
+    title: "Drastically Reduced MTTD & MTTR",
+    desc: "Shrink Mean Time to Detect and Mean Time to Respond with automated triage playbooks and experienced SOC tier analysts.",
   },
   {
-    title: "Compliance Assurance",
-    desc: "Meet SOC2, ISO 27001, and HIPAA requirements with rigorous logging and monitoring.",
+    title: "Continuous Compliance Assurance",
+    desc: "Exceed the stringent logging and audit trail requirements of SOC2, ISO 27001, PCI-DSS, and HIPAA frameworks effortlessly.",
   },
-  
+  {
+    title: "Significant Cost Efficiency",
+    desc: "Obtain the power of an enterprise 24/7 SOC without the massive financial overhead of hiring, training, and retaining internal shifts.",
+  },
 ];
 
 const certs = [
-  { label: "Certified SOC Analyst", code: "NCSA-SOC", isGrad: true },
-  { label: "Certified Cybersecurity Professional", code: "NCCP", isGrad: false },
+  {
+    label: "Certified SOC Analyst (NCSA)",
+    code: "NCSA-SOC",
+    desc: "Hands-on SIEM monitoring, threat detection engineering, and incident triage in a live enterprise SOC environment.",
+    href: "/courses/certified-soc-analyst",
+  },
+  {
+    label: "Certified Cybersecurity Professional",
+    code: "NCCP",
+    desc: "Comprehensive dual-track offensive pentesting and defensive infrastructure security engineering.",
+    href: "/courses/certified-cybersecurity-professional",
+  },
 ];
 
 const fadeUp = {
@@ -35,112 +50,115 @@ const fadeUp = {
 
 export default function ManagedSection() {
   return (
-    <div className="min-h-screen bg-[#0d0d0d] text-white">
-      {/* VALUE PROPOSITION */}
-      <section className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center -mt-10">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* VALUE PROPOSITION */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+          {/* Managed Image */}
+          <div className="relative flex items-center justify-center">
+            <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl">
+              <div className="relative w-full h-full rounded-xl overflow-hidden">
+                <Image
+                  src="/managed.webp"
+                  alt="Managed SOC Network Monitoring"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-transparent to-transparent" />
+              </div>
 
-        {/* Globe Image */}
-        <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full" />
-          <div className="relative w-full max-w-[440px] aspect-square rounded-lg overflow-hidden border border-white/5 bg-[#111]">
-            <Image
-              src="/managed.png"
-              alt="Global network threat map"
-              fill
-              className="object-cover"
-              loading="lazy"
-            />
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-lg bg-[#070d18]/90 border border-white/10 px-3.5 py-2 backdrop-blur-md">
+                <span className="text-xs font-mono text-cyan-300">SOC METRICS: LIVE</span>
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Benefits */}
-        <div>
-          <p className="text-xs font-semibold tracking-[0.2em] text-blue-400 uppercase mb-3">
-            Value Proposition
-          </p>
-          <h2 className="text-4xl font-bold text-white mb-10 leading-tight">
-            Key Benefits
-          </h2>
+          {/* Benefits */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <span>Enterprise Value</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 leading-tight">
+              Why Organizations Choose <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                Managed SOC
+              </span>
+            </h2>
 
-          <ul className="space-y-7">
-            {benefits.map((b, i) => (
-              <motion.li
-                key={b.title}
+            <ul className="space-y-6">
+              {benefits.map((b, i) => (
+                <motion.li
+                  key={b.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-40px" }}
+                  variants={fadeUp}
+                  className="glass-card p-5 flex items-start gap-4"
+                >
+                  <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 flex-shrink-0 mt-0.5">
+                    <CheckCircle2 size={18} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white text-base mb-1">{b.title}</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">{b.desc}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ACADEMY SECTION */}
+        <section className="border-t border-white/10 pt-20">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <Award size={14} className="text-cyan-400" />
+              <span>SOC Workforce Training</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-white">
+              Professional SOC Certifications
+            </h3>
+            <p className="text-gray-400 text-sm mt-2">
+              Equip your staff with accredited, battle-tested defensive security credentials.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {certs.map((c, i) => (
+              <motion.div
+                key={c.code}
                 custom={i}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-40px" }}
                 variants={fadeUp}
-                className="flex gap-4"
               >
-                <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center">
-                  <svg
-                    className="w-3.5 h-3.5 text-blue-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                <div>
-                  <p className="font-semibold text-white text-[15px] mb-1">{b.title}</p>
-                  <p className="text-sm text-gray-400 leading-relaxed">{b.desc}</p>
-                </div>
-              </motion.li>
+                <Link
+                  href={c.href}
+                  className="glass-card p-7 block group"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono font-bold tracking-wider text-cyan-400 uppercase">
+                      {c.code}
+                    </span>
+                    <ArrowRight size={16} className="text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                  </div>
+                  <h4 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                    {c.label}
+                  </h4>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {c.desc}
+                  </p>
+                </Link>
+              </motion.div>
             ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-white/5" />
+          </div>
+        </section>
       </div>
-
-      {/* ACADEMY */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="text-center mb-12">
-          <p className="text-xs font-semibold tracking-[0.2em] text-blue-400 uppercase mb-3">
-           $ noasec --list-training-modules
-          </p>
-          <h2 className="text-4xl font-bold text-white">
-           Cybersecurity Workforce Training
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {certs.map((c, i) => (
-            <motion.div
-              key={c.code}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              variants={fadeUp}
-              className="group flex items-center justify-between px-6 py-6 rounded-lg bg-[#161616] border border-white/5 hover:border-blue-500/30 hover:bg-[#1a1a1a] transition-all duration-300 cursor-pointer"
-            >
-              <div>
-                <p className="font-semibold text-white text-[15px] mb-1">{c.label}</p>
-                <p className="text-xs text-blue-400 font-medium">({c.code})</p>
-              </div>
-
-              <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 group-hover:border-blue-500/40 group-hover:text-blue-400 transition-all duration-300">
-                {c.isGrad ? (
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

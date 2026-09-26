@@ -1,75 +1,84 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { ShieldCheck, CheckCircle2, Cpu, Lock, Terminal, Activity } from "lucide-react";
 
 export default function WhoWeAre() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          ref.current.classList.remove("opacity-0", "translate-y-10");
-          ref.current.classList.add("opacity-100", "translate-y-0");
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
+  const technicalPillars = [
+    { title: "Zero-Trust Architecture", desc: "Never trust, always verify every packet, user, and endpoint connection." },
+    { title: "AI-Driven Telemetry", desc: "Machine-assisted behavioural anomaly correlation and zero-day threat detection." },
+    { title: "Defensive Red Teaming", desc: "Continuous offensive simulations to identify breach vectors before criminals do." },
+    { title: "Autonomous Incident Response", desc: "Surgical containment workflows that quarantine affected hosts within minutes." },
+  ];
 
   return (
-    <section className="bg-[#050b14] text-white py-24 px-6 md:px-12 lg:px-20 -mt-20">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section className="bg-[#05070d] text-white py-24 px-6 md:px-12 border-t border-white/5">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-        {/* LEFT */}
-        <div
-          ref={ref}
-          className="opacity-0 translate-y-10 transition-all duration-1000"
-        >
-          <p className="text-xs tracking-[0.3em] text-blue-400 mb-4">
-            THE IDENTITY
-          </p>
+        {/* LEFT CONTENT (7 cols) */}
+        <div className="lg:col-span-7">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+            <ShieldCheck size={14} className="text-cyan-400" />
+            <span>Our Identity</span>
+          </div>
 
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Who We Are
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            Defending Digital Frontiers & Empowering The Next Generation
           </h2>
 
-          <p className="text-gray-400 leading-relaxed mb-8">
-           NoaSec Cybersecurity Solutions is a next-generation cybersecurity company dedicated to developing skilled cybersecurity professionals and protecting organizations from modern cyber threats. In today's rapidly evolving digital environment, cyberattacks are becoming more sophisticated and frequent — NoaSec exists at the intersection of education and defense.
-Our programs are designed by cybersecurity professionals with real-world experience in ethical hacking, penetration testing, security operations, digital forensics, cloud security, and OT/SCADA security. Unlike traditional training institutes that prioritize theory, NoaSec emphasizes hands-on training, real-world attack simulations, and practical labs using industry-standard tools.
+          <div className="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed">
+            <p>
+              NoaSec Cybersecurity Solutions is a next-generation security and digital growth firm dedicated to developing elite cybersecurity operators and shielding enterprises from modern cyber adversaries. In a digital climate where ransomware and data breaches inflict devastating financial and reputational harm, NoaSec operates right at the convergence of practical education and enterprise defense.
+            </p>
+            <p>
+              Our programs and audits are executed by senior practitioners with battle-tested experience in ethical hacking, network penetration testing, managed SOC monitoring, cloud security, and digital forensics. Rather than treating security as a compliance checkbox or dry theory, NoaSec emphasizes hands-on simulations, real adversary toolkits, and measurable impact.
+            </p>
+          </div>
 
-          </p>
-
-          {/* Feature Box */}
-          <div className="border border-white/10 rounded-xl p-6 bg-[#0b1220]/60 backdrop-blur">
-            <h4 className="text-lg font-semibold mb-4">
-              Technical Focus
-            </h4>
-
-            <ul className="text-gray-400 text-sm space-y-2">
-              <li>• Zero-Trust Architecture</li>
-              <li>• AI-Driven Threat Detection</li>
-              <li>• Quantum-Resistant Encryption</li>
-              <li>• Autonomous Incident Response</li>
-            </ul>
+          {/* Technical Pillars Grid */}
+          <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            {technicalPillars.map((p) => (
+              <div key={p.title} className="glass-card rounded-xl p-4 transition-all duration-200">
+                <div className="flex items-center gap-2 text-cyan-300 font-bold text-sm mb-1">
+                  <CheckCircle2 size={16} className="text-cyan-400 shrink-0" />
+                  <span>{p.title}</span>
+                </div>
+                <p className="text-xs text-gray-400 leading-relaxed pl-6">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative w-full h-[400px] md:h-[500px]">
-          <Image
-            src="/chip.jpg"
-            alt="chip"
-            fill
-            className="object-cover rounded-xl"
-          />
+        {/* RIGHT IMAGE (5 cols) */}
+        <div className="lg:col-span-5 relative flex justify-center">
+          <div className="relative w-full max-w-md group">
+            {/* Cyber Corner HUD brackets */}
+            <div className="absolute -top-3 -left-3 w-8 h-8 border-l-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+            <div className="absolute -top-3 -right-3 w-8 h-8 border-r-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+            <div className="absolute -bottom-3 -left-3 w-8 h-8 border-l-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
+            <div className="absolute -bottom-3 -right-3 w-8 h-8 border-r-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
+
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl">
+              <div className="relative rounded-xl overflow-hidden aspect-[4/5] w-full">
+                <Image
+                  src="/chip.webp"
+                  alt="NoaSec Advanced Hardware & Chip Security"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/90 via-transparent to-transparent" />
+              </div>
+
+              {/* Status pill inside image frame */}
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-lg bg-[#070d18]/90 border border-white/10 px-3.5 py-2 backdrop-blur-md">
+                <span className="text-xs font-mono text-cyan-300">SECURE HARDWARE PLATFORM</span>
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

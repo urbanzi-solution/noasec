@@ -1,72 +1,77 @@
+"use client";
+
+import Breadcrumbs from "./Breadcrumbs";
+import Link from "next/link";
+import { ArrowRight, Compass, Calendar, User, Clock, ShieldCheck } from "lucide-react";
+
 export default function BlogHeader() {
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
-  
+    <section className="relative overflow-hidden bg-[#05070d] text-white pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-cyber-grid">
+      {/* Ambient Glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-150px] top-[15%] w-[550px] h-[550px] bg-cyan-500/15 blur-[140px] rounded-full" />
+      </div>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#07182c]/85" />
+      <div className="max-w-4xl mx-auto relative z-10">
+        <Breadcrumbs
+          items={[
+            { name: "Blog", href: "/blog" },
+            { name: "Cybersecurity Career Roadmap 2026", href: "/blogs/blog" },
+          ]}
+        />
 
-      {/* Navbar */}
-      <header className="relative z-20 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-5 flex justify-between items-center">
-          <h1 className="text-white font-bold text-2xl tracking-wide">
-            NOASEC CAREER HUB
-          </h1>
-
-          <button className="text-white text-3xl">
-            ☰
-          </button>
+        {/* Badge */}
+        <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
+          <Compass size={14} className="text-cyan-400" />
+          <span>Industry Career Blueprint 2026</span>
         </div>
-      </header>
 
-      {/* Hero Section */}
-      <section className="relative z-20 min-h-screen">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          
-          {/* THIS CONTROLS THE SPACE BELOW NAVBAR */}
-          <div className="pt-32 lg:pt-40">
+        {/* Heading */}
+        <h1 className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight text-white">
+          How to Start a Career in Cybersecurity: <br />
+          <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-transparent bg-clip-text">
+            Complete Beginner&apos;s Roadmap
+          </span>
+        </h1>
 
-            {/* Badge */}
-            <div className="inline-flex items-center px-5 py-2 rounded-full bg-cyan-500/20 border border-cyan-400/30 mb-8">
-              <span className="text-cyan-300 text-sm md:text-base font-semibold tracking-wider uppercase">
-                Industry Roadmap 2026
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 max-w-5xl">
-              How to Start a Career in
-              <br />
-              Cybersecurity in 2026:
-              <span className="block text-cyan-400 mt-2">
-                Complete Beginner's Roadmap
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mb-12">
-              Cybersecurity is one of the fastest growing and most in-demand
-              career fields in the world. As businesses, governments and
-              individuals become increasingly dependent on digital
-              technologies, the demand for skilled cybersecurity
-              professionals continues to grow.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5">
-              <button className="bg-cyan-400 hover:bg-cyan-300 transition px-10 py-4 rounded-md text-black font-semibold text-lg">
-                Explore Career Roadmap ↗
-              </button>
-
-              <button className="border border-cyan-400/50 text-white hover:bg-white/10 transition px-10 py-4 rounded-md font-medium text-lg">
-                Learn With Noasec
-              </button>
-            </div>
-
-          </div>
+        {/* Author / Date Strip */}
+        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-gray-400 border-t border-white/10 pt-4">
+          <span className="flex items-center gap-1.5">
+            <User size={14} className="text-cyan-400" />
+            <span>NoaSec Academy Team</span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Calendar size={14} className="text-cyan-400" />
+            <span>Updated September 2026</span>
+          </span>
+          <span className="flex items-center gap-1.5 text-cyan-400">
+            <Clock size={14} />
+            <span>12 min read</span>
+          </span>
         </div>
-      </section>
-    </main>
+
+        {/* Description */}
+        <p className="mt-6 text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
+          Cybersecurity is one of the fastest growing and most lucrative technical professions in the world. As enterprises and public entities defend against persistent state-sponsored adversaries and criminal syndicates, the demand for certified, lab-proven practitioners has reached unprecedented heights.
+        </p>
+
+        {/* Interactive Jump CTAs */}
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href="#roadmap"
+            className="btn-primary"
+          >
+            Explore Roadmap Steps <ArrowRight size={15} />
+          </a>
+
+          <Link
+            href="/courses"
+            className="btn-secondary"
+          >
+            Explore Hands-On Courses
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

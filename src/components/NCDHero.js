@@ -3,131 +3,126 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-const stats = [
-  { value: "98%", label: "Lab Success" },
-  { value: "24/7", label: "Lab Access" },
-  
-];
+import Breadcrumbs from "./Breadcrumbs";
+import { ShieldCheck, ArrowRight, Award, Clock, Laptop, BookOpen } from "lucide-react";
 
 const metaStats = [
-  { label: "Certification", value: "NCD" },
-  { label: "Duration", value: "2 Months" },
-  { label: "Mode", value: "Online / Offline" },
-  { label: "Prerequisite", value: "Basic Networking" },
+  { label: "Certification", value: "NCD Certified", icon: Award },
+  { label: "Duration", value: "2 Months", icon: Clock },
+  { label: "Training Mode", value: "Online / Classroom", icon: Laptop },
+  { label: "Prerequisite", value: "Basic Networking / NCSA", icon: BookOpen },
 ];
 
 export default function NCDHero() {
   return (
-    <div className="bg-[#080c10] text-white">
+    <div className="bg-[#05070d] text-white bg-cyber-grid">
+      <section className="relative min-h-[85vh] flex items-center pt-32 pb-16 overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute left-[-100px] top-[15%] w-[500px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
+        </div>
 
-      {/* Grid background */}
-      <div
-        className="relative"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,200,255,0.025) 39px, rgba(0,200,255,0.025) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,200,255,0.025) 39px, rgba(0,200,255,0.025) 40px)",
-        }}
-      >
-        <section className="max-w-7xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="mb-6">
+            <Breadcrumbs
+              items={[
+                { name: "Courses", href: "/courses" },
+                { name: "NCD Program", href: "/courses/noasec-cyber-defender" },
+              ]}
+            />
+          </div>
 
-            {/* ── LEFT ── */}
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content (7 cols) */}
             <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-7"
             >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 border border-cyan-500/30 bg-[#0d1a20] px-3 py-1.5 rounded-sm mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-[10px] font-bold tracking-[0.22em] text-cyan-400 uppercase">
-                  Advanced Cyber Defense
-                </span>
+                <span>Foundational Ethical Hacking Track</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
-                NoaSec Cyber{" "}
-                <span className="text-cyan-400">Defender (NCD)</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-5 tracking-tight text-white">
+                NoaSec Cyber <br />
+                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-transparent bg-clip-text">
+                  Defender (NCD)
+                </span>
               </h1>
 
-              <p className="text-sm text-gray-400 leading-relaxed mb-10 max-w-md">
-                Foundational ethical hacking and vulnerability assessment course — 2 months
-                of high-intensity, hands-on labs utilizing Burp Suite, Nmap, and Aircrack-ng
-                to master defensive security.
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                Hands-on ethical hacking and vulnerability assessment — 2 months of high-intensity, practical labs utilizing Burp Suite, Nmap, Wireshark, Metasploit, and Linux to transition from IT basics into active defense.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="px-7 py-3 bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-black tracking-[0.18em] uppercase transition-colors duration-200 rounded-sm"
-                >
-                  Enrol Now
+              <div className="flex flex-wrap items-center gap-3">
+                <Link href="/contact" className="btn-primary">
+                  Enroll in NCD <ArrowRight size={15} />
                 </Link>
-                <Link
-                  href="/courses"
-                  className="px-7 py-3 border border-white/20 hover:border-cyan-500/40 text-white text-xs font-black tracking-[0.18em] uppercase transition-all duration-200 rounded-sm hover:bg-cyan-500/5"
-                >
-                  View Syllabus
+                <Link href="/courses" className="btn-secondary">
+                  Compare All Programs
                 </Link>
               </div>
             </motion.div>
 
-            {/* ── RIGHT — image + stats ── */}
+            {/* Right Image (5 cols) */}
             <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-              className="rounded-xl border border-white/8 overflow-hidden bg-[#0d1520]"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-5 relative flex justify-center"
             >
-              {/* Image */}
-              <div className="relative w-full aspect-[16/9]">
-                <Image
-                  src="/ncd-hero.png"
-                  alt="NCD Course - Server Hardware"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+              <div className="relative w-full max-w-md group">
+                <div className="absolute -top-3 -left-3 w-8 h-8 border-l-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+                <div className="absolute -top-3 -right-3 w-8 h-8 border-r-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+                <div className="absolute -bottom-3 -left-3 w-8 h-8 border-l-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
+                <div className="absolute -bottom-3 -right-3 w-8 h-8 border-r-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
 
-              {/* Stats row */}
-              <div className="grid grid-cols-3 divide-x divide-white/5">
-                {stats.map((s, i) => (
-                  <motion.div
-                    key={s.label}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
-                    className="flex flex-col items-center justify-center py-5 gap-1 hover:bg-white/3 transition-colors duration-200"
-                  >
-                    <p className="text-lg font-extrabold text-cyan-400">{s.value}</p>
-                    <p className="text-[10px] text-gray-500 uppercase tracking-widest">{s.label}</p>
-                  </motion.div>
-                ))}
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl">
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] w-full">
+                    <Image
+                      src="/ncd-hero.webp"
+                      alt="NCD Lab Environment"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/90 via-transparent to-transparent" />
+                  </div>
+
+                  <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-lg bg-[#070d18]/90 border border-white/10 px-3.5 py-2 backdrop-blur-md">
+                    <span className="text-xs font-mono text-cyan-300">NCD ETHICAL LABS</span>
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      {/* ── META STATS BAR ── */}
-      <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/5">
-            {metaStats.map((m, i) => (
-              <motion.div
-                key={m.label}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="flex flex-col px-8 py-7 gap-1"
-              >
-                <p className="text-[10px] text-gray-500 uppercase tracking-widest">{m.label}</p>
-                <p className="text-base font-bold text-white">{m.value}</p>
-              </motion.div>
-            ))}
+      {/* Meta Stats Bar */}
+      <div className="border-t border-b border-white/10 bg-[#070d18]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            {metaStats.map((m, i) => {
+              const Icon = m.icon;
+              return (
+                <div key={m.label} className="flex items-center gap-3.5 px-6 py-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-wider text-gray-400 uppercase">
+                      {m.label}
+                    </p>
+                    <p className="text-sm font-bold text-white mt-0.5">{m.value}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

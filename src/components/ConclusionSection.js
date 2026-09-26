@@ -1,44 +1,49 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Award } from "lucide-react";
+
 export default function ConclusionSection() {
   return (
-    <section className="relative bg-[#0d1723] py-20 overflow-hidden">
-
-      {/* Left Gradient Line */}
-      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-[#6D5CFF] via-[#3B82F6] to-[#6D5CFF]" />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+    <section className="bg-[#05070d] py-16 px-6 md:px-12 border-t border-white/5">
+      <div className="max-w-4xl mx-auto space-y-8">
 
         {/* Image */}
-        <div className="overflow-hidden rounded-[26px] mb-10 shadow-lg">
-          <img
-            src="/conclusion.jpg"
-            alt="Cybersecurity Career"
-            className="w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[430px] object-cover"
-          />
+        <div className="overflow-hidden rounded-2xl border border-white/10 glass-card p-2 shadow-2xl">
+          <div className="relative h-[240px] sm:h-[380px] w-full rounded-xl overflow-hidden">
+            <Image
+              src="/conclusion.webp"
+              alt="Launch Your Cybersecurity Career"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-transparent to-transparent" />
+          </div>
         </div>
 
-        {/* Heading */}
-        <h2 className="text-center text-white text-3xl md:text-4xl font-bold mb-8">
-          Conclusion
-        </h2>
+        {/* Content Box */}
+        <div className="glass-card rounded-2xl p-6 sm:p-10 text-center">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-6">
+            Conclusion: The Best Time to Start is Now
+          </h2>
 
-        {/* Content */}
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-[#B6C7D6] text-base md:text-lg leading-8">
-            Choosing a career in cybersecurity in <span className="text-white font-semibold">2026</span> is one of the smartest
-            decisions for those looking for a profession that is future-proof.
-            This will lay a good foundation for success down the road. So learn
-            the basics of IT, build your cybersecurity skill set, get some
-            certifications and experience.
-          </p>
+          <div className="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto mb-8">
+            <p>
+              Entering the cybersecurity discipline in 2026 is one of the most future-proof career choices you can make. The persistent rise in cloud adoption, automated adversary tooling, and compliance mandates makes competent defenders invaluable.
+            </p>
+            <p>
+              Whether you are a college student, fresher, IT support specialist, or switching careers entirely, our structured programs (NCSA, NCD, NCCP, and NCSA-SOC) provide the direct, hands-on roadmap to get you job-ready.
+            </p>
+          </div>
 
-          <p className="mt-6 text-center text-[#B6C7D6] text-base md:text-lg leading-8">
-            If you are a student, fresher, career changer, or an IT professional
-            looking to specialize, cybersecurity presents exciting opportunities
-            with substantial growth potential. Through hard work, continuous
-            learning, and practical experience, you can launch a successful
-            career in cybersecurity and become an invaluable asset in today's
-            digital landscape.
-          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/courses" className="btn-primary">
+              Explore Our Certification Pathways <ArrowRight size={15} />
+            </Link>
+            <Link href="/contact" className="btn-secondary">
+              Book a Counseling Session
+            </Link>
+          </div>
         </div>
 
       </div>

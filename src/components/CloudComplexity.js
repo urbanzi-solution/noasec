@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AlertTriangle, KeyRound, Globe2, ShieldAlert } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -13,154 +14,127 @@ const fadeUp = {
 
 const challenges = [
   {
-    title: "Misconfigurations",
-    desc: "Unprotected buckets, exposed databases, and default security groups account for 80% of data breaches.",
-    icon: (
-      <svg className="w-5 h-5 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-      </svg>
-    ),
-    iconBg: "bg-orange-500/10 border border-orange-500/20",
+    title: "Critical Cloud Misconfigurations",
+    desc: "Unprotected public S3 buckets, exposed RDS databases, and permissive security groups account for over 80% of multi-cloud data breaches.",
+    icon: AlertTriangle,
   },
   {
-    title: "Over-privileged IAM",
-    desc: "Identity is the new perimeter. Excessive permissions allow for rapid lateral movement during a compromise.",
-    icon: (
-      <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
-      </svg>
-    ),
-    iconBg: "bg-blue-500/10 border border-blue-500/20",
+    title: "Over-Privileged Identity & IAM Sprawl",
+    desc: "Identity is the true cloud perimeter. Excessive wildcard permissions and dormant service roles allow adversaries to pivot rapidly across accounts.",
   },
   {
-    title: "Exposed APIs",
-    desc: "Publicly accessible management interfaces provide direct entry points for sophisticated attackers.",
-    icon: (
-      <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-      </svg>
-    ),
-    iconBg: "bg-blue-500/10 border border-blue-500/20",
+    title: "Exposed API Gateways & Kubernetes",
+    desc: "Publicly accessible control planes, unauthenticated Swagger docs, and misconfigured ingress controllers provide direct unauthorized entry points.",
+    icon: Globe2,
   },
 ];
 
 const scorecard = [
   {
-    label: "External API Surface",
-    status: "VULNERABLE",
-    color: "text-orange-400",
+    label: "External API Attack Surface",
+    status: "VULNERABILITY DETECTED",
+    color: "text-amber-400",
   },
   {
-    label: "IAM Least-Privilege Gap",
-    status: "92% DRIFT",
-    color: "text-orange-400",
+    label: "IAM Least-Privilege Drift",
+    status: "92% EXCESS PERMISSIONS",
+    color: "text-amber-400",
   },
   {
-    label: "Storage Encryption Status",
-    status: "PARTIAL",
-    color: "text-blue-400",
+    label: "Cloud Storage Encryption",
+    status: "PARTIAL COMPLIANCE",
+    color: "text-cyan-400",
   },
 ];
 
 export default function CloudComplexity() {
   return (
-    <div className="bg-[#0d0d0d] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          {/* ── LEFT (7 cols) ── */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <span>The Attack Surface</span>
+            </div>
 
-          {/* ── LEFT ── */}
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl font-extrabold text-white mb-5 leading-tight"
-            >
-              The Challenge of Cloud Complexity
-            </motion.h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              The Reality of <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                Multi-Cloud Complexity
+              </span>
+            </h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-sm text-gray-400 leading-relaxed mb-10 max-w-lg"
-            >
-              Modern cloud environments are dynamic, ethereal, and dangerously complex. Rapid
-              deployment cycles often prioritize speed over security, leaving organizations
-              vulnerable to a new breed of technical threats.
-            </motion.p>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-10 max-w-xl">
+              Modern cloud architectures are dynamic, containerized, and dangerously complex. Rapid CI/CD deployment cycles often prioritize feature delivery over security, leaving your infrastructure exposed to automated threat actor sweeps.
+            </p>
 
-            <div className="flex flex-col gap-7">
-              {challenges.map((c, i) => (
-                <motion.div
-                  key={c.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  className="flex gap-4"
-                >
-                  {/* Icon */}
-                  <span className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${c.iconBg}`}>
-                    {c.icon}
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-white mb-1">{c.title}</p>
-                    <p className="text-sm text-gray-400 leading-relaxed">{c.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="flex flex-col gap-6">
+              {challenges.map((c, i) => {
+                const Icon = c.icon || KeyRound;
+                return (
+                  <motion.div
+                    key={c.title}
+                    custom={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeUp}
+                    className="glass-card p-5 flex items-start gap-4"
+                  >
+                    <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex-shrink-0 mt-0.5">
+                      <Icon size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-white mb-1">{c.title}</h4>
+                      <p className="text-sm text-gray-400 leading-relaxed">{c.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
 
-          {/* ── RIGHT — Scorecard ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.15 }}
-            className="rounded-2xl border border-white/8 bg-[#161618] p-8 flex flex-col gap-6"
-          >
-            {/* Header */}
-            <p className="text-sm font-mono text-blue-400 font-semibold">
-              # Cloud_Vulnerability_Scorecard
-            </p>
+          {/* ── RIGHT — Scorecard (5 cols) ── */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-6 shadow-2xl">
+              {/* Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <span className="text-xs font-mono text-cyan-400 font-semibold tracking-wider">
+                  # CLOUD_POSTURE_TELEMETRY
+                </span>
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              </div>
 
-            {/* Rows */}
-            <div className="flex flex-col gap-3">
-              {scorecard.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  className="flex items-center justify-between px-5 py-4 rounded-lg bg-[#0d0d0d] border border-white/5"
-                >
-                  <span className="text-sm font-medium text-white">{s.label}</span>
-                  <span className={`text-sm font-extrabold tracking-wider ${s.color}`}>
-                    {s.status}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
+              {/* Rows */}
+              <div className="flex flex-col gap-4">
+                {scorecard.map((s, i) => (
+                  <motion.div
+                    key={s.label}
+                    custom={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeUp}
+                    className="p-4 rounded-xl bg-white/[0.03] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
+                  >
+                    <span className="text-xs font-medium text-gray-300">{s.label}</span>
+                    <span className={`text-xs font-mono font-bold tracking-wider ${s.color}`}>
+                      {s.status}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
 
-            {/* Footer */}
-            <div className="pt-2 border-t border-white/5 flex items-center gap-2">
-              {/* Pulse dot */}
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-              </span>
-              <p className="text-[10px] font-semibold tracking-[0.2em] text-gray-500 uppercase">
-                Noasec Sentinel Monitoring Active
-              </p>
+              {/* Footer */}
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center gap-2">
+                <ShieldAlert size={14} className="text-cyan-400" />
+                <p className="text-[10px] font-mono tracking-widest text-gray-400 uppercase">
+                  Continuous CSPM Engine Active
+                </p>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

@@ -3,161 +3,129 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
+import { Award, ArrowRight, ShieldCheck, Clock, Laptop, BookOpen } from "lucide-react";
 
-const stats = [
-  {
-    label: "Certification",
-    value: "NCSA",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Duration",
-    value: "1 Month",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Mode",
-    value: "Hybrid",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-      </svg>
-    ),
-  },
-  {
-    label: "Prerequisite",
-    value: "Basics",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-      </svg>
-    ),
-  },
+const metaStats = [
+  { label: "Certification", value: "NCSA Associate", icon: Award },
+  { label: "Duration", value: "1 Month Foundation", icon: Clock },
+  { label: "Training Mode", value: "Online / Classroom", icon: Laptop },
+  { label: "Prerequisite", value: "None / Complete Beginner", icon: BookOpen },
 ];
 
 export default function NCSAHero() {
   return (
-    <div className="bg-[#080c10] text-white">
+    <div className="bg-[#05070d] text-white bg-cyber-grid">
+      <section className="relative min-h-[85vh] flex items-center pt-32 pb-16 overflow-hidden">
+        {/* Glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute left-[-100px] top-[15%] w-[500px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
+        </div>
 
-      {/* Grid background */}
-      <div
-        className="relative"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,200,255,0.03) 39px, rgba(0,200,255,0.03) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,200,255,0.03) 39px, rgba(0,200,255,0.03) 40px)",
-        }}
-      >
-        {/* ── HERO ── */}
-        <section className="max-w-6xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="mb-6">
+            <Breadcrumbs
+              items={[
+                { name: "Courses", href: "/courses" },
+                { name: "NCSA Associate", href: "/courses/noasec-cyber-security-associate" },
+              ]}
+            />
+          </div>
 
-            {/* Left */}
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content (7 cols) */}
             <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-7"
             >
-              <p className="text-xs font-semibold tracking-[0.25em] text-cyan-400 uppercase mb-5">
-                Level 01 Certification
-              </p>
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <span>Beginner Entry Gateway</span>
+              </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
-                NoaSec Cyber Security Associate{" "}
-                <span className="text-cyan-400">(NCSA)</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-5 tracking-tight text-white">
+                Cyber Security <br />
+                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-transparent bg-clip-text">
+                  Associate (NCSA)
+                </span>
               </h1>
 
-              <p className="text-sm text-gray-400 leading-relaxed mb-10 max-w-md">
-                Beginner cybersecurity certification — 1 month intensive course covering
-                critical cyber threats, networking fundamentals, Linux command line, and
-                an introduction to ethical hacking.
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                The premier zero-to-one cybersecurity launchpad. Designed for students, beginners, and transitioning professionals to master operating system internals, computer networking, basic ethical hacking, and essential security utilities.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="px-7 py-3 bg-cyan-500 hover:bg-cyan-400 text-black text-sm font-bold transition-colors duration-200 rounded-sm"
-                >
-                  Enroll Now
+              <div className="flex flex-wrap items-center gap-3">
+                <Link href="/contact" className="btn-primary">
+                  Enroll in NCSA <ArrowRight size={15} />
                 </Link>
-                <Link
-                  href="/courses"
-                  className="px-7 py-3 border border-cyan-500/50 hover:border-cyan-400 text-white text-sm font-bold transition-all duration-200 rounded-sm hover:bg-cyan-500/5"
-                >
-                  View Syllabus
+                <Link href="/courses" className="btn-secondary">
+                  Explore Progression Path
                 </Link>
               </div>
             </motion.div>
 
-            {/* Right — image */}
+            {/* Right Image (5 cols) */}
             <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-5 relative flex justify-center"
             >
-              {/* Image container */}
-              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-cyan-500/20 bg-[#0d1520]">
-                <Image
-                  src="/shield-hero.png"
-                  alt="Cybersecurity Shield"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                {/* Cyan corner accents */}
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-cyan-400/60 rounded-tl-xl" />
-                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-cyan-400/60 rounded-tr-xl" />
-                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-cyan-400/60 rounded-bl-xl" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-cyan-400/60 rounded-br-xl" />
-              </div>
+              <div className="relative w-full max-w-md group">
+                <div className="absolute -top-3 -left-3 w-8 h-8 border-l-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+                <div className="absolute -top-3 -right-3 w-8 h-8 border-r-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+                <div className="absolute -bottom-3 -left-3 w-8 h-8 border-l-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
+                <div className="absolute -bottom-3 -right-3 w-8 h-8 border-r-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
 
-              {/* Status badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="absolute -bottom-4 left-4 flex items-center gap-2.5 px-5 py-3 rounded-lg bg-[#0d1520]/90 border border-white/10 backdrop-blur-sm"
-              >
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
-                </span>
-                <span className="text-[11px] font-bold tracking-[0.18em] text-white uppercase">
-                  System Status: Secure
-                </span>
-              </motion.div>
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl">
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] w-full">
+                    <Image
+                      src="/ncsa-hero.webp"
+                      alt="NCSA Cyber Security Associate Training"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/90 via-transparent to-transparent" />
+                  </div>
+
+                  <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-lg bg-[#070d18]/90 border border-white/10 px-3.5 py-2 backdrop-blur-md">
+                    <span className="text-xs font-mono text-cyan-300">NCSA FOUNDATIONS</span>
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
-        </section>
-      </div>
-
-      {/* ── STATS ROW ── */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.4, ease: "easeOut" }}
-              className="flex flex-col items-center justify-center gap-2 px-6 py-6 rounded-lg border border-cyan-500/15 bg-[#0d1520] hover:border-cyan-500/30 transition-colors duration-200"
-            >
-              <span className="text-cyan-400">{s.icon}</span>
-              <p className="text-[10px] text-gray-500 uppercase tracking-widest">{s.label}</p>
-              <p className="text-base font-bold text-white">{s.value}</p>
-            </motion.div>
-          ))}
         </div>
       </section>
+
+      {/* Meta Stats Bar */}
+      <div className="border-t border-b border-white/10 bg-[#070d18]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            {metaStats.map((m, i) => {
+              const Icon = m.icon;
+              return (
+                <div key={m.label} className="flex items-center gap-3.5 px-6 py-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-wider text-gray-400 uppercase">
+                      {m.label}
+                    </p>
+                    <p className="text-sm font-bold text-white mt-0.5">{m.value}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

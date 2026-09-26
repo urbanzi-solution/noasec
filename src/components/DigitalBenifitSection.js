@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { CheckCircle2, ArrowRight, HardDrive, Binary, GraduationCap } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -15,75 +16,82 @@ const fadeUp = {
 
 const benefits = [
   {
-    title: "Legally admissible evidence",
-   
+    title: "Legally Admissible Evidence",
+    desc: "Every artifact is gathered using write-blockers and validated forensic imaging tools, ensuring zero contamination.",
   },
   {
-    title: "Preserved integrity (hashes)",
-   
+    title: "Cryptographic Integrity Verification",
+    desc: "Dual SHA-256 and MD5 cryptographic hashes calculated at the scene to prove data has not been modified.",
   },
   {
-    title: "Court-accepted documentation",
-   
+    title: "Court-Accepted Documentation",
+    desc: "Standardized chain-of-custody logs detailing evidence handlers, transfer dates, and storage locations.",
   },
   {
-    title: "Rapid response deployment",
-   
+    title: "Rapid Emergency Deployment",
+    desc: "Rapid response capability to arrive on-site or initiate remote collection before volatile evidence evaporates.",
   },
 ];
 
 const relatedServices = [
   {
     title: "Disk & Memory Forensics",
-    desc: "Remote and on-site preservation of digital assets following ISO 27037 standards.",
-    href: "/services/digital-evidence-collection",
-    icon: (<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-      </svg>),
+    desc: "Deep forensic carving of disk images and RAM dumps acquired during evidence gathering.",
+    href: "/services/disk-memory-forensics",
+    icon: HardDrive,
   },
   {
-    title: "Malware Analysis",
-    desc: "Reverse engineering malicious binaries discovered during memory forensics.",
+    title: "Malware Analysis Lab",
+    desc: "Reverse engineering suspicious binaries and scripts discovered on seized machines.",
     href: "/services/malware-analysis",
-    icon: (<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
-      </svg>),
+    icon: Binary,
   },
-];
-
-const certifications = [
-  { tag: "CERTIFICATION", title: "Certified Digital Forensics Analyst (NCDF)" },
-  { tag: "CERTIFICATION", title: "Certified Cybersecurity Professional (NCCP)" },
 ];
 
 export default function DigitalBenefitsSection() {
   return (
-    <div className="bg-[#0a0a0a] text-white">
-
-      {/* ── KEY BENEFITS ── */}
-      <section className="max-w-6xl mx-auto px-6 py-20 -mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
+        {/* ── KEY BENEFITS ── */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left — image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/5 bg-[#111]"
+            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl"
           >
-            <Image
-              src="/forensics.png"
-              alt="Server forensics hardware"
-              fill
-              className="object-cover"
-              priority
-            />
+            <div className="relative w-full h-full rounded-xl overflow-hidden">
+              <Image
+                src="/forensics.webp"
+                alt="Digital Evidence Collection Hardware"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-transparent to-transparent" />
+            </div>
+
+            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-lg bg-[#070d18]/90 border border-white/10 px-3.5 py-2 backdrop-blur-md">
+              <span className="text-xs font-mono text-cyan-300">CUSTODY LOG: LOCKED</span>
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            </div>
           </motion.div>
 
           {/* Right — benefits */}
           <div>
-            <h2 className="text-3xl font-bold text-white mb-8">Key Benefits</h2>
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
+              <span>Legal Protection</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 leading-tight">
+              Why Forensic Collection <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                Matters
+              </span>
+            </h2>
+
             <ul className="space-y-6">
               {benefits.map((b, i) => (
                 <motion.li
@@ -93,104 +101,111 @@ export default function DigitalBenefitsSection() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="flex gap-3"
+                  className="glass-card p-5 flex items-start gap-4"
                 >
-                  {/* Check circle */}
-                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 border-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
+                  <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 flex-shrink-0 mt-0.5">
+                    <CheckCircle2 size={18} />
+                  </div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-0.5">{b.title}</p>
-                    <p className="text-xs text-gray-400 leading-relaxed">{b.desc}</p>
+                    <h4 className="font-bold text-white text-base mb-1">{b.title}</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">{b.desc}</p>
                   </div>
                 </motion.li>
               ))}
             </ul>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-white/5" />
-      </div>
-
-      {/* ── RELATED SERVICES + TRAINING ── */}
-      <section className="max-w-6xl mx-auto px-6 py-20 -mt-18">
-        <h2 className="text-base font-bold text-white mb-8">Related Services</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
-
-          {/* Left — 2 service cards stacked */}
-          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {relatedServices.map((s, i) => (
-              <motion.div
-                key={s.title}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                className="flex flex-col px-5 py-6 rounded-md border border-white/5 bg-[#111] hover:bg-[#161616] hover:border-blue-500/20 transition-all duration-200 group"
-              >
-                {/* Icon */}
-                <span className="w-8 h-8 rounded-md bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-blue-400 transition-colors duration-200 mb-4">
-                  {s.icon}
-                </span>
-                <p className="text-sm font-bold text-white mb-2">{s.title}</p>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4 flex-1">{s.desc}</p>
-                <Link
-  href={s.href}
-  className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-400 hover:text-blue-300 uppercase tracking-wider transition-colors duration-200 group/link"
->
-  <span>Learn More</span>
-  <span className="transition-transform duration-200 group-hover/link:translate-x-1">
-    →
-  </span>
-</Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right — Training card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.2 }}
-            className="relative rounded-md border border-white/5 bg-[#111] px-6 py-6 flex flex-col gap-5 overflow-hidden"
-          >
-            {/* Ghost graduation icon */}
-            <div className="absolute right-4 top-4 opacity-10">
-              <svg className="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-              </svg>
+        {/* ── RELATED SERVICES + TRAINING ── */}
+        <section className="border-t border-white/10 pt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Related Forensic Capabilities
+              </h3>
+              <p className="text-gray-400 text-sm mt-1">
+                Explore end-to-end investigation capabilities for enterprise litigation.
+              </p>
             </div>
-
-            <h3 className="text-base font-bold text-white relative z-10">Training</h3>
-
-            <div className="flex flex-col gap-4 relative z-10">
-              {certifications.map((c, i) => (
-                <div key={c.title} className={i > 0 ? "pt-4 border-t border-white/5" : ""}>
-                  <p className="text-[9px] font-bold tracking-[0.18em] text-blue-400 uppercase mb-1">
-                    {c.tag}
-                  </p>
-                  <p className="text-sm font-semibold text-white leading-snug">{c.title}</p>
-                </div>
-              ))}
-            </div>
-
             <Link
               href="/services"
-              className="relative z-10 mt-2 w-full text-center px-4 py-3 border border-white/20 text-white text-xs font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-200 rounded-sm"
+              className="text-xs font-semibold tracking-wider uppercase text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
             >
-              View Training Hub
+              <span>View All Services</span>
+              <ArrowRight size={14} />
             </Link>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Left — 2 service cards */}
+            {relatedServices.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <motion.div
+                  key={s.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                >
+                  <Link
+                    href={s.href}
+                    className="glass-card p-6 flex flex-col justify-between h-full group"
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                        <Icon size={20} />
+                      </div>
+                      <h4 className="font-bold text-white text-base group-hover:text-cyan-300 transition-colors mb-2">
+                        {s.title}
+                      </h4>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {s.desc}
+                      </p>
+                    </div>
+                    <div className="mt-6 flex items-center text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span>Explore</span>
+                      <ArrowRight size={12} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+
+            {/* Right — Training card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: 0.2 }}
+              className="glass-card p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+                  <GraduationCap size={20} />
+                </div>
+                <p className="text-[10px] font-mono font-bold tracking-wider text-cyan-400 uppercase mb-1">
+                  OFFICIAL CERTIFICATION
+                </p>
+                <h4 className="font-bold text-white text-base mb-2">
+                  Certified Cybersecurity Professional (NCCP)
+                </h4>
+                <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  Train your internal incident responders in digital forensics and evidence preservation.
+                </p>
+              </div>
+
+              <Link
+                href="/courses/certified-cybersecurity-professional"
+                className="btn-secondary text-center text-xs"
+              >
+                View NCCP Curriculum
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

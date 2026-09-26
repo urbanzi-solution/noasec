@@ -45,7 +45,7 @@ export default function CareerRoadmap() {
     {
       number: "1",
       title: "Learn Basics of IT & Networking",
-      image: "/learn.jpg",
+      image: "/learn.webp",
       description:
         "Build a strong foundation in how computers, networks, and operating systems work.",
       icon: Network,
@@ -97,7 +97,7 @@ export default function CareerRoadmap() {
     {
       number: "2",
       title: "Grasp Core Concepts",
-      image: "/grasp.avif",
+      image: "/grasp.webp",
       description:
         "Understand the core principles, common threats, security controls, and risk management practices used in cybersecurity.",
       icon: ShieldCheck,
@@ -149,7 +149,7 @@ export default function CareerRoadmap() {
     {
       number: "3",
       title: "Learn Essential Skills",
-      image: "/skill.jpg",
+      image: "/skill.webp",
       description:
         "Develop practical cybersecurity skills that help you monitor networks, investigate threats, and respond to security incidents.",
       icon: Code2,
@@ -216,7 +216,7 @@ export default function CareerRoadmap() {
     {
       number: "4",
       title: "Obtain Certifications",
-      image: "/certificate.jpeg",
+      image: "/certificate.webp",
       description:
         "Begin with beginner-friendly certifications to validate your knowledge and strengthen your cybersecurity resume.",
       icon: Award,
@@ -265,7 +265,7 @@ export default function CareerRoadmap() {
     {
       number: "5",
       title: "Get Practical Experience",
-      image: "/practical.jpg",
+      image: "/practical.webp",
       description:
         "Gain hands-on experience by practicing cybersecurity techniques in safe environments and building your own projects.",
       icon: Laptop,
@@ -314,7 +314,7 @@ export default function CareerRoadmap() {
     {
       number: "6",
       title: "Build a Strong Resume",
-      image: "/resume.jpg",
+      image: "/resume.webp",
       description:
         "Create a focused cybersecurity resume that clearly shows your skills, learning progress, projects, and achievements.",
       icon: FileText,
@@ -425,7 +425,7 @@ export default function CareerRoadmap() {
     {
       number: "8",
       title: "Continuous Growth",
-      image: "/grwoth.jpg",
+      image: "/growth.webp",
       description:
         "Cybersecurity is constantly evolving. New threats, technologies, and attack methods emerge every year.",
       icon: TrendingUp,
@@ -483,20 +483,19 @@ export default function CareerRoadmap() {
   ];
 
   return (
-    <section className="min-h-screen bg-[#071827] px-4 pb-16 pt-44 text-white sm:px-6 sm:pb-20 sm:pt-52 lg:px-10 lg:pt-56">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-24 text-center">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-400">
-            Cybersecurity Learning Journey
-          </p>
+    <section id="roadmap" className="bg-[#05070d] px-6 py-20 text-white md:px-12 border-t border-white/5 scroll-mt-20">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-16 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
+            <span>Progressive Career Blueprint</span>
+          </div>
 
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
-            The 8-Step Career Roadmap
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+            The 8-Step Practitioner Roadmap
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-300">
-            Follow these steps to build the right cybersecurity knowledge,
-            practical skills, certifications, and career experience.
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-gray-300">
+            Follow this step-by-step roadmap to acquire core IT knowledge, hands-on lab reflexes, accredited certifications, and entry into frontline cybersecurity roles.
           </p>
         </div>
 
@@ -509,38 +508,38 @@ export default function CareerRoadmap() {
 
               return (
                 <article key={step.number} className="relative pl-12 sm:pl-16">
-                  <div className="absolute left-0 top-1 z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 border-cyan-300 bg-[#0b2436] text-sm font-bold text-cyan-100 shadow-[0_0_18px_rgba(34,211,238,0.65)] sm:h-12 sm:w-12">
+                  <div className="absolute left-0 top-1 z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#09152a] text-sm font-bold text-cyan-100 shadow-[0_0_18px_rgba(34,211,238,0.4)] sm:h-12 sm:w-12">
                     {step.number}
                   </div>
 
-                  <div className="mb-5 flex min-h-[58px] items-center gap-3 rounded-xl border border-[#24475c] bg-[#0b2030] px-4 py-3 sm:min-h-[66px] sm:px-5 sm:py-4">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-400/10 sm:h-10 sm:w-10">
+                  <div className="mb-5 flex min-h-[58px] items-center gap-3 rounded-2xl border border-white/10 bg-[#091222]/90 px-4 py-3 sm:min-h-[66px] sm:px-5 sm:py-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-400/10 sm:h-10 sm:w-10">
                       <StepIcon size={19} className="text-cyan-300" />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-400 sm:text-[11px]">
-                        Step {step.number}
+                      <p className="mb-0.5 text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-400 sm:text-[11px]">
+                        Milestone {step.number}
                       </p>
 
-                      <h3 className="text-[17px] font-bold leading-tight text-white sm:text-xl">
+                      <h3 className="text-lg font-bold leading-tight text-white sm:text-xl">
                         {step.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="overflow-hidden rounded-xl border border-[#24475c] bg-[#0b2030] shadow-[0_12px_30px_rgba(0,0,0,0.2)]">
-                    <div className="relative h-56 overflow-hidden sm:h-72 lg:h-80">
+                  <div className="overflow-hidden rounded-2xl border border-white/10 glass-card shadow-2xl">
+                    <div className="relative h-56 overflow-hidden sm:h-72">
                       <img
                         src={step.image}
                         alt={step.title}
                         className="h-full w-full object-cover object-center"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#071827]/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-transparent to-transparent" />
                     </div>
 
-                    <div className="border-b border-[#24475c] px-5 py-5 sm:px-7">
-                      <p className="text-sm leading-6 text-slate-200 sm:text-[15px]">
+                    <div className="border-b border-white/10 px-5 py-5 sm:px-7">
+                      <p className="text-sm leading-relaxed text-gray-200 sm:text-base">
                         {step.description}
                       </p>
                     </div>
@@ -555,7 +554,7 @@ export default function CareerRoadmap() {
                             </h4>
                           </div>
 
-                          <p className="text-sm leading-6 text-slate-200">
+                          <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
                             Successful cybersecurity professionals regularly
                             follow trusted industry resources, security
                             advisories, and threat intelligence updates.
@@ -570,48 +569,47 @@ export default function CareerRoadmap() {
                               <ExternalLink size={13} />
                             </a>{" "}
                             help professionals stay informed about the latest
-                            cybersecurity threats, vulnerabilities, and best
-                            practices relevant to India.
+                            threat advisories and best practices.
                           </p>
                         </div>
                       )}
 
                       <div className="mb-5 flex items-center gap-2">
                         <CheckCircle2 size={19} className="text-cyan-400" />
-                        <h4 className="text-[15px] font-bold text-cyan-100">
-                          Topics to Learn
+                        <h4 className="text-sm font-bold text-cyan-100">
+                          Critical Competencies to Master
                         </h4>
                       </div>
 
-                      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         {step.topics.map((topic) => {
                           const TopicIcon = topic.icon;
 
                           return (
                             <div
                               key={topic.title}
-                              className="relative overflow-hidden rounded-xl border border-[#24475c] bg-[#102a3d]"
+                              className="relative overflow-hidden rounded-xl border border-white/10 bg-[#070e1c] p-4 pl-5 transition-all hover:border-cyan-500/30"
                             >
                               <div className="absolute left-0 top-0 h-full w-1 bg-cyan-400" />
 
-                              <div className="flex gap-4 p-5 pl-6">
-                                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-400/10">
+                              <div className="flex gap-3">
+                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-400/10">
                                   <TopicIcon
-                                    size={21}
+                                    size={18}
                                     className="text-cyan-300"
                                   />
                                 </div>
 
                                 <div className="min-w-0 flex-1">
-                                  <h5 className="mb-3 text-[15px] font-bold text-white">
+                                  <h5 className="mb-2 text-sm font-bold text-white">
                                     {topic.title}
                                   </h5>
 
-                                  <div className="flex flex-wrap gap-2">
+                                  <div className="flex flex-wrap gap-1.5">
                                     {topic.items.map((item) => (
                                       <span
                                         key={item}
-                                        className="rounded-md border border-cyan-400/15 bg-[#071d2c] px-3 py-1.5 text-xs text-slate-200"
+                                        className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-gray-300"
                                       >
                                         {item}
                                       </span>
@@ -627,10 +625,10 @@ export default function CareerRoadmap() {
                       {step.bottomNote && (
                         <div className="mt-6 flex items-start gap-3 rounded-xl border border-cyan-400/20 bg-cyan-400/5 px-5 py-4">
                           <Lightbulb
-                            size={19}
+                            size={18}
                             className="mt-0.5 shrink-0 text-cyan-300"
                           />
-                          <p className="text-sm leading-6 text-cyan-50">
+                          <p className="text-xs sm:text-sm leading-relaxed text-cyan-50">
                             {step.bottomNote}
                           </p>
                         </div>

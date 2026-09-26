@@ -2,59 +2,89 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
+import { ShieldCheck, ArrowRight, Globe, CheckCircle2 } from "lucide-react";
 
 export default function WebSecurityHero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center bg-[#050b14] text-white overflow-hidden">
-
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/web-hero.jpg" // replace with your image
-          alt="web security background"
-          fill
-          loading="lazy"
-          className="object-cover opacity-30"
-        />
+    <section className="relative bg-[#05070d] bg-cyber-grid text-white px-6 md:px-12 pt-32 pb-20 border-b border-white/5 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-100px] top-[15%] w-[500px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
       </div>
 
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050b14] via-[#050b14]/95 to-[#050b14]/70 z-0" />
-
-      {/* Right Circular Glow Effect */}
-      <div className="absolute right-0 top-0 h-full w-[50%] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.25),transparent_70%)] z-0" />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl px-6 md:px-12 lg:px-20 py-24">
-
-        {/* Tag */}
-        <div className="inline-flex items-center gap-2 border border-blue-500/40 text-blue-400 text-[10px] md:text-xs px-4 py-1 rounded-full mb-6 tracking-[0.2em]">
-          <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
-          PREMIUM SECURITY ASSESSMENT
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-6">
+          <Breadcrumbs
+            items={[
+              { name: "Services", href: "/services" },
+              { name: "Web Application Pentesting", href: "/services/web-application-penetration-testing" },
+            ]}
+          />
         </div>
 
-        {/* Heading */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] max-w-3xl">
-         Web Application Penetration <br />
-          <span className="text-blue-500">Testing</span>
-        </h1>
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Left Content (7 cols) */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">
+              <Globe size={14} className="text-cyan-400" />
+              <span>OWASP Top 10 Aligned Assessment</span>
+            </div>
 
-        {/* Description */}
-        <p className="mt-6 text-gray-400 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
-          Web applications are a primary attack vector for threat actors. NoaSec's web application penetration testing service simulates real-world attacks against your web apps — uncovering vulnerabilities such as SQL injection, cross-site scripting (XSS), broken authentication, and API security flaws — aligned with the OWASP Top 10 framework.
-        </p>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-5 tracking-tight text-white">
+              Web Application <br />
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-transparent bg-clip-text">
+                Penetration Testing
+              </span>
+            </h1>
 
-        {/* Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl">
+              Web applications are a primary attack vector for threat actors. NoaSec&apos;s web application penetration testing service simulates real-world attacks against your web apps — uncovering vulnerabilities such as SQL injection, cross-site scripting (XSS), broken authentication, and API security flaws — aligned with the OWASP Top 10 framework.
+            </p>
 
-          <Link
-            href="/contact"
-            className="w-full sm:w-auto text-center px-6 py-3 rounded-md bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-semibold transition shadow-lg shadow-cyan-500/20"
-          >
-            Request a Quote →
-          </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/contact" className="btn-primary">
+                Request Scoping Proposal <ArrowRight size={15} />
+              </Link>
+              <Link href="/services" className="btn-secondary">
+                View All Services
+              </Link>
+            </div>
 
-         
+            <div className="mt-8 flex flex-wrap gap-4 text-xs text-gray-400 border-t border-white/10 pt-6">
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-cyan-400" /> Black, Grey &amp; White Box</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-cyan-400" /> Business Logic Flaws</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-cyan-400" /> PoC Exploitation Reports</span>
+            </div>
+          </div>
+
+          {/* Right Image (5 cols) */}
+          <div className="lg:col-span-5 relative flex justify-center">
+            <div className="relative w-full max-w-md group">
+              <div className="absolute -top-3 -left-3 w-8 h-8 border-l-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+              <div className="absolute -top-3 -right-3 w-8 h-8 border-r-2 border-t-2 border-cyan-400 z-20 pointer-events-none" />
+              <div className="absolute -bottom-3 -left-3 w-8 h-8 border-l-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
+              <div className="absolute -bottom-3 -right-3 w-8 h-8 border-r-2 border-b-2 border-cyan-400 z-20 pointer-events-none" />
+
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl">
+                <div className="relative rounded-xl overflow-hidden aspect-[4/3] w-full">
+                  <Image
+                    src="/web-hero.webp"
+                    alt="NoaSec Web Application Penetration Testing"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/90 via-transparent to-transparent" />
+                </div>
+
+                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-lg bg-[#070d18]/90 border border-white/10 px-3.5 py-2 backdrop-blur-md">
+                  <span className="text-xs font-mono text-cyan-300">VAPT AUDIT IN PROGRESS</span>
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

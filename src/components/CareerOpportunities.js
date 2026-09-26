@@ -1,113 +1,77 @@
-import {
-  Shield,
-  Users,
-  ShieldCheck,
-  Cloud,
-} from "lucide-react";
+import Image from "next/image";
+import { Shield, Users, ShieldCheck, Cloud, Briefcase } from "lucide-react";
 
 const careers = [
   {
     icon: Shield,
-    title: "Penetration Testing",
-    description:
-      "Ethical hacking and vulnerability assessment.",
-  },
-  {
-    icon: Users,
-    title: "Security Engineering",
-    description:
-      "Building robust defensive architectures.",
+    title: "Penetration Testing & Red Teaming",
+    description: "Ethical hacking, web vulnerability assessments, mobile app auditing, and adversary emulation.",
   },
   {
     icon: ShieldCheck,
-    title: "GRC Specialist",
-    description:
-      "Governance, Risk, and Compliance management.",
+    title: "Security Operations & Defense (Blue Team)",
+    description: "24/7 SIEM monitoring, log telemetry, threat hunting, and automated incident triage.",
   },
   {
     icon: Cloud,
-    title: "Cloud Security",
-    description:
-      "Securing modern cloud infrastructures.",
+    title: "Cloud Security Architecture",
+    description: "Hardening AWS, Azure, GCP infrastructure, identity governance, and container security.",
+  },
+  {
+    icon: Users,
+    title: "Governance, Risk & Compliance (GRC)",
+    description: "Policy authoring, ISO 27001 / SOC 2 audits, regulatory standards, and risk assessments.",
   },
 ];
 
 export default function CareerOpportunities() {
   return (
-    <section className="relative bg-[#0D1723] py-20 overflow-hidden">
-
-      {/* Left Gradient Line */}
-      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-[#6D5CFF] via-[#3B82F6] to-[#6D5CFF]" />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+    <section className="bg-[#05070d] py-16 px-6 md:px-12 border-t border-white/5">
+      <div className="max-w-4xl mx-auto space-y-8">
 
         {/* Heading */}
-        <h2 className="text-[#70879B] text-3xl md:text-4xl font-bold leading-tight mb-10">
-          Career Opportunities and Future
-          <br />
-          Scope
-        </h2>
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
+            <Briefcase size={13} className="text-cyan-400" />
+            <span>Employment Horizons</span>
+          </div>
+
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+            High-Impact Career Opportunities &amp; Future Scope
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-gray-300 leading-relaxed">
+            Cybersecurity offers specialized career trajectories across every technical domain.
+          </p>
+        </div>
 
         {/* Image */}
-        <div className="overflow-hidden rounded-[26px] mb-12">
-          <img
-            src="/career.jpg"
-            alt="Career Opportunities"
-            className="w-full h-[230px] sm:h-[320px] md:h-[420px] lg:h-[470px] object-cover"
-          />
+        <div className="overflow-hidden rounded-2xl border border-white/10 glass-card p-2 shadow-2xl">
+          <div className="relative h-[240px] sm:h-[380px] w-full rounded-xl overflow-hidden">
+            <Image
+              src="/career.webp"
+              alt="Cybersecurity Career Opportunities"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-transparent to-transparent" />
+          </div>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7">
-
-          {careers.map((career, index) => {
-            const Icon = career.icon;
-
+        <div className="grid sm:grid-cols-2 gap-4">
+          {careers.map((c) => {
+            const Icon = c.icon;
             return (
-              <div
-                key={index}
-                className="
-                  bg-[#132131]
-                  border
-                  border-[#26394A]
-                  rounded-[24px]
-                  px-8
-                  pt-8
-                  pb-8
-                  min-h-[255px]
-                  flex
-                  flex-col
-                  transition-all
-                  duration-300
-                  hover:border-[#4D8DFF]
-                  hover:-translate-y-1
-                  hover:shadow-lg
-                "
-              >
-
-                {/* Icon */}
-                <div className="mb-8">
-                  <Icon
-                    size={34}
-                    strokeWidth={2}
-                    className="text-[#D9F5FF]"
-                  />
+              <div key={c.title} className="glass-card rounded-2xl p-6 transition-all duration-200">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                  <Icon size={20} />
                 </div>
-
-                {/* Title */}
-                <h3 className="text-white text-[24px] font-semibold leading-[1.3] mb-5">
-                  {career.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[#8EA4B5] text-[15px] leading-7">
-                  {career.description}
-                </p>
-
+                <h3 className="text-base font-bold text-white mb-1.5">{c.title}</h3>
+                <p className="text-xs leading-relaxed text-gray-400">{c.description}</p>
               </div>
             );
           })}
-
         </div>
 
       </div>

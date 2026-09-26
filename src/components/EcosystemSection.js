@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight, ShieldCheck, GraduationCap } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -13,50 +14,42 @@ const fadeUp = {
 };
 
 const ecosystemServices = [
-  { title: "Web App Pen Testing", href: "/services/web-application-penetration-testing" },
-  { title: "Network Pen Testing", href: "/services/network-penetration-testing" },
+  { title: "Web App Penetration Testing", href: "/services/web-application-penetration-testing" },
+  { title: "Network Penetration Testing", href: "/services/network-penetration-testing" },
   { title: "Server & Firewall Hardening", href: "/services/server-hardening" },
+  { title: "Cloud Security Solutions", href: "/services/cloud-security-solutions" },
 ];
 
 const trainings = [
   {
-    tag: "NCD",
-    title: "Cyber Defender",
-    desc: "Master-level defense tactics for internal security teams.",
+    tag: "NCD DEFENDER",
+    title: "NoaSec Cyber Defender",
+    desc: "Master-level defensive engineering and SOC operations tactics for internal defense teams.",
     href: "/courses/noasec-cyber-defender",
-    icon: (
-      <svg className="w-10 h-10 text-white/10" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-      </svg>
-    ),
   },
   {
-    tag: "NCCP",
+    tag: "NCCP CERTIFIED",
     title: "Certified Cybersecurity Professional",
-    desc: "Core certification for comprehensive digital asset protection.",
+    desc: "Comprehensive dual-track offensive & defensive training for career-ready practitioners.",
     href: "/courses/certified-cybersecurity-professional",
-    icon: (
-      <svg className="w-10 h-10 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
   },
 ];
 
 export default function EcosystemSection() {
   return (
-    <div className="bg-[#0a0a0a] text-white">
-      <div className="max-w-5xl mx-auto px-6 py-20 space-y-20">
-
+    <div className="bg-[#05070d] text-white border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-20">
         {/* ── TWO COLUMN SECTION ── */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
-
           {/* LEFT — Ecosystem Services */}
           <div>
-            <h2 className="text-base font-bold text-white mb-1">Ecosystem Services</h2>
-            <div className="h-px bg-white/10 mb-5" />
+            <div className="flex items-center gap-2 mb-4">
+              <ShieldCheck size={18} className="text-cyan-400" />
+              <h3 className="text-lg font-bold text-white tracking-wide">Ecosystem Security Services</h3>
+            </div>
+            <div className="h-px bg-white/10 mb-6" />
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {ecosystemServices.map((s, i) => (
                 <motion.div
                   key={s.title}
@@ -68,12 +61,10 @@ export default function EcosystemSection() {
                 >
                   <Link
                     href={s.href}
-                    className="group flex items-center justify-between px-4 py-4 border border-white/8 bg-[#111] hover:bg-[#161616] hover:border-blue-500/20 rounded-sm transition-all duration-200"
+                    className="glass-card px-5 py-4 flex items-center justify-between group"
                   >
-                    <span className="text-sm font-medium text-white">{s.title}</span>
-                    <span className="text-gray-500 group-hover:text-blue-400 transition-colors duration-200">
-                      →
-                    </span>
+                    <span className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">{s.title}</span>
+                    <ArrowRight size={16} className="text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
                   </Link>
                 </motion.div>
               ))}
@@ -82,10 +73,13 @@ export default function EcosystemSection() {
 
           {/* RIGHT — Professional Training */}
           <div>
-            <h2 className="text-base font-bold text-white mb-1">Professional Training</h2>
-            <div className="h-px bg-white/10 mb-5" />
+            <div className="flex items-center gap-2 mb-4">
+              <GraduationCap size={18} className="text-cyan-400" />
+              <h3 className="text-lg font-bold text-white tracking-wide">Professional Skill Pipelines</h3>
+            </div>
+            <div className="h-px bg-white/10 mb-6" />
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {trainings.map((t, i) => (
                 <motion.div
                   key={t.tag}
@@ -95,68 +89,60 @@ export default function EcosystemSection() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                 >
-                  <div className="relative flex items-start justify-between px-5 py-5 border border-white/8 bg-[#111] rounded-sm overflow-hidden group hover:bg-[#161616] hover:border-blue-500/20 transition-all duration-200">
-                    {/* Ghost icon bg */}
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-60">
-                      {t.icon}
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10 flex-1 pr-4">
-                      <p className="text-[10px] font-bold tracking-[0.18em] text-blue-400 uppercase mb-1">
+                  <div className="glass-card p-5 group flex flex-col justify-between">
+                    <div>
+                      <p className="text-[10px] font-mono font-bold tracking-wider text-cyan-400 uppercase mb-1">
                         {t.tag}
                       </p>
-                      <h3 className="text-sm font-bold text-white mb-1">{t.title}</h3>
-                      <p className="text-xs text-gray-500 leading-relaxed mb-3">{t.desc}</p>
-                      <Link
-                        href={t.href}
-                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-400 hover:text-blue-300 uppercase tracking-wider transition-colors duration-200 group/link"
-                      >
-                        <span>Learn More</span>
-                        <span className="transition-transform duration-200 group-hover/link:translate-x-1">→</span>
-                      </Link>
+                      <h4 className="text-base font-bold text-white mb-1.5">{t.title}</h4>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-4">{t.desc}</p>
                     </div>
+                    <Link
+                      href={t.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 uppercase tracking-wider transition-colors group/link"
+                    >
+                      <span>Explore Curriculum</span>
+                      <ArrowRight size={13} className="transition-transform duration-200 group-hover/link:translate-x-1" />
+                    </Link>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* ── CTA BANNER ── */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] p-10 md:p-14 text-center relative overflow-hidden shadow-[0_0_50px_rgba(14,165,233,0.12)]"
+        >
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+              Ready to Fortify Your Perimeter?
+            </h3>
+            <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-lg mx-auto leading-relaxed">
+              Schedule a technical scoping consultation with our senior security consultants to evaluate your risk exposure.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="btn-primary"
+              >
+                Request Scoping Call <ArrowRight size={15} />
+              </Link>
+              <Link
+                href="/services"
+                className="btn-secondary"
+              >
+                Explore Services Catalog
+              </Link>
+            </div>
+          </div>
+        </motion.section>
       </div>
-
-      {/* ── CTA BANNER ── */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="relative mx-6 mb-16 rounded-lg overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #7b9cdb 0%, #a8bce8 40%, #b8caf0 100%)" }}
-      >
-        {/* Dot pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: "radial-gradient(circle, #3b5998 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        />
-
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-8 py-20">
-          <h2 className="text-3xl sm:text-4xl font-black text-[#0d0d0d] uppercase tracking-tight mb-4">
-            Ready to Fortify Your Perimeter?
-          </h2>
-          <p className="text-sm text-[#1a1a2e]/70 mb-10 max-w-md">
-            Schedule a strategic consultation with our lead security architects today.
-          </p>
-          <Link
-            href="/contact"
-            className="px-10 py-4 bg-[#0d0d0d] text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#1a1a1a] transition-colors duration-200 rounded-sm"
-          >
-            Request a Quote or Consultation
-          </Link>
-        </div>
-      </motion.section>
     </div>
   );
 }
