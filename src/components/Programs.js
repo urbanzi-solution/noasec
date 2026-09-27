@@ -47,12 +47,12 @@ export default function Programs() {
   return (
     <section
       id="courses"
-      className="relative bg-[#05070d] text-white py-24 px-6 md:px-12 border-t border-white/5 scroll-mt-20"
+      className="relative bg-[#05070d] text-white py-14 md:py-16 lg:py-24 px-6 md:px-12 border-t border-white/5 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-12">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
               <GraduationCap size={14} className="text-cyan-400" />

@@ -9,7 +9,7 @@ export default function CTA({
   primaryHref = "/contact",
 }) {
   return (
-    <section className="relative px-6 py-16 md:px-12 overflow-hidden">
+    <section className="relative px-6 py-10 md:py-12 lg:py-16 md:px-12 overflow-hidden">
       <div className="mx-auto max-w-6xl relative rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-[#0c182c] via-[#091222] to-[#060a14] p-8 md:p-14 shadow-2xl shadow-cyan-500/10 overflow-hidden">
         {/* Glow orb in background */}
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/20 blur-[80px]" />

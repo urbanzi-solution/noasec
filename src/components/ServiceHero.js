@@ -7,7 +7,7 @@ import { ShieldCheck, ArrowRight, Activity, Clock, Award } from "lucide-react";
 
 export default function ServiceHero() {
   return (
-    <section className="relative w-full min-h-[82vh] flex items-center justify-start bg-[#05070d] bg-cyber-grid text-white overflow-hidden pt-32 pb-20 px-6 md:px-12 border-b border-white/5">
+    <section className="relative w-full lg:min-h-[82vh] flex items-center justify-start bg-[#05070d] bg-cyber-grid text-white overflow-hidden pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-20 px-6 md:px-12 border-b border-white/5">
       {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-[-150px] top-[15%] w-[550px] h-[550px] bg-cyan-500/15 blur-[140px] rounded-full" />
@@ -19,7 +19,7 @@ export default function ServiceHero() {
           <Breadcrumbs items={[{ name: "Services", href: "/services" }]} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Content (7 cols) */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">

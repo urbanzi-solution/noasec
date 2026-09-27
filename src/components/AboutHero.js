@@ -8,7 +8,7 @@ import { Shield, Target, Award, ArrowRight } from "lucide-react";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center bg-[#05070d] bg-cyber-grid text-white overflow-hidden pt-32 pb-20 px-6 md:px-12">
+    <section className="relative lg:min-h-[80vh] flex items-center justify-center bg-[#05070d] bg-cyber-grid text-white overflow-hidden pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-20 px-6 md:px-12">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/4 top-1/4 w-[600px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
@@ -20,7 +20,7 @@ export default function AboutHero() {
           <Breadcrumbs items={[{ name: "About Us", href: "/about" }]} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Text (7 cols) */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-300 backdrop-blur-md mb-6 shadow-[0_0_15px_rgba(14,165,233,0.15)]">

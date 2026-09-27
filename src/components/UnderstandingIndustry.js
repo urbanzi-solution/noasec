@@ -37,8 +37,8 @@ export default function UnderstandingIndustry() {
   ];
 
   return (
-    <section className="w-full bg-[#05070d] px-6 py-16 text-white md:px-12 border-t border-white/5">
-      <div className="max-w-4xl mx-auto space-y-12">
+    <section className="w-full bg-[#05070d] px-6 py-10 md:py-12 lg:py-16 text-white md:px-12 border-t border-white/5">
+      <div className="max-w-4xl mx-auto space-y-8 lg:space-y-12">
         {/* Heading */}
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">

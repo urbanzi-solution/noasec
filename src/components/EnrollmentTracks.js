@@ -44,7 +44,7 @@ const tracks = [
 
 export default function EnrollmentTracks() {
   return (
-    <section id="tracks" className="bg-[#05070d] text-white px-6 md:px-12 py-20 border-b border-white/5 scroll-mt-20">
+    <section id="tracks" className="bg-[#05070d] text-white px-6 md:px-12 py-12 md:py-14 lg:py-20 border-b border-white/5 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}

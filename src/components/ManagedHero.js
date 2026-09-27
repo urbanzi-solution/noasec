@@ -7,7 +7,7 @@ import { ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function ManagedHero() {
   return (
-    <section className="relative bg-[#05070d] bg-cyber-grid text-white px-6 md:px-12 pt-32 pb-20 border-b border-white/5 overflow-hidden">
+    <section className="relative bg-[#05070d] bg-cyber-grid text-white px-6 md:px-12 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-20 border-b border-white/5 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-[-100px] top-[15%] w-[500px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
       </div>
@@ -22,7 +22,7 @@ export default function ManagedHero() {
           />
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Content (7 cols) */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">

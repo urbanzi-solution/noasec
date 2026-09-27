@@ -49,11 +49,11 @@ export default function OperationalAdvantages() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
         {/* ── OPERATIONAL ADVANTAGES ── */}
         <section>
-          <div className="mb-12">
+          <div className="mb-8 lg:mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
               <span>System Operations</span>
             </div>
@@ -131,7 +131,7 @@ export default function OperationalAdvantages() {
         </section>
 
         {/* ── ECOSYSTEM SUPPORT ── */}
-        <section className="border-t border-white/10 pt-20">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">

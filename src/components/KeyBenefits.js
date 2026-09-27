@@ -25,8 +25,8 @@ export default function KeyBenefits() {
   return (
     <div className="bg-[#05070d] text-white border-t border-white/5">
       {/* ── KEY BENEFITS ── */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-24">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-16 lg:py-24">
+        <div className="text-center mb-10 lg:mb-16 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
             <span>Enterprise Value</span>
           </div>
@@ -126,7 +126,7 @@ export default function KeyBenefits() {
         </div>
 
         {/* ── RELATED SERVICES ── */}
-        <div className="border-t border-white/10 mt-20 pt-16">
+        <div className="border-t border-white/10 mt-12 lg:mt-20 pt-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <h3 className="text-2xl font-bold text-white">Related Ecosystem Services</h3>
@@ -172,7 +172,7 @@ export default function KeyBenefits() {
         </div>
 
         {/* ── CTA BANNER ── */}
-        <div className="mt-20">
+        <div className="mt-12 lg:mt-20">
           <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] p-10 md:p-14 text-center relative overflow-hidden shadow-[0_0_50px_rgba(14,165,233,0.12)]">
             <div className="relative z-10 max-w-2xl mx-auto">
               <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">

@@ -40,13 +40,13 @@ export default function CurriculumRoadmap() {
   return (
     <div id="curriculum" className="bg-[#05070d] text-white border-t border-white/5 scroll-mt-20">
       {/* ── CURRICULUM ROADMAP ── */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-14 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="mb-12"
+          className="mb-8 lg:mb-12"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
             <span>Syllabus Modules</span>
@@ -94,7 +94,7 @@ export default function CurriculumRoadmap() {
       </section>
 
       {/* ── INDUSTRY STANDARD TOOLKIT ── */}
-      <section className="py-16 bg-[#070b14] border-t border-b border-white/5">
+      <section className="py-10 md:py-12 lg:py-16 bg-[#070b14] border-t border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
             <Wrench size={13} className="text-cyan-400" />

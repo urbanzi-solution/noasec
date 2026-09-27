@@ -4,7 +4,7 @@ import { FileText, Calendar } from "lucide-react";
 export default function LegalPage({ title, href, updated, sections }) {
   return (
     <div className="bg-[#05070d] text-white">
-      <header className="px-6 pt-32 pb-12 md:px-12 border-b border-white/5 bg-cyber-grid">
+      <header className="px-6 pt-24 md:pt-28 lg:pt-32 pb-12 md:px-12 border-b border-white/5 bg-cyber-grid">
         <div className="mx-auto max-w-4xl">
           <Breadcrumbs items={[{ name: title, href }]} />
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
@@ -21,7 +21,7 @@ export default function LegalPage({ title, href, updated, sections }) {
         </div>
       </header>
 
-      <article className="px-6 py-16 md:px-12">
+      <article className="px-6 py-10 md:py-12 lg:py-16 md:px-12">
         <div className="mx-auto max-w-4xl glass-card rounded-3xl p-8 sm:p-12 border border-white/10">
           <div className="prose-lite space-y-8">
             {sections.map((s) => (

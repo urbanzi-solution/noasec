@@ -12,7 +12,7 @@ export default function WhyConsiderCybersecurity() {
   ];
 
   return (
-    <section className="bg-[#05070d] py-16 px-6 md:px-12 border-t border-white/5">
+    <section className="bg-[#05070d] py-10 md:py-12 lg:py-16 px-6 md:px-12 border-t border-white/5">
       <div className="max-w-4xl mx-auto space-y-8">
 
         {/* Heading */}

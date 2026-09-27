@@ -6,7 +6,7 @@ import { SITE } from "@/data/site";
 
 export default function ReadyCTA() {
   return (
-    <section className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+    <section className="bg-[#05070d] text-white px-6 md:px-12 py-14 md:py-16 lg:py-24 border-t border-white/5">
       <div className="max-w-5xl mx-auto rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-[#0c182c] via-[#091222] to-[#060a14] p-8 md:p-14 text-center relative overflow-hidden shadow-2xl">
 
         {/* Ambient Glows */}

@@ -5,7 +5,10 @@ const nextConfig = {
 
   // Old blog index moved to /blog (the old article stays at /blogs/blog).
   async redirects() {
-    return [{ source: "/blogs", destination: "/blog", permanent: true }];
+    return [
+      { source: "/blogs", destination: "/blog", permanent: true },
+      { source: "/services/branding/packaging-print-design", destination: "/services/branding", permanent: true },
+    ];
   },
 
   async headers() {

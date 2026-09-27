@@ -53,7 +53,7 @@ export default async function CategoryPage({ params }) {
       />
 
       {/* Services List Section */}
-      <section aria-labelledby="list-h" className="px-6 py-20 md:px-12 border-b border-white/5 bg-cyber-grid">
+      <section aria-labelledby="list-h" className="px-6 py-12 md:py-14 lg:py-20 md:px-12 border-b border-white/5 bg-cyber-grid">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
@@ -88,7 +88,7 @@ export default async function CategoryPage({ params }) {
       <FAQ faqs={faqs} title={`${c.name} Frequently Asked Questions`} eyebrow="Clarifications & Insights" />
 
       {/* Cross-links to other categories */}
-      <section aria-labelledby="other-h" className="px-6 py-16 md:px-12 border-t border-white/5 bg-[#070b14]">
+      <section aria-labelledby="other-h" className="px-6 py-10 md:py-12 lg:py-16 md:px-12 border-t border-white/5 bg-[#070b14]">
         <div className="mx-auto max-w-6xl text-center">
           <h2 id="other-h" className="text-xl sm:text-2xl font-bold text-white mb-2">
             Explore Other Specialized Divisions

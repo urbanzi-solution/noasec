@@ -37,7 +37,7 @@ const advantages = [
 
 export default function AboutSections() {
   return (
-    <section className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+    <section className="bg-[#05070d] text-white px-6 md:px-12 py-14 md:py-16 lg:py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
 
         {/* TOP - Mission & Vision */}
@@ -66,7 +66,7 @@ export default function AboutSections() {
         </div>
 
         {/* DIFFERENTIATION HEADING */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
             <span>Core Differentiation</span>
           </div>

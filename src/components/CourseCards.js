@@ -75,8 +75,8 @@ const courses = [
 
 export default function CourseCards() {
   return (
-    <div className="bg-[#05070d] text-white px-6 md:px-12 py-20">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-12 md:py-14 lg:py-20">
+      <div className="max-w-6xl mx-auto space-y-10 lg:space-y-16">
 
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto">

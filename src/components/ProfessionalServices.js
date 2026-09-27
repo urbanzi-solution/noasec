@@ -45,7 +45,7 @@ const related = [
 
 export default function ProfessionalServices() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
         {/* ── PROFESSIONAL SECURITY SERVICES ── */}
         <section>
@@ -107,7 +107,7 @@ export default function ProfessionalServices() {
         </section>
 
         {/* ── RELATED CAPABILITIES ── */}
-        <section className="border-t border-white/10 pt-20">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
           <h3 className="text-2xl font-bold text-white mb-8">
             Adjacent Security Capabilities
           </h3>

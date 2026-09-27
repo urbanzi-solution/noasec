@@ -28,7 +28,7 @@ export default function BlogPage() {
         image="/courses-hero.webp"
       />
 
-      <section className="px-6 py-20 md:px-12 bg-cyber-grid">
+      <section className="px-6 py-12 md:py-14 lg:py-20 md:px-12 bg-cyber-grid">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 md:grid-cols-2">
             {sorted.map((p) => (

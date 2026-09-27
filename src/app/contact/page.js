@@ -22,7 +22,7 @@ export default function ContactPage() {
         cta={false}
       />
 
-      <section className="bg-[#05070d] px-6 py-20 md:px-12 bg-cyber-grid">
+      <section className="bg-[#05070d] px-6 py-12 md:py-14 lg:py-20 md:px-12 bg-cyber-grid">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-12 items-start">
           {/* Main Enquiry Form (7 cols) */}
           <div className="glass-card rounded-2xl p-6 sm:p-10 lg:col-span-7">

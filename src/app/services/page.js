@@ -44,12 +44,12 @@ export default function ServicesPage() {
           key={c.slug}
           id={c.slug}
           aria-labelledby={`${c.slug}-h`}
-          className={`px-6 py-20 md:px-12 scroll-mt-28 border-b border-white/5 ${
+          className={`px-6 py-12 md:py-14 lg:py-20 md:px-12 scroll-mt-28 border-b border-white/5 ${
             i % 2 === 0 ? "bg-[#05070d]" : "bg-[#070b14]"
           }`}
         >
           <div className="mx-auto max-w-7xl">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 lg:mb-10">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-2">
                   <span>Category Overview</span>

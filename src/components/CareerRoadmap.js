@@ -483,9 +483,9 @@ export default function CareerRoadmap() {
   ];
 
   return (
-    <section id="roadmap" className="bg-[#05070d] px-6 py-20 text-white md:px-12 border-t border-white/5 scroll-mt-20">
+    <section id="roadmap" className="bg-[#05070d] px-6 py-12 md:py-14 lg:py-20 text-white md:px-12 border-t border-white/5 scroll-mt-20">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-16 text-center">
+        <div className="mb-10 lg:mb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
             <span>Progressive Career Blueprint</span>
           </div>
@@ -502,7 +502,7 @@ export default function CareerRoadmap() {
         <div className="relative">
           <div className="absolute bottom-8 left-[18px] top-8 w-px bg-cyan-400/40 sm:left-[23px]" />
 
-          <div className="space-y-16">
+          <div className="space-y-10 lg:space-y-16">
             {roadmap.map((step) => {
               const StepIcon = step.icon;
 

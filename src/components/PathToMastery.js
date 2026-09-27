@@ -31,7 +31,7 @@ const beyondCards = [
 
 export default function PathToMastery() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
         {/* ── YOUR PATH TO MASTERY ── */}
         <section className="max-w-3xl mx-auto text-center">
@@ -91,7 +91,7 @@ export default function PathToMastery() {
         </section>
 
         {/* ── RELATED SECURITY SERVICES ── */}
-        <section className="border-t border-white/10 pt-20">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -198,7 +198,7 @@ export default function PathToMastery() {
         </section>
 
         {/* ── BEYOND THE CLASSROOM ── */}
-        <section className="border-t border-white/10 pt-20">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
           <h3 className="text-2xl font-bold text-white mb-8">
             Beyond the Classroom: Enterprise Defense
           </h3>

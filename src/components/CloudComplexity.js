@@ -49,9 +49,9 @@ const scorecard = [
 
 export default function CloudComplexity() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* ── LEFT (7 cols) ── */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">

@@ -34,11 +34,11 @@ const tools = [
 
 export default function LearningRoadmap() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24 px-6 md:px-12">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto space-y-24">
         {/* ── HEADER ── */}
         <section>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 lg:mb-12">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
                 <span>Course Syllabus</span>

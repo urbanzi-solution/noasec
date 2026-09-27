@@ -6,7 +6,7 @@ import { ArrowRight, Compass, Calendar, User, Clock, ShieldCheck } from "lucide-
 
 export default function BlogHeader() {
   return (
-    <section className="relative overflow-hidden bg-[#05070d] text-white pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-cyber-grid">
+    <section className="relative overflow-hidden bg-[#05070d] text-white pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-20 px-6 md:px-12 border-b border-white/5 bg-cyber-grid">
       {/* Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-[-150px] top-[15%] w-[550px] h-[550px] bg-cyan-500/15 blur-[140px] rounded-full" />

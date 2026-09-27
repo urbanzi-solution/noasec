@@ -39,7 +39,7 @@ export default async function PostPage({ params }) {
       <JsonLd data={articleSchema(p)} />
 
       {/* Article Header */}
-      <header className="relative px-6 pt-32 pb-12 md:px-12 border-b border-white/5 bg-cyber-grid">
+      <header className="relative px-6 pt-24 md:pt-28 lg:pt-32 pb-12 md:px-12 border-b border-white/5 bg-cyber-grid">
         <div className="mx-auto max-w-4xl">
           <Breadcrumbs items={[{ name: "Blog", href: "/blog" }, { name: p.title, href: `/blog/${p.slug}` }]} />
 
@@ -70,7 +70,7 @@ export default async function PostPage({ params }) {
       </header>
 
       {/* Article Body */}
-      <article className="px-6 py-16 md:px-12">
+      <article className="px-6 py-10 md:py-12 lg:py-16 md:px-12">
         <div className="mx-auto max-w-4xl">
           {/* TL;DR — answer-first block for snippets & AI citations */}
           <div className="glass-card rounded-2xl border-l-4 border-l-cyan-400 p-6 md:p-8">
@@ -127,7 +127,7 @@ export default async function PostPage({ params }) {
                   Explore how our team provides end-to-end execution.
                 </p>
               </div>
-              <Link href={serviceHref(service)} className="btn-primary text-xs shrink-0 whitespace-nowrap">
+              <Link href={serviceHref(service)} className="btn-primary w-full text-center text-xs sm:w-auto sm:shrink-0 sm:whitespace-nowrap">
                 View {service.name} <ArrowRight size={13} />
               </Link>
             </div>

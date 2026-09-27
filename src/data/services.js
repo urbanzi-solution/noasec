@@ -120,18 +120,6 @@ export const services = [
       { q: "Will rebranding hurt my Google rankings?", a: "Not if handled correctly. We plan redirects, update schema and profiles, and keep existing URLs wherever possible to protect rankings." },
     ],
   }),
-  s({
-    slug: "packaging-print-design",
-    category: "branding",
-    name: "Packaging & Print Design",
-    short: "Packaging, brochures and print that sell on the shelf.",
-    description:
-      "Product packaging, labels, brochures, catalogues and signage designed to stand out on the shelf and stay on-brand.",
-    features: ["Product packaging & labels", "Brochures & catalogues", "Flyers & posters", "Signage & banners", "Print-ready files", "Printer coordination"],
-    faqs: [
-      { q: "Do you handle printing?", a: "We deliver print-ready files and can coordinate with trusted printing partners on your behalf." },
-    ],
-  }),
 
   // ---------------- WEB DEVELOPMENT ----------------
   s({

@@ -32,7 +32,7 @@ export default function NCSOCHero() {
   return (
     <div className="bg-[#05070d] text-white bg-cyber-grid">
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-[85vh] flex items-center pt-32 pb-16 overflow-hidden">
+      <section className="relative lg:min-h-[85vh] flex items-center pt-24 md:pt-28 lg:pt-32 pb-10 md:pb-12 lg:pb-16 overflow-hidden">
         {/* Glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute left-[-100px] top-[15%] w-[500px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
@@ -48,7 +48,7 @@ export default function NCSOCHero() {
             />
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content (7 cols) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -144,8 +144,8 @@ export default function NCSOCHero() {
       </div>
 
       {/* Curriculum Highlights */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-14 lg:py-20">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
               <span>Operational Blueprint</span>

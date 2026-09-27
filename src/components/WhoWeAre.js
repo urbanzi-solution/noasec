@@ -12,7 +12,7 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section className="bg-[#05070d] text-white py-24 px-6 md:px-12 border-t border-white/5">
+    <section className="bg-[#05070d] text-white py-14 md:py-16 lg:py-24 px-6 md:px-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
         {/* LEFT CONTENT (7 cols) */}

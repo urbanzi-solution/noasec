@@ -8,7 +8,7 @@ export default function FAQ({ faqs, title = "Frequently Asked Questions", eyebro
   if (!faqs?.length) return null;
 
   return (
-    <section aria-labelledby="faq-heading" className="relative px-6 py-20 md:px-12">
+    <section aria-labelledby="faq-heading" className="relative px-6 py-12 md:py-14 lg:py-20 md:px-12">
       <JsonLd data={faqSchema(faqs)} />
 
       <div className="mx-auto max-w-4xl">

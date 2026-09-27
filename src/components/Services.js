@@ -161,7 +161,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative bg-[#05070d] py-24 px-6 md:px-12 border-t border-white/5 scroll-mt-16">
+    <section id="services" className="relative bg-[#05070d] py-14 md:py-16 lg:py-24 px-6 md:px-12 border-t border-white/5 scroll-mt-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}

@@ -16,9 +16,9 @@ const categoryIcons = {
 
 export default function DigitalServices() {
   return (
-    <section id="digital-services" className="scroll-mt-20 bg-[#05070d] px-6 py-24 md:px-12 border-t border-white/5">
+    <section id="digital-services" className="scroll-mt-20 bg-[#05070d] px-6 py-14 md:py-16 lg:py-24 md:px-12 border-t border-white/5">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-12">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-3">
               <Sparkles size={14} className="text-cyan-400" />

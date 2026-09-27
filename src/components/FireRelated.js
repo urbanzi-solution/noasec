@@ -21,10 +21,10 @@ const fadeUp = {
 
 export default function FireRelated() {
   return (
-    <div className="bg-[#05070d] text-white px-6 md:px-12 py-20 border-t border-white/5">
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-12 md:py-14 lg:py-20 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         {/* ── RELATED SERVICES ── */}
-        <section className="mb-16">
+        <section className="mb-10 lg:mb-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">

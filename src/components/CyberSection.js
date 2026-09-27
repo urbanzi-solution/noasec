@@ -50,10 +50,10 @@ const fadeUp = {
 
 export default function CyberSection() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* VALUE PROPOSITION */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mb-24">
           {/* Globe Image */}
           <div className="relative flex items-center justify-center">
             <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden border border-white/10 bg-[#091222]/80 backdrop-blur-xl p-2 shadow-2xl">
@@ -113,8 +113,8 @@ export default function CyberSection() {
         </section>
 
         {/* ACADEMY SECTION */}
-        <section className="border-t border-white/10 pt-20">
-          <div className="text-center mb-12 max-w-2xl mx-auto">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
+          <div className="text-center mb-8 lg:mb-12 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-4">
               <Award size={14} className="text-cyan-400" />
               <span>Upskill Your Threat Hunters</span>

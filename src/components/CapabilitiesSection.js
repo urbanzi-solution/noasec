@@ -29,7 +29,7 @@ const items = [
 
 export default function CapabilitiesSection() {
   return (
-    <section className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+    <section className="bg-[#05070d] text-white px-6 md:px-12 py-14 md:py-16 lg:py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
         <div className="mb-14">

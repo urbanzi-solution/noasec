@@ -62,7 +62,7 @@ const ecosystem = [
 
 export default function StrategicBenefits() {
   return (
-    <div className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5">
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-14 md:py-16 lg:py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto space-y-24">
         {/* ── STRATEGIC BUSINESS BENEFITS ── */}
         <section className="glass-card p-8 md:p-12 relative overflow-hidden">

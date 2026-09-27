@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#05070d] bg-cyber-grid pt-28 pb-20 md:pt-36 md:pb-28"
+      className="relative lg:min-h-[92vh] flex items-center overflow-hidden bg-[#05070d] bg-cyber-grid pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-36 lg:pb-28"
     >
       {/* Background Gradient Glow Orbs */}
       <div className="absolute inset-0 -z-10 pointer-events-none">

@@ -69,7 +69,7 @@ const techStack = [
 
 export default function NCDFoundation() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
         {/* ── THE FOUNDATION ── */}
         <section className="max-w-3xl mx-auto text-center">
@@ -96,8 +96,8 @@ export default function NCDFoundation() {
         </section>
 
         {/* ── MODULE ROADMAP ── */}
-        <section className="border-t border-white/10 pt-20">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
+          <div className="text-center mb-10 lg:mb-16 max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-4xl font-extrabold text-white mb-2">
               NCD Module Roadmap
             </h3>

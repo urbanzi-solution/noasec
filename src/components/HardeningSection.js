@@ -33,8 +33,8 @@ const benefits = [
 
 export default function HardeningSection() {
   return (
-    <div className="bg-[#05070d] text-white px-6 md:px-12 py-24 border-t border-white/5 space-y-20">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <div className="bg-[#05070d] text-white px-6 md:px-12 py-14 md:py-16 lg:py-24 border-t border-white/5 space-y-20">
+      <div className="max-w-7xl mx-auto space-y-10 lg:space-y-16">
         {/* ── THREE BENEFITS ── */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {benefits.map((b, i) => (

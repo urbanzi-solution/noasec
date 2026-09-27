@@ -5,7 +5,7 @@ import { GraduationCap, ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function TrainingCTA() {
   return (
-    <section className="bg-[#05070d] px-6 md:px-12 py-20 border-t border-white/5">
+    <section className="bg-[#05070d] px-6 md:px-12 py-12 md:py-14 lg:py-20 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#0c1c38] via-[#081224] to-[#05070d] p-10 md:p-16 shadow-[0_0_50px_rgba(14,165,233,0.15)]">
           {/* AMBIENT GLOW */}

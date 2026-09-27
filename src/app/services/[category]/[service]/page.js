@@ -62,7 +62,7 @@ export default async function ServicePage({ params }) {
       <JsonLd data={serviceSchema({ name: s.name, description: s.description, href: serviceHref(s), category: c.name })} />
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-[#050b14] px-6 pb-20 pt-28 md:px-12 md:pt-32 lg:px-20">
+      <section className="relative overflow-hidden bg-[#050b14] px-6 pb-12 md:pb-14 lg:pb-20 pt-28 md:px-12 md:pt-32 lg:px-20">
         <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-full w-[45%] bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.12),transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl">
           <Breadcrumbs
@@ -73,7 +73,7 @@ export default async function ServicePage({ params }) {
             ]}
           />
 
-          <div className="mt-8 grid items-center gap-12 lg:grid-cols-2">
+          <div className="mt-8 grid items-center gap-8 lg:gap-12 lg:grid-cols-2">
             <div>
               <div className="mb-5 inline-block rounded-full border border-blue-500/40 px-3 py-1 text-[10px] tracking-[0.2em] text-blue-400 md:text-xs">
                 {c.name.toUpperCase()} · KOTTAYAM, KERALA
@@ -126,7 +126,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* ── OVERVIEW ── */}
-      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:gap-12 px-6 py-12 md:py-14 lg:py-20 md:grid-cols-2">
         <div>
           <Eyebrow>Overview</Eyebrow>
           <h2 className="text-3xl font-bold leading-tight">What is {name}?</h2>
@@ -140,7 +140,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* ── WHAT WE DELIVER ── */}
-      <section className="mx-auto max-w-6xl px-6 pb-20">
+      <section className="mx-auto max-w-6xl px-6 pb-12 md:pb-14 lg:pb-20">
         <Eyebrow>Scope of Work</Eyebrow>
         <h2 className="mb-10 text-3xl font-bold">What We Deliver</h2>
         {x.deliverables ? (
@@ -167,7 +167,7 @@ export default async function ServicePage({ params }) {
       {/* ── KEY BENEFITS ── */}
       {x.benefits && (
         <section className="bg-[#0a0d14]">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 lg:gap-12 px-6 py-12 md:py-14 lg:py-20 md:grid-cols-2">
             <div className="relative flex items-center justify-center">
               <div aria-hidden="true" className="absolute inset-0 rounded-full bg-blue-500/5 blur-3xl" />
               <div className="relative aspect-square w-full max-w-[440px] overflow-hidden rounded-lg border border-white/5 bg-[#111]">
@@ -197,7 +197,7 @@ export default async function ServicePage({ params }) {
 
       {/* ── PROCESS ── */}
       {x.process && (
-        <section className="mx-auto max-w-6xl px-6 py-20">
+        <section className="mx-auto max-w-6xl px-6 py-12 md:py-14 lg:py-20">
           <Eyebrow>How We Work</Eyebrow>
           <h2 className="mb-10 text-3xl font-bold">Our {name} Process</h2>
           <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -214,7 +214,7 @@ export default async function ServicePage({ params }) {
 
       {/* ── TOOLS & WHO IT'S FOR ── */}
       {(x.tools || x.idealFor) && (
-        <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-20 md:grid-cols-2">
+        <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-12 md:pb-14 lg:pb-20 md:grid-cols-2">
           {x.tools && (
             <div className="rounded-lg border border-white/5 bg-[#0b0f17] p-7">
               <h2 className="mb-5 flex items-center gap-2 text-xl font-bold">
@@ -247,9 +247,9 @@ export default async function ServicePage({ params }) {
       <FAQ faqs={faqs} title={`${name} FAQs`} eyebrow="Common Questions" />
 
       {/* ── RELATED SERVICES + FURTHER READING + CTA ── */}
-      <div className="mx-auto max-w-6xl px-6 pb-16 pt-4">
+      <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-12 lg:pb-16 pt-4">
         {related.length > 0 && (
-          <section className="mb-16">
+          <section className="mb-10 lg:mb-16">
             <h2 className="mb-6 text-lg font-bold">Related Services</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               {related.map((r) => (
@@ -272,7 +272,7 @@ export default async function ServicePage({ params }) {
         )}
 
         {relatedPosts.length > 0 && (
-          <section className="mb-16">
+          <section className="mb-10 lg:mb-16">
             <h2 className="mb-4 text-lg font-bold">Further Reading</h2>
             <ul className="space-y-2">
               {relatedPosts.map((p) => (

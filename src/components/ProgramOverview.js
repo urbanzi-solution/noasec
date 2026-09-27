@@ -4,7 +4,7 @@ import { Award } from "lucide-react";
 
 export default function ProgramOverview() {
   return (
-    <section className="bg-[#05070d] text-white py-24 px-6 md:px-12 border-t border-white/5 text-center">
+    <section className="bg-[#05070d] text-white py-14 md:py-16 lg:py-24 px-6 md:px-12 border-t border-white/5 text-center">
       <div className="max-w-4xl mx-auto">
         {/* Tag */}
         <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 mb-6">

@@ -25,7 +25,7 @@ const highlights = [
 
 export default function NewGen() {
   return (
-    <section id="about" className="relative bg-[#05070d] py-24 px-6 md:px-12 border-t border-white/5">
+    <section id="about" className="relative bg-[#05070d] py-14 md:py-16 lg:py-24 px-6 md:px-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
 
         {/* LEFT IMAGE WITH CYBER HUD FRAME (5 cols on md) */}

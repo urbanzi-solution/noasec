@@ -38,9 +38,9 @@ const trainings = [
 export default function EcosystemSection() {
   return (
     <div className="bg-[#05070d] text-white border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-14 lg:py-20 space-y-20">
         {/* ── TWO COLUMN SECTION ── */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* LEFT — Ecosystem Services */}
           <div>
             <div className="flex items-center gap-2 mb-4">

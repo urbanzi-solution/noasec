@@ -16,7 +16,7 @@ const metaStats = [
 export default function NCSAHero() {
   return (
     <div className="bg-[#05070d] text-white bg-cyber-grid">
-      <section className="relative min-h-[85vh] flex items-center pt-32 pb-16 overflow-hidden">
+      <section className="relative lg:min-h-[85vh] flex items-center pt-24 md:pt-28 lg:pt-32 pb-10 md:pb-12 lg:pb-16 overflow-hidden">
         {/* Glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute left-[-100px] top-[15%] w-[500px] h-[500px] bg-cyan-500/15 blur-[140px] rounded-full" />
@@ -32,7 +32,7 @@ export default function NCSAHero() {
             />
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content (7 cols) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

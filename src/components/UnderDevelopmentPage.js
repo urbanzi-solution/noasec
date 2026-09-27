@@ -6,7 +6,7 @@ import { Shield, ArrowRight, Home, Terminal } from "lucide-react";
 
 export default function UnderDevelopmentPage() {
   return (
-    <div className="min-h-[85vh] bg-[#05070d] bg-cyber-grid text-white flex items-center justify-center px-6 py-32">
+    <div className="min-h-[85vh] bg-[#05070d] bg-cyber-grid text-white flex items-center justify-center px-6 py-16 md:py-20 lg:py-32">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

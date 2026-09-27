@@ -47,7 +47,7 @@ export default function Home() {
       <WhyChooseUs />
 
       {/* Latest insights */}
-      <section aria-labelledby="blog-heading" className="bg-[#05070d] px-6 py-24 md:px-12 border-t border-white/5">
+      <section aria-labelledby="blog-heading" className="bg-[#05070d] px-6 py-14 md:py-16 lg:py-24 md:px-12 border-t border-white/5">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>

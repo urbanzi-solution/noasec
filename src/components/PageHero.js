@@ -6,7 +6,7 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 // Standard hero for inner pages: breadcrumbs + single H1 + answer-first intro + optional HUD image.
 export default function PageHero({ eyebrow, title, intro, breadcrumbs, cta = true, badge = null, image = null }) {
   return (
-    <section className="relative overflow-hidden border-b border-white/10 bg-[#05070d] px-6 pb-16 pt-32 md:px-12 bg-cyber-grid">
+    <section className="relative overflow-hidden border-b border-white/10 bg-[#05070d] px-6 pb-10 md:pb-12 lg:pb-16 pt-24 md:pt-28 lg:pt-32 md:px-12 bg-cyber-grid">
       {/* Background Radial Glow */}
       <div
         aria-hidden="true"
@@ -21,7 +21,7 @@ export default function PageHero({ eyebrow, title, intro, breadcrumbs, cta = tru
         {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
 
         {image ? (
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content (7 cols) */}
             <div className="lg:col-span-7">
               {eyebrow && (

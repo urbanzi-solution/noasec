@@ -106,41 +106,6 @@ const branding = {
       { q: "How do you announce a rebrand to customers?", a: "We plan an announcement across email, social media, your website and Google Business Profile, explaining what changed and why, so customers feel included rather than confused." },
     ],
   },
-
-  "packaging-print-design": {
-    image: "/packaging-hero.webp",
-    stats: [{ v: "3 sec", l: "To win shelf attention" }, { v: "CMYK", l: "Print-ready files" }, { v: "2–4", l: "Weeks typical" }],
-    overview: [
-      "On a crowded shelf or in an online marketplace, packaging is your silent salesperson. Great packaging communicates quality, explains the product in seconds and makes customers pick you over the brand next to you.",
-      "We design packaging, labels and printed materials that are on-brand, compliant and ready for production. From dielines and material selection to printer coordination, we handle the technical details so your products look exactly as designed.",
-    ],
-    deliverables: [
-      { icon: "Package", t: "Product Packaging", d: "Boxes, pouches, bottles and jars designed on accurate dielines with 3D mockups." },
-      { icon: "Tag", t: "Labels & Stickers", d: "Product labels including mandatory information, barcodes and regulatory text." },
-      { icon: "FileText", t: "Brochures & Catalogues", d: "Multi-page brochures and product catalogues that sell your range." },
-      { icon: "Printer", t: "Flyers, Posters & Banners", d: "Event, retail and promotional print designed for impact." },
-      { icon: "Store", t: "Signage & Displays", d: "Shop signage, standees and point-of-sale displays." },
-      { icon: "ClipboardCheck", t: "Print Production Support", d: "Print-ready files with bleed and colour profiles, plus printer coordination and proof checks." },
-    ],
-    benefits: [
-      { t: "Win the Shelf", d: "Designs built to be noticed and understood in seconds." },
-      { t: "Premium Perception", d: "Quality packaging lets you charge a higher price." },
-      { t: "Fewer Print Errors", d: "Technically correct files avoid costly reprints." },
-      { t: "Consistent Product Range", d: "A packaging system that scales as you add products." },
-    ],
-    process: [
-      { t: "Product & Market Brief", d: "Understand the product, retail environment and competitors." },
-      { t: "Concepts & Mockups", d: "Design directions presented on realistic 3D mockups." },
-      { t: "Artwork Finalisation", d: "Regulatory text, barcodes and dielines finalised." },
-      { t: "Print Handover", d: "Print-ready files and support through proofing and production." },
-    ],
-    tools: ["Adobe Illustrator", "Adobe InDesign", "Adobe Dimension", "Esko ArtiosCAD dielines", "Pantone"],
-    idealFor: ["FMCG and D2C product brands", "Food, cosmetics and wellness brands", "Retail stores and franchises", "Event and exhibition marketing"],
-    faqs: [
-      { q: "Can you include FSSAI and legal information on labels?", a: "Yes. We lay out mandatory information such as ingredients, nutrition facts, FSSAI details, MRP and barcodes based on the content you provide." },
-      { q: "Do you provide 3D mockups for e-commerce listings?", a: "Yes. We create realistic product mockups you can use on Amazon, your website and social media before physical samples are ready." },
-    ],
-  },
 };
 
 export default branding;

@@ -50,10 +50,10 @@ const relatedServices = [
 
 export default function DigitalBenefitsSection() {
   return (
-    <div className="bg-[#05070d] text-white border-t border-white/5 py-24">
+    <div className="bg-[#05070d] text-white border-t border-white/5 py-14 md:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
         {/* ── KEY BENEFITS ── */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left — image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -117,7 +117,7 @@ export default function DigitalBenefitsSection() {
         </section>
 
         {/* ── RELATED SERVICES + TRAINING ── */}
-        <section className="border-t border-white/10 pt-20">
+        <section className="border-t border-white/10 pt-12 md:pt-14 lg:pt-20">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
